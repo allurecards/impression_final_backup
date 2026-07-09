@@ -1,0 +1,26 @@
+[
+  {
+    "id": "AL - Tes",
+    "category": "PASTEL",
+    "price": 89,
+    "featured": false,
+    "minOrder": 100,
+    "size": "5\" x 7\"",
+    "material": "Premium 350 gsm",
+    "description": "Testing",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "",
+    "images": [
+      "assets/impressions/al---tes-1.png"
+    ],
+    "originals": [
+      "assets/impressions/original/al---tes-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ]
+  }
+]
