@@ -652,6 +652,21 @@ function ShopPage() {
                   </p>
                 )}
 
+                {/* Instagram */}
+                <a
+                  href="https://www.instagram.com/impressions.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 flex items-center gap-2 text-sm opacity-60 transition hover:opacity-100"
+                >
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                  @impressions.in
+                </a>
+
                 {/* Calculator */}
                 <div className="mt-6 rounded-2xl border border-[#1a1a1a]/15 bg-white p-5">
                   <label className="text-xs font-semibold uppercase tracking-[0.18em] opacity-70">Quantity</label>
