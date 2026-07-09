@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import type { ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 import invitations from "@/assets/invitations.jpg";
 import logo from "@/assets/IMP_LOGO_final.png";
 import weddingCard from "@/assets/wedding-card.jpg";
@@ -271,7 +271,7 @@ function BentoSection() {
     title: string;
     desc: string;
     img: string;
-    icon: (props: { className?: string }) => React.ReactElement;
+    icon: (props: { className?: string }) => ReactElement;
     to?: string;
     href?: string;
   }[] = [

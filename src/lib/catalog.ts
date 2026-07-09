@@ -1,5 +1,3 @@
-export const IMAGE_BASE = "";
-
 export type ChargedItem = { name: string; price: number };
 
 export type WatermarkEntry = {

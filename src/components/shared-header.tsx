@@ -1,9 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { Search, ShoppingBag, ChevronDown } from "lucide-react";
+import type { ReactNode } from "react";
 
 type SharedHeaderProps = {
   showSubnav?: boolean;
-  subnavContent?: React.ReactNode;
+  subnavContent?: ReactNode;
 };
 
 export function SharedHeader({ showSubnav, subnavContent }: SharedHeaderProps) {

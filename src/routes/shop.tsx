@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Search, Heart, ChevronDown, ShoppingBag } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import invitations from "@/assets/invitations.jpg";
@@ -62,6 +62,7 @@ function ShopPage() {
 
   const [showFavorites, setShowFavorites] = useState(false);
   const [modalMounted, setModalMounted] = useState(false);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (active) {
@@ -73,7 +74,25 @@ function ShopPage() {
 
   const closeModal = useCallback(() => {
     setModalMounted(false);
-    setTimeout(() => setActive(null), 200);
+    closeTimerRef.current = setTimeout(() => setActive(null), 200);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash.startsWith("#card=")) {
+      const cardId = hash.replace("#card=", "");
+      const found = Array.isArray(cardsData) ? (cardsData as Catalog[]).find((c) => c.id === cardId) : undefined;
+      if (found) {
+        const t = setTimeout(() => setActive(found), 300);
+        return () => clearTimeout(t);
+      }
+    }
   }, []);
 
   const toggleFavorite = (id: string) => {
@@ -86,15 +105,14 @@ function ShopPage() {
   };
 
   const [modalQuantity, setModalQuantity] = useState(0);
-  const [modalSize, setModalSize] = useState("");
 
   useEffect(() => {
     if (active) {
       setModalQuantity(active.minOrder);
-      setModalSize(active.size);
     }
   }, [active?.id]);
 
+  const searchRef = useRef<HTMLInputElement>(null);
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -131,15 +149,13 @@ function ShopPage() {
     return () => window.removeEventListener("keydown", handler);
   }, [galleryOpen, active]);
 
-  const qty = modalQuantity;
-  const cardCost = active ? qty * active.price : 0;
+  const cardCost = active ? modalQuantity * active.price : 0;
   const extraTotal = active?.extraCharges?.reduce((sum, ch) => sum + ch.price, 0) || 0;
   let discountPct = 0;
-  if (qty >= 1000) discountPct = 10;
-  else if (qty >= 500) discountPct = 5;
+  if (modalQuantity >= 1000) discountPct = 10;
+  else if (modalQuantity >= 500) discountPct = 5;
   const discountAmt = Math.round(cardCost * discountPct / 100);
   const finalTotal = Math.round(cardCost * (1 - discountPct / 100)) + extraTotal;
-  const totalSavings = discountAmt;
 
   const shareUrl = typeof window !== "undefined"
     ? `${window.location.origin}/shop#card=${active?.id}`
@@ -152,14 +168,6 @@ function ShopPage() {
       setTimeout(() => setShareCopied(false), 1800);
     } catch {}
   };
-
-  function getQuantityOptions(minOrder: number): number[] {
-    const options: number[] = [];
-    for (let qty = minOrder; qty <= 1500; qty += 50) {
-      options.push(qty);
-    }
-    return options;
-  }
 
   useEffect(() => {
     const t = setTimeout(() => {
@@ -242,7 +250,7 @@ function ShopPage() {
             IMPRESSIONS
           </Link>
           <div className="flex items-center gap-4">
-            <button className="p-2 hover:opacity-70" aria-label="Search">
+            <button onClick={() => searchRef.current?.focus()} className="p-2 hover:opacity-70 active:scale-[0.97]" aria-label="Search">
               <Search className="h-5 w-5" />
             </button>
             <button
@@ -270,9 +278,9 @@ function ShopPage() {
               <button
                 key={c}
                 onClick={() => setCategoryAndReset(c)}
-                className={`flex items-center gap-1 whitespace-nowrap transition ${
+                className={`flex items-center gap-1 whitespace-nowrap transition-colors ${
                   category === c ? "border-b-2 border-zola-ink pb-1 font-semibold" : "hover:opacity-70"
-                }`}
+                } active:scale-[0.97]`}
               >
                 {c === "All" ? "All cards" : c} <ChevronDown className="h-3.5 w-3.5" />
               </button>
@@ -310,7 +318,7 @@ function ShopPage() {
             <button
               key={c.cat}
               onClick={() => setCategoryAndReset(c.cat)}
-              className="flex flex-col items-center gap-2 group"
+              className="flex flex-col items-center gap-2 group active:scale-[0.95]"
             >
               <div
                 className={`h-20 w-20 overflow-hidden rounded-full ring-1 transition-all duration-200 group-hover:ring-2 group-hover:ring-zola-ink ${
@@ -371,15 +379,17 @@ function ShopPage() {
               ))}
             </SelectContent>
           </Select>
-          <div className="flex items-center gap-1.5 rounded-full border border-zola-ink/20 px-4 py-2 text-sm transition hover:border-zola-ink">
+          <div className="flex items-center gap-1.5 rounded-full border border-zola-ink/20 px-4 py-2 text-sm transition-colors hover:border-zola-ink focus-within:ring-2 focus-within:ring-zola-ink/20">
             <Search className="h-3.5 w-3.5" />
             <input
+              ref={searchRef}
               value={query}
               onChange={(e) => {
                 setQuery(e.target.value);
                 setVisible(PAGE_SIZE);
               }}
               placeholder="Search…"
+              aria-label="Search cards"
               className="w-24 bg-transparent outline-none placeholder:text-zola-ink/40"
             />
           </div>
@@ -417,7 +427,7 @@ function ShopPage() {
                       <img
                         src={imgUrl(c.images[0])}
                         alt={c.id}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                        className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-[1.02]"
                         loading="lazy"
                       />
                     )}
@@ -597,7 +607,7 @@ function ShopPage() {
                   <div className="mt-4 grid grid-cols-3 gap-3">
                     {active.images.map((src, idx) => (
                       <button
-                        key={idx}
+                        key={src}
                         onClick={() => setSelectedImageIndex(idx)}
                         className={`overflow-hidden rounded-lg border-2 ${
                           idx === selectedImageIndex ? "border-[#1a1a1a]" : "border-transparent"
@@ -657,7 +667,7 @@ function ShopPage() {
                       href={instaHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-5 group inline-flex items-center gap-2.5 rounded-full border border-[#1a1a1a]/15 px-4 py-2 text-sm font-medium text-[#1a1a1a]/80 shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)] transition-all duration-200 ease-out hover:border-[#1a1a1a] hover:bg-gradient-to-r hover:from-[#1a1a1a] hover:to-[#2a2a2a] hover:text-[#f5f0e6] active:scale-[0.97]"
+                      className="mt-5 group inline-flex items-center gap-2.5 rounded-full border border-[#1a1a1a]/15 px-4 py-2 text-sm font-medium text-[#1a1a1a]/80 shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)] transition-colors duration-200 ease-out hover:border-[#1a1a1a] hover:bg-gradient-to-r hover:from-[#1a1a1a] hover:to-[#2a2a2a] hover:text-[#f5f0e6] active:scale-[0.97]"
                     >
                       <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 transition-transform duration-200 ease-out group-hover:scale-110" fill="currentColor">
                         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
@@ -672,18 +682,20 @@ function ShopPage() {
 
                 {/* Calculator */}
                 <div className="mt-6 rounded-2xl border border-[#1a1a1a]/15 bg-white p-5">
-                  <label className="text-xs font-semibold uppercase tracking-[0.18em] opacity-70">Quantity</label>
+                  <label htmlFor="modal-qty" className="text-xs font-semibold uppercase tracking-[0.18em] opacity-70">Quantity</label>
                   <div className="mt-3 flex items-center gap-3">
                     <button
                       onClick={() => setModalQuantity((q) => Math.max(active.minOrder, q - 50))}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-[#1a1a1a]/20 text-lg text-[#1a1a1a]"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-[#1a1a1a]/20 text-lg text-[#1a1a1a] active:scale-[0.95]"
                     >−</button>
                     <input
+                      id="modal-qty"
                       type="number"
                       value={modalQuantity}
                       min={active.minOrder}
                       max={1500}
                       step={50}
+                      inputMode="numeric"
                       onChange={(e) => {
                         const v = Number(e.target.value);
                         if (Number.isFinite(v)) setModalQuantity(Math.min(1500, Math.max(active.minOrder, v)));
@@ -692,7 +704,7 @@ function ShopPage() {
                     />
                     <button
                       onClick={() => setModalQuantity((q) => Math.min(1500, q + 50))}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-[#1a1a1a]/20 text-lg text-[#1a1a1a]"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-[#1a1a1a]/20 text-lg text-[#1a1a1a] active:scale-[0.95]"
                     >+</button>
                     <span className="text-xs opacity-60">pcs</span>
                   </div>
@@ -703,6 +715,7 @@ function ShopPage() {
                     step={50}
                     value={modalQuantity}
                     onChange={(e) => setModalQuantity(Number(e.target.value))}
+                    aria-label="Select quantity"
                     className="mt-4 w-full accent-[#1a1a1a]"
                   />
                   <p className="mt-1 text-xs opacity-50">
@@ -711,12 +724,12 @@ function ShopPage() {
 
                   <div className="mt-5 space-y-1.5 text-sm">
                     <div className="flex items-baseline justify-between">
-                      <span className="opacity-80">Card Cost · {qty} × ₹{active.price}</span>
+                      <span className="opacity-80">Card Cost · {modalQuantity} × ₹{active.price}</span>
                       <span>₹{cardCost.toLocaleString()}</span>
                     </div>
 
-                    {active.extraCharges?.map((ch, i) => (
-                      <div key={i} className="flex items-baseline justify-between">
+                    {active.extraCharges?.map((ch) => (
+                      <div key={ch.name} className="flex items-baseline justify-between">
                         <span className="opacity-80">{ch.name}</span>
                         <span>₹{ch.price.toLocaleString()}</span>
                       </div>
@@ -739,8 +752,8 @@ function ShopPage() {
                       <span className="font-serif text-xl text-[#1a1a1a]">Total</span>
                       <span className="font-serif text-2xl text-[#1a1a1a]">₹{finalTotal.toLocaleString()}</span>
                     </div>
-                    {totalSavings > 0 && (
-                      <p className="text-xs text-[#1a3c2a]">You save ₹{totalSavings.toLocaleString()}</p>
+                    {discountAmt > 0 && (
+                      <p className="text-xs text-[#1a3c2a]">You save ₹{discountAmt.toLocaleString()}</p>
                     )}
                   </div>
                 </div>
@@ -753,25 +766,25 @@ function ShopPage() {
                         `Hi Allure Cards! I'd like to order:`,
                         ``,
                         `• ${active.id} (${active.category || "Allure"} Collection)`,
-                        `• Quantity: ${qty} pcs`,
+                        `• Quantity: ${modalQuantity} pcs`,
                         `• Card Cost: ₹${cardCost.toLocaleString()}`,
                         ...(active.extraCharges?.map((ch) => `• ${ch.name}: ₹${ch.price}`) || []),
                         ...(discountAmt > 0
                           ? [`• Volume discount (${discountPct}%): −₹${discountAmt.toLocaleString()}`]
                           : []),
                         `• Total: ₹${finalTotal.toLocaleString()}`,
-                        ...(totalSavings > 0 ? [`• You save: ₹${totalSavings.toLocaleString()}`] : []),
+                        ...(discountAmt > 0 ? [`• You save: ₹${discountAmt.toLocaleString()}`] : []),
                       ].join("\n")
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 rounded-full bg-[#1a1a1a] px-6 py-3 text-center text-sm font-semibold text-[#efe0b8] transition-all duration-200 ease-out hover:bg-[#2a2a2a] active:scale-[0.97]"
+                    className="flex-1 rounded-full bg-[#1a1a1a] px-6 py-3 text-center text-sm font-semibold text-[#efe0b8] transition-colors duration-200 ease-out hover:bg-[#2a2a2a] active:scale-[0.97]"
                   >
                     Order on WhatsApp
                   </a>
                   <button
                     onClick={copyLink}
-                    className="flex-1 rounded-full border border-[#1a1a1a] px-6 py-3 text-sm font-semibold text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-[#f5f0e6]"
+                    className="flex-1 rounded-full border border-[#1a1a1a] px-6 py-3 text-sm font-semibold text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-[#f5f0e6] active:scale-[0.97]"
                   >
                     {shareCopied ? "Link copied ✓" : "Copy product link"}
                   </button>
@@ -799,9 +812,9 @@ function ShopPage() {
               />
               {active.images.length > 1 && (
                 <div className="absolute bottom-8 flex gap-2">
-                  {active.images.map((_, i) => (
+                  {active.images.map((src, i) => (
                     <button
-                      key={i}
+                      key={src}
                       onClick={(e) => { e.stopPropagation(); setGalleryIndex(i); }}
                       className={`h-2 w-8 rounded-full ${galleryIndex === i ? "bg-white" : "bg-white/30"}`}
                     />
