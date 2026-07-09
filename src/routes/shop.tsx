@@ -651,7 +651,7 @@ function ShopPage() {
 
                 {/* Instagram */}
                 <a
-                  href={active.instagram || "https://www.instagram.com/impressions_wedding_cards"}
+                  href={active.instagram_url || "https://www.instagram.com/impressions_wedding_cards"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-5 flex items-center gap-2 text-sm opacity-60 transition hover:opacity-100"
