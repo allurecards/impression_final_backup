@@ -1,57 +1,5 @@
 [
   {
-    "id": "AL - Tes",
-    "category": "New Category",
-    "price": 75,
-    "featured": true,
-    "minOrder": 200,
-    "size": "5\" x 7\"",
-    "material": "Premium 350 gsm",
-    "description": "The GOAT",
-    "instagram_url": "https://www.allurecards.in",
-    "extraCharges": [],
-    "applyWatermark": true,
-    "watermarkPos": "bottom-right",
-    "watermarkSize": "medium",
-    "images": [
-      "src/assets/cards/display/al-tes-1.jpeg",
-      "src/assets/cards/display/al-tes-2.jpeg",
-      "src/assets/cards/display/al-tes-3.jpeg"
-    ],
-    "originals": [
-      "src/assets/cards/originals/al-tes-1.jpeg",
-      "src/assets/cards/originals/al-tes-2.jpeg",
-      "src/assets/cards/originals/al-tes-3.jpeg"
-    ],
-    "imageWatermarks": [
-      {
-        "apply": true,
-        "pos": "bottom-left",
-        "size": "medium"
-      },
-      null,
-      null
-    ],
-    "variants": [
-      {
-        "name": "Jomboly",
-        "size_id": 1,
-        "material_id": 1,
-        "size": "5\" x 7\"",
-        "material": "Premium 350 gsm",
-        "price": 75
-      },
-      {
-        "name": "Adith K",
-        "size_id": 4,
-        "material_id": 3,
-        "size": "6\" x 9\"",
-        "material": "Recycled Kraft",
-        "price": 99
-      }
-    ]
-  },
-  {
     "id": "Impressions Test",
     "category": "PASTEL",
     "price": 99,
