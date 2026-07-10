@@ -38,7 +38,7 @@ function ShopPage() {
   }, [items]);
 
   const circles = useMemo(() => {
-    const allImg = items.find(() => true)?.images[0] ?? "";
+    const allImg = invitations;
     const result = [{ label: "All Cards", cat: "All", image: allImg }];
     for (const cat of categories) {
       if (cat === "All") continue;
