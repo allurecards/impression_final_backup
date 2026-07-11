@@ -1,5 +1,40 @@
 [
   {
+    "id": "API-TEST-1",
+    "category": "Test",
+    "price": 50,
+    "featured": false,
+    "minOrder": 100,
+    "size": "5\" x 7\"",
+    "material": "Premium 350 gsm",
+    "description": "Created via API test",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#FFD700",
+    "images": [
+      "src/assets/cards/display/api-test-1-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/api-test-1-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "Standard",
+        "size_id": 1,
+        "material_id": 1,
+        "size": "5\" x 7\"",
+        "material": "Premium 350 gsm",
+        "price": 50
+      }
+    ]
+  },
+  {
     "id": "Test 3",
     "category": "Another one",
     "price": 44,
