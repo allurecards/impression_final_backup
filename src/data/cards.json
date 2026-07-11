@@ -1,54 +1,5 @@
 [
   {
-    "id": "IMP 102",
-    "category": "brand",
-    "price": 55,
-    "featured": true,
-    "minOrder": 100,
-    "size": "5\" x 7\"",
-    "material": "Premium 350 gsm",
-    "description": "pmlmpokp",
-    "instagram_url": "",
-    "extraCharges": [],
-    "applyWatermark": true,
-    "watermarkPos": "center",
-    "watermarkSize": "xlarge",
-    "images": [
-      "src/assets/cards/display/imp-102-1.png",
-      "src/assets/cards/display/imp-102-2.png",
-      "src/assets/cards/display/imp-102-3.png",
-      "src/assets/cards/display/imp-102-4.png",
-      "src/assets/cards/display/imp-102-5.png",
-      "src/assets/cards/display/imp-102-6.png"
-    ],
-    "originals": [
-      "src/assets/cards/originals/imp-102-1.png",
-      "src/assets/cards/originals/imp-102-2.png",
-      "src/assets/cards/originals/imp-102-3.png",
-      "src/assets/cards/originals/imp-102-4.png",
-      "src/assets/cards/originals/imp-102-5.png",
-      "src/assets/cards/originals/imp-102-6.png"
-    ],
-    "imageWatermarks": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "variants": [
-      {
-        "name": "",
-        "size_id": 1,
-        "material_id": 1,
-        "size": "5\" x 7\"",
-        "material": "Premium 350 gsm",
-        "price": 55
-      }
-    ]
-  },
-  {
     "id": "Impressions Test",
     "category": "Test",
     "price": 99,
