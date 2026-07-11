@@ -1,5 +1,40 @@
 [
   {
+    "id": "TEST-FINAL-2",
+    "category": "Test",
+    "price": 100,
+    "featured": false,
+    "minOrder": 100,
+    "size": "5\" x 7\"",
+    "material": "Premium 350 gsm",
+    "description": "",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "center",
+    "watermarkSize": "xlarge",
+    "watermarkColor": "#FF0000",
+    "images": [
+      "src/assets/cards/display/test-final-2-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/test-final-2-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "",
+        "size_id": 1,
+        "material_id": 1,
+        "size": "5\" x 7\"",
+        "material": "Premium 350 gsm",
+        "price": 100
+      }
+    ]
+  },
+  {
     "id": "TEST-DEBUG-1",
     "category": "Test",
     "price": 100,
