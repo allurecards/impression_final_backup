@@ -11,9 +11,9 @@
     "instagram_url": "",
     "extraCharges": [],
     "applyWatermark": true,
-    "watermarkPos": "top-right",
-    "watermarkSize": "large",
-    "watermarkColor": "#0000FF",
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "small",
+    "watermarkColor": "#00FF00",
     "images": [
       "src/assets/cards/display/test-wm-002-1.png"
     ],
