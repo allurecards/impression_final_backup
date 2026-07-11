@@ -1,1 +1,88 @@
-[]
+[
+  {
+    "id": "IMP 102",
+    "category": "brand",
+    "price": 55,
+    "featured": true,
+    "minOrder": 100,
+    "size": "6\" x 8\"",
+    "material": "Premium 350 gsm",
+    "description": "pmlmpokp",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "center",
+    "watermarkSize": "xlarge",
+    "images": [
+      "src/assets/cards/display/imp-102-1.png",
+      "src/assets/cards/display/imp-102-2.png",
+      "src/assets/cards/display/imp-102-3.png",
+      "src/assets/cards/display/imp-102-4.png",
+      "src/assets/cards/display/imp-102-5.png",
+      "src/assets/cards/display/imp-102-6.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/imp-102-1.png",
+      "src/assets/cards/originals/imp-102-2.png",
+      "src/assets/cards/originals/imp-102-3.png",
+      "src/assets/cards/originals/imp-102-4.png",
+      "src/assets/cards/originals/imp-102-5.png",
+      "src/assets/cards/originals/imp-102-6.png"
+    ],
+    "imageWatermarks": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "variants": [
+      {
+        "name": "",
+        "size_id": 2,
+        "material_id": 1,
+        "size": "6\" x 8\"",
+        "material": "Premium 350 gsm",
+        "price": 55
+      }
+    ]
+  },
+  {
+    "id": "Impressions Test",
+    "category": "Test",
+    "price": 99,
+    "featured": true,
+    "minOrder": 200,
+    "size": "5\" x 8\"",
+    "material": "Premium 350 gsm",
+    "description": "Testing",
+    "instagram_url": "https://www.allurecards.in",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "images": [
+      "src/assets/cards/display/impressions-test-1.jpeg",
+      "src/assets/cards/display/impressions-test-2.jpeg"
+    ],
+    "originals": [
+      "src/assets/cards/originals/impressions-test-1.jpeg",
+      "src/assets/cards/originals/impressions-test-2.jpeg"
+    ],
+    "imageWatermarks": [
+      null,
+      null
+    ],
+    "variants": [
+      {
+        "name": "Test",
+        "size_id": 1,
+        "material_id": 1,
+        "size": "5\" x 8\"",
+        "material": "Premium 350 gsm",
+        "price": 99
+      }
+    ]
+  }
+]
