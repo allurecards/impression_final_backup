@@ -25,15 +25,15 @@
     "imageWatermarks": [
       {
         "apply": true,
-        "pos": "bottom-center",
+        "pos": "bottom-left",
         "size": "medium",
-        "color": "#001eff"
+        "color": "#00ff2a"
       },
       {
         "apply": true,
-        "pos": "top-right",
-        "size": "large",
-        "color": "#3700ff"
+        "pos": "bottom-right",
+        "size": "medium",
+        "color": "#00ff2a"
       }
     ],
     "variants": [
