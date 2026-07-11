@@ -50,7 +50,7 @@
   {
     "id": "Test 2",
     "category": "New Test",
-    "price": 57,
+    "price": 59,
     "featured": false,
     "minOrder": 200,
     "size": "5\" x 7\"",
@@ -83,7 +83,7 @@
         "material_id": 1,
         "size": "5\" x 7\"",
         "material": "Premium 350 gsm",
-        "price": 57
+        "price": 59
       }
     ]
   },
