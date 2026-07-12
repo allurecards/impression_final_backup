@@ -246,26 +246,41 @@ function Footer() {
   return (
     <footer id="contact" className="bg-[#1a1a1a] px-6 py-20 text-[#f5f0e6] md:px-16">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-8 md:grid-cols-2">
-          <div className="pt-6">
+        <div className="grid gap-12 md:grid-cols-2 md:gap-20">
+          <div>
             <img src={logo} alt="Impressions" className="h-20 w-auto" />
-            <address className="mt-4 space-y-1 text-sm not-italic leading-relaxed opacity-70">
+            <div className="my-4 h-px w-10 bg-[#d9a87c]" />
+            <address className="space-y-1 text-sm not-italic leading-relaxed text-[#f5f0e6]/60">
               <p>Paravattani, Opp. Childrens Park,</p>
               <p>East Fort P.O.,</p>
               <p>Thrissur, Kerala — 680005</p>
             </address>
-            <p className="mt-3 text-sm opacity-70">
-              <a href="tel:+919526577999" className="hover:opacity-60">+91 95265 77 999</a>
-              <span className="mx-2">·</span>
-              <a href="tel:+919020077999" className="hover:opacity-60">+91 90200 77 999</a>
+            <p className="mt-4 text-sm text-[#f5f0e6]/60">
+              <a href="tel:+919526577999" className="text-[#d9a87c] transition-colors hover:text-[#f5f0e6]">+91 95265 77 999</a>
+              <span className="mx-2 text-[#f5f0e6]/30">·</span>
+              <a href="tel:+919020077999" className="text-[#d9a87c] transition-colors hover:text-[#f5f0e6]">+91 90200 77 999</a>
+              <br />
             </p>
+            <div className="mt-6">
+              <a
+                href="https://www.instagram.com/impressions_wedding_cards"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.12em] text-[#f5f0e6]/70 transition-colors hover:text-[#d9a87c]"
+              >
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+                Instagram
+              </a>
+            </div>
           </div>
-          <div>
-            <div className="overflow-hidden rounded-lg">
+          <div className="flex flex-col items-start md:items-end">
+            <div className="w-full overflow-hidden rounded-lg border border-[#d9a87c]/30 opacity-85 transition-opacity hover:opacity-100">
               <iframe
                 src="https://maps.google.com/maps?q=Impressions+Castle+Paravattani+Thrissur+Kerala&output=embed"
                 width="100%"
-                height="260"
+                height="220"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -276,16 +291,18 @@ function Footer() {
               href="https://maps.app.goo.gl/ZJTa4s78fDbU1HjF7"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-block text-sm opacity-70 transition-opacity hover:opacity-50"
+              className="mt-3 inline-block rounded-full border border-[#d9a87c]/40 px-5 py-2 text-xs font-medium uppercase tracking-[0.08em] text-[#d9a87c] transition-all hover:bg-[#d9a87c] hover:text-[#1a1a1a]"
             >
-              Get Directions to our Atelier
+              Get Directions
             </a>
           </div>
         </div>
 
-        <p className="mt-16 text-xs opacity-50">
-          © {new Date().getFullYear()} Impressions Wedding Cards. All rights reserved.
-        </p>
+        <div className="mt-16 border-t border-[#f5f0e6]/10 pt-8 text-center">
+          <p className="text-xs text-[#f5f0e6]/40">
+            © {new Date().getFullYear()} Allure by Impressions Wedding Cards. All rights reserved. Crafted with devotion in Thrissur.
+          </p>
+        </div>
       </div>
     </footer>
   );
