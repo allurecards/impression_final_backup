@@ -136,8 +136,9 @@ function Landing() {
               href="https://www.allurecards.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative text-sm font-medium text-[#f5f0e6] transition-colors duration-300 after:absolute after:-bottom-1 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#d9a87c] after:transition-all after:duration-300 hover:text-[#d9a87c] group-hover:after:w-full"
+              className="group inline-flex items-center gap-1.5 rounded-full border border-[#d9a87c]/30 px-4 py-1.5 text-sm font-medium text-[#d9a87c] transition-all duration-200 ease-out hover:bg-[#d9a87c] hover:text-[#1a1a1a] active:scale-[0.97]"
             >
+              <span className="text-xs transition-transform duration-200 ease-out group-hover:scale-110">✦</span>
               <span className="tracking-[0.08em]">Allure</span>
             </a>
             <a
