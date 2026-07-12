@@ -1,5 +1,40 @@
 [
   {
+    "id": "IM 101",
+    "category": "TRADITIONAL",
+    "price": 30,
+    "featured": false,
+    "minOrder": 100,
+    "size": "8X8",
+    "material": "260 GSM TEXTURED",
+    "description": "SIZE : 195 MM X 195 MM  MATERIAL: 260 GSM TEXTURED  ",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/im-101-1.jpeg"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-101-1.jpeg"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "MEDIUM",
+        "size_id": 4,
+        "material_id": 4,
+        "size": "8X8",
+        "material": "260 GSM TEXTURED",
+        "price": 30
+      }
+    ]
+  },
+  {
     "id": "imp test two",
     "category": "testb two",
     "price": 98,
