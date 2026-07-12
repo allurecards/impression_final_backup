@@ -4,6 +4,7 @@ import { z } from "zod";
 import { Search, Heart, ChevronDown, ShoppingBag } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ShareSheet } from "@/components/share-sheet";
+import { cn } from "@/lib/utils";
 import invitations from "@/assets/invitations.jpg";
 import heroVenue from "@/assets/hero-venue.jpg";
 import type { Catalog } from "@/lib/catalog";
@@ -49,7 +50,7 @@ const shopSearchSchema = z.object({
 });
 
 function ShopPage() {
-  const navigate = useNavigate();
+  const navigate = Route.useNavigate();
   const { category: urlCategory } = Route.useSearch();
 
   const [items, setItems] = useState<Catalog[]>([]);
@@ -470,8 +471,8 @@ function ShopPage() {
           </div>
         ) : (
           <>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {page.map((c) => (
+            {(() => {
+              const card = (c: Catalog) => (
                 <article
                   key={c.id}
                   onClick={() => setActive(c)}
@@ -512,65 +513,80 @@ function ShopPage() {
                     )}
                   </div>
                 </article>
-              ))}
-              <a
-                key="ad-allure"
-                href="https://www.allurecards.in"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block relative rounded-sm overflow-hidden text-white"
-                style={{ backgroundColor: "#0f2740" }}
-              >
-                <img
-                  src={heroVenue}
-                  alt="Allure Cards premium wedding stationery"
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity"
-                />
-                <div className="relative z-10 flex flex-col justify-between p-6 aspect-[4/5]">
-                  <div>
-                    <div className="text-xs uppercase tracking-widest font-semibold opacity-90">Sponsored</div>
-                    <h3 className="font-serif text-4xl leading-tight font-medium mt-3">
-                      <em className="not-italic">Allure</em> Cards
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed max-w-[240px]">
-                      <span className="font-semibold">Premium</span> foil,{' '}
-                      <span className="font-semibold">letterpress</span>, and{' '}
-                      <span className="font-semibold">luxury</span> paper.
-                      Elevate your invitation suite.
-                    </p>
+              );
+
+              const allureAd = (
+                <a
+                  key="ad-allure"
+                  href="https://www.allurecards.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block relative rounded-sm overflow-hidden text-white"
+                  style={{ backgroundColor: "#0f2740" }}
+                >
+                  <img
+                    src={heroVenue}
+                    alt="Allure Cards premium wedding stationery"
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity"
+                  />
+                  <div className="relative z-10 flex flex-col justify-between p-6 aspect-[4/5]">
+                    <div>
+                      <div className="text-xs uppercase tracking-widest font-semibold opacity-90">Sponsored</div>
+                      <h3 className="font-serif text-4xl leading-tight font-medium mt-3">
+                        <em className="not-italic">Allure</em> Cards
+                      </h3>
+                      <p className="mt-3 text-sm leading-relaxed max-w-[240px]">
+                        <span className="font-semibold">Premium</span> foil,{' '}
+                        <span className="font-semibold">letterpress</span>, and{' '}
+                        <span className="font-semibold">luxury</span> paper.
+                        Elevate your invitation suite.
+                      </p>
+                    </div>
+                    <div>
+                      <span className="inline-flex items-center gap-2 bg-white text-neutral-900 text-sm font-semibold px-4 py-2 rounded-full">
+                        Shop Allure Cards &rarr;
+                      </span>
+                    </div>
                   </div>
-                  <div>
-                    <span className="inline-flex items-center gap-2 bg-white text-neutral-900 text-sm font-semibold px-4 py-2 rounded-full">
-                      Shop Allure Cards &rarr;
-                    </span>
+                </a>
+              );
+
+              const customTile = (
+                <Link
+                  to="/customize"
+                  className="group block relative rounded-sm overflow-hidden text-white"
+                  style={{ backgroundColor: "#1a1a1a" }}
+                >
+                  <img src={invitations} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-60 transition-opacity duration-200" />
+                  <div className="relative z-10 flex flex-col justify-between p-6 aspect-[4/5]">
+                    <div>
+                      <div className="text-xs uppercase tracking-widest font-semibold opacity-90">Custom</div>
+                      <h3 className="font-serif text-4xl leading-tight font-medium mt-3">
+                        Design <em className="not-italic">Your Own</em>
+                      </h3>
+                      <p className="mt-3 text-sm leading-relaxed max-w-[240px]">
+                        Start from scratch with our interactive designer. Pick templates, fonts, colors, verses and more.
+                      </p>
+                    </div>
+                    <div>
+                      <span className="inline-flex items-center gap-2 bg-white text-neutral-900 text-sm font-semibold px-4 py-2 rounded-full transition-transform duration-150 active:scale-[0.97]">
+                        Start Designing &rarr;
+                      </span>
+                    </div>
                   </div>
+                </Link>
+              );
+
+              return (
+                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                  {page.slice(0, 3).map(card)}
+                  {allureAd}
+                  {page.slice(3).map(card)}
+                  {customTile}
                 </div>
-              </a>
-              <Link
-                to="/customize"
-                className="group block relative rounded-sm overflow-hidden text-white"
-                style={{ backgroundColor: "#1a1a1a" }}
-              >
-                <img src={invitations} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-60 transition-opacity duration-200" />
-                <div className="relative z-10 flex flex-col justify-between p-6 aspect-[4/5]">
-                  <div>
-                    <div className="text-xs uppercase tracking-widest font-semibold opacity-90">Custom</div>
-                    <h3 className="font-serif text-4xl leading-tight font-medium mt-3">
-                      Design <em className="not-italic">Your Own</em>
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed max-w-[240px]">
-                      Start from scratch with our interactive designer. Pick templates, fonts, colors, verses and more.
-                    </p>
-                  </div>
-                  <div>
-                    <span className="inline-flex items-center gap-2 bg-white text-neutral-900 text-sm font-semibold px-4 py-2 rounded-full transition-transform duration-150 active:scale-[0.97]">
-                      Start Designing &rarr;
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </div>
+              );
+            })()}
             {hasMore && (
               <div className="mt-12 flex justify-center">
                 <button
@@ -717,15 +733,35 @@ function ShopPage() {
                 {active.variants && active.variants.length > 1 && (
                   <div className="mt-4">
                     <label className="text-xs font-semibold uppercase tracking-[0.18em] opacity-70">Variant</label>
-                    <select
-                      value={selectedVariantIdx}
-                      onChange={(e) => setSelectedVariantIdx(Number(e.target.value))}
-                      className="mt-2 w-full rounded-xl border border-[#1a1a1a]/15 bg-white px-4 py-2.5 text-sm text-[#1a1a1a]"
-                    >
-                      {active.variants.map((v, i) => (
-                        <option key={i} value={i}>{v.name} — ₹{v.price}/card</option>
-                      ))}
-                    </select>
+                    <div className="mt-3 grid grid-cols-2 gap-3">
+                      {active.variants.map((v, i) => {
+                        const isSelected = i === selectedVariantIdx;
+                        return (
+                          <button
+                            key={i}
+                            onClick={() => setSelectedVariantIdx(i)}
+                            className={cn(
+                              "group relative rounded-xl border-2 p-3.5 text-left transition-all duration-200 ease-out active:scale-[0.97]",
+                              isSelected
+                                ? "border-[#1a1a1a] bg-[#1a1a1a]/5"
+                                : "border-[#1a1a1a]/10 bg-white hover:border-[#1a1a1a]/30"
+                            )}
+                          >
+                            <p className="text-sm font-medium text-[#1a1a1a]">
+                              {v.name || v.size}
+                            </p>
+                            <p className="mt-1 text-xs font-semibold text-[#1a1a1a]">
+                              ₹{v.price}/card
+                            </p>
+                            {isSelected && (
+                              <span className="absolute right-2.5 top-2.5 flex h-5 w-5 items-center justify-center rounded-full bg-[#1a1a1a] text-[10px] text-white">
+                                ✓
+                              </span>
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
                 )}
 
