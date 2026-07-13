@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useCardDesign } from "@/hooks/use-card-design";
 import { getTemplate } from "@/data/templates";
-import { versesByTradition, TRADITION_LABELS } from "@/data/verses";
+import { VERSES, versesByTradition, TRADITION_LABELS } from "@/data/verses";
 import { ICON_DEFS, getIconDef } from "@/data/icons";
 import { MONOGRAM_DEFS, getMonogramDef } from "@/data/monograms";
 import { normalizeMapsUrl } from "@/lib/qr";
@@ -12,11 +12,39 @@ import { Slider } from "./shared/Slider";
 import { Group } from "./shared/Group";
 
 export function ExtrasPanel() {
-  const { state, setField, addDecoration, updateDecoration, removeDecoration } = useCardDesign();
+  const { state, setField, addDecoration, updateDecoration, removeDecoration, setChurchText, setScriptText } = useCardDesign();
   const template = getTemplate(state.templateId);
   const [tradition, setTradition] = useState<VerseTradition | "all">("all");
 
-  const deferredMapsUrl = state.mapsUrl; // simple debounce could be added via useDeferredValue if needed
+  const isClassic = state.textLayoutId === "classic";
+
+  const populateVerse = (verseId: string) => {
+    const v = VERSES.find((vx) => vx.id === verseId);
+    setField("verseId", verseId);
+    setField("customVerse", "");
+    if (!v) return;
+    if (isClassic) {
+      setChurchText("quoteLine1", v.text);
+      setChurchText("quoteLine2", v.ref ? `— ${v.ref}` : "");
+    } else {
+      setScriptText("quoteLine1", v.text);
+      setScriptText("quoteLine2", v.ref ? `— ${v.ref}` : "");
+    }
+  };
+
+  const populateCustomVerse = (text: string) => {
+    setField("customVerse", text);
+    if (text) setField("verseId", "");
+    if (isClassic) {
+      setChurchText("quoteLine1", text || "");
+      setChurchText("quoteLine2", "");
+    } else {
+      setScriptText("quoteLine1", text || "");
+      setScriptText("quoteLine2", "");
+    }
+  };
+
+  const deferredMapsUrl = state.mapsUrl;
   const normalizedMapsUrl = normalizeMapsUrl(deferredMapsUrl);
   const mapsUrlIsInvalid = Boolean(state.showQr && deferredMapsUrl.trim() && !normalizedMapsUrl);
 
@@ -53,10 +81,7 @@ export function ExtrasPanel() {
         <span className="mb-1 block text-xs opacity-70">Verse</span>
         <select
           value={state.verseId}
-          onChange={(e) => {
-            setField("verseId", e.target.value);
-            setField("customVerse", "");
-          }}
+          onChange={(e) => populateVerse(e.target.value)}
           className="w-full rounded-md border border-input bg-white px-3 py-2 text-sm"
         >
           <option value="">— No verse —</option>
@@ -71,10 +96,7 @@ export function ExtrasPanel() {
         <span className="mb-1 block text-xs opacity-70">…or write your own</span>
         <textarea
           value={state.customVerse}
-          onChange={(e) => {
-            setField("customVerse", e.target.value);
-            if (e.target.value) setField("verseId", "");
-          }}
+          onChange={(e) => populateCustomVerse(e.target.value)}
           rows={2}
           placeholder="Add a personal quote or blessing"
           className="w-full rounded-md border border-input bg-white px-3 py-2 text-sm"

@@ -1,15 +1,38 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useCardDesign, encodeDesignForUrl } from "@/hooks/use-card-design";
+import { createShare } from "@/lib/share-store";
 
-const OWNER_WHATSAPP_NUMBER = "911234567890";
+const OWNER_WHATSAPP_NUMBER = "919526577999";
 
 export function ExportBar({ svgRef: _svgRef }: { svgRef: React.RefObject<SVGSVGElement | null> }) {
-  const { state, undo, redo, canUndo, canRedo } = useCardDesign();
+  const { state, undo, redo, canUndo, canRedo, resetChurchPositions, resetScriptPositions } = useCardDesign();
   const [shareUrl, setShareUrl] = useState("");
+  const [isCreating, setIsCreating] = useState(false);
+  const creatingRef = useRef(false);
 
   useEffect(() => {
     setShareUrl(`${window.location.origin}${window.location.pathname}?design=${encodeDesignForUrl(state)}`);
+  }, [state]);
+
+  const handleWhatsApp = useCallback(async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (creatingRef.current) return;
+    creatingRef.current = true;
+    setIsCreating(true);
+    try {
+      const { key } = await createShare({ data: { state: JSON.stringify(state) } });
+      const short = `${window.location.origin}${window.location.pathname}?d=${key}`;
+      const msg = `Hi! Here's my wedding card design for ${state.groom} & ${state.bride} — could you take a look? ${short}`;
+      window.open(`https://wa.me/${OWNER_WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+    } catch {
+      const fallback = `${window.location.origin}${window.location.pathname}?design=${encodeDesignForUrl(state)}`;
+      const msg = `Hi! Here's my wedding card design for ${state.groom} & ${state.bride} — could you take a look? ${fallback}`;
+      window.open(`https://wa.me/${OWNER_WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+    } finally {
+      creatingRef.current = false;
+      setIsCreating(false);
+    }
   }, [state]);
 
   const shareMessage = `Hi! Here's my wedding card design for ${state.groom} & ${state.bride} — could you take a look? ${shareUrl}`;
@@ -27,17 +50,16 @@ export function ExportBar({ svgRef: _svgRef }: { svgRef: React.RefObject<SVGSVGE
         >
           Browse ready-made
         </Link>
-        {/* Share on WhatsApp button — commented out per user request (2026-07-11). Uncomment to restore.
         <a
           href={whatsappHref}
+          onClick={handleWhatsApp}
           target="_blank"
           rel="noopener noreferrer"
-          aria-disabled={!whatsappHref}
+          aria-disabled={!whatsappHref || isCreating}
           className="flex-1 rounded-full bg-foreground px-5 py-3 text-center text-sm font-semibold text-background transition-transform duration-150 active:scale-[0.97] aria-disabled:pointer-events-none aria-disabled:opacity-60"
         >
-          Share on WhatsApp
+          {isCreating ? "Creating share link…" : "Share on WhatsApp"}
         </a>
-        */}
       </div>
 
       <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs">
@@ -49,6 +71,13 @@ export function ExportBar({ svgRef: _svgRef }: { svgRef: React.RefObject<SVGSVGE
             Redo
           </button>
         </div>
+        <button
+          type="button"
+          onClick={state.textLayoutId === "classic" ? resetChurchPositions : resetScriptPositions}
+          className="underline opacity-70"
+        >
+          Reset current layout
+        </button>
       </div>
 
       <p className="mt-3 min-h-5 text-center text-xs opacity-70" role="status" aria-live="polite">

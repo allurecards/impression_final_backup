@@ -72,6 +72,9 @@ function CustomizePageInner() {
             <CardSvg ref={svgRef} />
           </div>
           <ExportBar svgRef={svgRef} />
+          <p className="mt-3 text-center text-xs text-muted-foreground">
+            Click any text or motif on the card to select it, then drag to reposition.
+          </p>
         </div>
 
         <div className="space-y-10">

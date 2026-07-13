@@ -33,13 +33,14 @@ export function TemplatePicker() {
         ))}
       </div>
 
-      <div className="grid grid-cols-3 gap-3 sm:grid-cols-5">
+      <div className="grid grid-cols-3 gap-3 sm:grid-cols-5" role="radiogroup" aria-label="Template selection">
         {filtered.map((t) => (
           <button
             type="button"
             key={t.id}
+            role="radio"
+            aria-checked={state.templateId === t.id}
             onClick={() => setTemplate(t.id)}
-            aria-pressed={state.templateId === t.id}
             className={`flex flex-col items-center gap-2 rounded-2xl border p-3 transition-[transform,border-color] duration-150 active:scale-[0.97] ${
               state.templateId === t.id ? "border-foreground" : "border-border hover:border-foreground/40"
             }`}

@@ -1,6 +1,17 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useReducer, useRef } from "react";
-import type { CardDesignState, DecorationInstance } from "@/types/card-design";
+import lzString from "lz-string";
+import type {
+  CardDesignState,
+  DecorationInstance,
+  CardPoint,
+  CardElementId,
+  TextElementId,
+  ScriptTextElementId,
+  TextLayoutId,
+} from "@/types/card-design";
 import { TEMPLATES } from "@/data/templates";
+import { createDefaultClassicChurchState, createDefaultScriptState } from "@/types/card-design";
+import { getShare } from "@/lib/share-store";
 
 const STORAGE_KEY = "wedding-card-design:v1";
 const HISTORY_LIMIT = 50;
@@ -16,7 +27,6 @@ export const DEFAULT_DESIGN: CardDesignState = {
   time: "Half past four in the afternoon",
   venue: "Presidio Chapel · San Francisco",
 
-  showAllLines: false,
   eyebrow: "Together with their families",
   intro: "request the honour of your presence at the marriage of",
   reception: "Reception to follow",
@@ -31,15 +41,20 @@ export const DEFAULT_DESIGN: CardDesignState = {
   verseId: "",
   customVerse: "",
 
-  icons: [
-    { key: "icon-flower-1", defId: "flower", position: { x: 200, y: 42 }, scale: 0.45 },
+  icons: [],
+  monograms: [
+    { key: "mono-church-1", defId: "church-monogram", position: { x: 200, y: 386 }, scale: 0.45 },
+    { key: "mono-clock-1", defId: "clock-monogram", position: { x: 335, y: 384 }, scale: 0.45 },
   ],
-  monograms: [],
 
   mapsUrl: "",
   showQr: false,
   qrOffsetX: 0,
   qrOffsetY: 0,
+
+  textLayoutId: "classic",
+  classicChurch: createDefaultClassicChurchState(),
+  scriptLayout: createDefaultScriptState(),
 };
 
 type Action =
@@ -49,7 +64,16 @@ type Action =
   | { type: "UPDATE_DECORATION"; kind: "icons" | "monograms"; key: string; patch: Partial<DecorationInstance> }
   | { type: "REMOVE_DECORATION"; kind: "icons" | "monograms"; key: string }
   | { type: "LOAD"; state: CardDesignState }
-  | { type: "RESET" };
+  | { type: "RESET" }
+  | { type: "SET_TEXT_LAYOUT"; layoutId: TextLayoutId }
+  | { type: "SET_CHURCH_TEXT"; elementId: TextElementId; value: string }
+  | { type: "UPDATE_CHURCH_POSITION"; elementId: CardElementId; point: CardPoint }
+  | { type: "TOGGLE_CHURCH_ELEMENT"; elementId: CardElementId }
+  | { type: "RESET_CHURCH_POSITIONS" }
+  | { type: "SET_SCRIPT_TEXT"; elementId: ScriptTextElementId; value: string }
+  | { type: "UPDATE_SCRIPT_POSITION"; elementId: ScriptTextElementId; point: CardPoint }
+  | { type: "TOGGLE_SCRIPT_ELEMENT"; elementId: ScriptTextElementId }
+  | { type: "RESET_SCRIPT_POSITIONS" };
 
 function reducer(state: CardDesignState, action: Action): CardDesignState {
   switch (action.type) {
@@ -73,51 +97,133 @@ function reducer(state: CardDesignState, action: Action): CardDesignState {
     case "LOAD":
       return action.state;
     case "RESET":
-      return DEFAULT_DESIGN;
+      return {
+        ...DEFAULT_DESIGN,
+        classicChurch: createDefaultClassicChurchState(),
+        scriptLayout: createDefaultScriptState(),
+      };
+    case "SET_TEXT_LAYOUT":
+      return { ...state, textLayoutId: action.layoutId };
+    case "SET_CHURCH_TEXT":
+      return {
+        ...state,
+        classicChurch: {
+          ...state.classicChurch,
+          text: { ...state.classicChurch.text, [action.elementId]: action.value },
+        },
+      };
+    case "UPDATE_CHURCH_POSITION":
+      return {
+        ...state,
+        classicChurch: {
+          ...state.classicChurch,
+          positions: { ...state.classicChurch.positions, [action.elementId]: { ...action.point } },
+        },
+      };
+    case "TOGGLE_CHURCH_ELEMENT": {
+      const hidden = state.classicChurch.hiddenElements;
+      const isHidden = hidden.includes(action.elementId);
+      return {
+        ...state,
+        classicChurch: {
+          ...state.classicChurch,
+          hiddenElements: isHidden ? hidden.filter((id) => id !== action.elementId) : [...hidden, action.elementId],
+        },
+      };
+    }
+    case "RESET_CHURCH_POSITIONS":
+      return { ...state, classicChurch: { ...state.classicChurch, positions: { ...DEFAULT_DESIGN.classicChurch.positions } } };
+    case "SET_SCRIPT_TEXT":
+      return {
+        ...state,
+        scriptLayout: {
+          ...state.scriptLayout,
+          text: { ...state.scriptLayout.text, [action.elementId]: action.value },
+        },
+      };
+    case "UPDATE_SCRIPT_POSITION":
+      return {
+        ...state,
+        scriptLayout: {
+          ...state.scriptLayout,
+          positions: { ...state.scriptLayout.positions, [action.elementId]: { ...action.point } },
+        },
+      };
+    case "TOGGLE_SCRIPT_ELEMENT": {
+      const hidden = state.scriptLayout.hiddenElements;
+      const isHidden = hidden.includes(action.elementId);
+      return {
+        ...state,
+        scriptLayout: {
+          ...state.scriptLayout,
+          hiddenElements: isHidden ? hidden.filter((id) => id !== action.elementId) : [...hidden, action.elementId],
+        },
+      };
+    }
+    case "RESET_SCRIPT_POSITIONS":
+      return { ...state, scriptLayout: { ...state.scriptLayout, positions: { ...DEFAULT_DESIGN.scriptLayout.positions } } };
     default:
       return state;
   }
 }
 
+const LOADING_SHARE: CardDesignState = { ...DEFAULT_DESIGN, textLayoutId: "classic" as TextLayoutId };
+
 function loadInitialState(): CardDesignState {
   if (typeof window === "undefined") return DEFAULT_DESIGN;
   try {
     const params = new URLSearchParams(window.location.search);
-    const shared = params.get("design");
-    if (shared) {
-      const binary = window.atob(shared);
-      const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0));
-      const decoded = JSON.parse(new TextDecoder().decode(bytes));
+    const designParam = params.get("design");
+    if (designParam) {
+      const json = lzString.decompressFromEncodedURIComponent(designParam) ?? window.atob(designParam);
+      const decoded = JSON.parse(json);
       return { ...DEFAULT_DESIGN, ...decoded };
     }
+    if (params.has("d")) {
+      return LOADING_SHARE;
+    }
     const saved = window.localStorage.getItem(STORAGE_KEY);
-    if (saved) return { ...DEFAULT_DESIGN, ...JSON.parse(saved) };
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (parsed.textLayoutId === "simple") parsed.textLayoutId = "classic";
+      return {
+        ...DEFAULT_DESIGN,
+        ...parsed,
+        classicChurch: parsed.classicChurch ?? createDefaultClassicChurchState(),
+        scriptLayout: parsed.scriptLayout ?? createDefaultScriptState(),
+      };
+    }
   } catch {
     // Corrupt/unreadable saved state — fall back to defaults rather than crash.
   }
   return DEFAULT_DESIGN;
 }
 
-/**
- * Encodes the design as a URL-safe base64 string for shareable links, e.g.
- *   `${location.origin}/customize?design=${encodeDesignForUrl(state)}`
- * For very large designs (many decorations), swap this for storing the JSON
- * server-side (Vercel KV/Postgres) keyed by a short id instead of inlining
- * it in the URL.
- */
 export function encodeDesignForUrl(state: CardDesignState): string {
-  const bytes = new TextEncoder().encode(JSON.stringify(state));
-  const binary = Array.from(bytes, (b) => String.fromCharCode(b)).join("");
-  return window.btoa(binary);
+  return lzString.compressToEncodedURIComponent(JSON.stringify(state));
 }
 
-export function useCardDesignState() {
+function useCardDesignReducer() {
   const [present, dispatch] = useReducer(reducer, undefined, loadInitialState);
   const past = useRef<CardDesignState[]>([]);
   const future = useRef<CardDesignState[]>([]);
   const skipHistory = useRef(false);
+  const shareLoaded = useRef(false);
 
-  // Push to undo history on every change except undo/redo/load themselves.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const key = params.get("d");
+    if (!key) return;
+    getShare({ data: { key } }).then((result) => {
+      if (result) {
+        shareLoaded.current = true;
+        skipHistory.current = true;
+        dispatch({ type: "LOAD", state: { ...DEFAULT_DESIGN, ...result } });
+      }
+    });
+  }, []);
+
   const prevRef = useRef(present);
   useEffect(() => {
     if (skipHistory.current) {
@@ -129,16 +235,17 @@ export function useCardDesignState() {
     prevRef.current = present;
   }, [present]);
 
-  // Debounced autosave to localStorage.
   useEffect(() => {
-    const id = window.setTimeout(() => {
-      try {
-        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(present));
-      } catch {
-        // Quota exceeded or storage disabled — non-fatal, just skip autosave.
-      }
-    }, 400);
-    return () => window.clearTimeout(id);
+    if (shareLoaded.current || !new URLSearchParams(window.location.search).has("d")) {
+      const id = window.setTimeout(() => {
+        try {
+          window.localStorage.setItem(STORAGE_KEY, JSON.stringify(present));
+        } catch {
+          // Quota exceeded or storage disabled — non-fatal, just skip autosave.
+        }
+      }, 400);
+      return () => window.clearTimeout(id);
+    }
   }, [present]);
 
   const setField = useCallback(
@@ -182,9 +289,65 @@ export function useCardDesignState() {
 
   const reset = useCallback(() => dispatch({ type: "RESET" }), []);
 
-  return useMemo(
+  const setTextLayout = useCallback((layoutId: TextLayoutId) => dispatch({ type: "SET_TEXT_LAYOUT", layoutId }), []);
+
+  const setChurchText = useCallback(
+    (elementId: TextElementId, value: string) => dispatch({ type: "SET_CHURCH_TEXT", elementId, value }),
+    [],
+  );
+  const updateChurchPosition = useCallback(
+    (elementId: CardElementId, point: CardPoint) => dispatch({ type: "UPDATE_CHURCH_POSITION", elementId, point }),
+    [],
+  );
+  const toggleChurchElement = useCallback(
+    (elementId: CardElementId) => dispatch({ type: "TOGGLE_CHURCH_ELEMENT", elementId }),
+    [],
+  );
+  const resetChurchPositions = useCallback(() => dispatch({ type: "RESET_CHURCH_POSITIONS" }), []);
+
+  const setScriptText = useCallback(
+    (elementId: ScriptTextElementId, value: string) => dispatch({ type: "SET_SCRIPT_TEXT", elementId, value }),
+    [],
+  );
+  const updateScriptPosition = useCallback(
+    (elementId: ScriptTextElementId, point: CardPoint) =>
+      dispatch({ type: "UPDATE_SCRIPT_POSITION", elementId, point }),
+    [],
+  );
+  const toggleScriptElement = useCallback(
+    (elementId: ScriptTextElementId) => dispatch({ type: "TOGGLE_SCRIPT_ELEMENT", elementId }),
+    [],
+  );
+  const resetScriptPositions = useCallback(() => dispatch({ type: "RESET_SCRIPT_POSITIONS" }), []);
+
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      const target = e.target as HTMLElement | null;
+      if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)) return;
+      if ((e.ctrlKey || e.metaKey) && e.key === "z" && !e.shiftKey) {
+        e.preventDefault();
+        undo();
+      }
+      if ((e.ctrlKey || e.metaKey) && (e.key === "y" || (e.key === "z" && e.shiftKey))) {
+        e.preventDefault();
+        redo();
+      }
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [undo, redo]);
+
+  const stateValue = useMemo(
     () => ({
       state: present,
+      canUndo: past.current.length > 0,
+      canRedo: future.current.length > 0,
+    }),
+    [present],
+  );
+
+  const dispatchValue = useMemo(
+    () => ({
       setField,
       setTemplate,
       addDecoration,
@@ -193,23 +356,80 @@ export function useCardDesignState() {
       undo,
       redo,
       reset,
-      canUndo: past.current.length > 0,
-      canRedo: future.current.length > 0,
+      setTextLayout,
+      setChurchText,
+      updateChurchPosition,
+      toggleChurchElement,
+      resetChurchPositions,
+      setScriptText,
+      updateScriptPosition,
+      toggleScriptElement,
+      resetScriptPositions,
     }),
-    [present, setField, setTemplate, addDecoration, updateDecoration, removeDecoration, undo, redo, reset],
+    [
+      setField, setTemplate, addDecoration, updateDecoration, removeDecoration,
+      undo, redo, reset,
+      setTextLayout, setChurchText, updateChurchPosition, toggleChurchElement, resetChurchPositions,
+      setScriptText, updateScriptPosition, toggleScriptElement, resetScriptPositions,
+    ],
+  );
+
+  return { stateValue, dispatchValue };
+}
+
+type CardDesignStateValue = {
+  state: CardDesignState;
+  canUndo: boolean;
+  canRedo: boolean;
+};
+
+const CardDesignStateContext = createContext<CardDesignStateValue | null>(null);
+
+const CardDesignDispatchContext = createContext<{
+  setField: <K extends keyof CardDesignState>(field: K, value: CardDesignState[K]) => void;
+  setTemplate: (templateId: string) => void;
+  addDecoration: (kind: "icons" | "monograms", defId: string, position?: { x: number; y: number }) => void;
+  updateDecoration: (kind: "icons" | "monograms", key: string, patch: Partial<DecorationInstance>) => void;
+  removeDecoration: (kind: "icons" | "monograms", key: string) => void;
+  undo: () => void;
+  redo: () => void;
+  reset: () => void;
+  setTextLayout: (layoutId: TextLayoutId) => void;
+  setChurchText: (elementId: TextElementId, value: string) => void;
+  updateChurchPosition: (elementId: CardElementId, point: CardPoint) => void;
+  toggleChurchElement: (elementId: CardElementId) => void;
+  resetChurchPositions: () => void;
+  setScriptText: (elementId: ScriptTextElementId, value: string) => void;
+  updateScriptPosition: (elementId: ScriptTextElementId, point: CardPoint) => void;
+  toggleScriptElement: (elementId: ScriptTextElementId) => void;
+  resetScriptPositions: () => void;
+} | null>(null);
+
+export function CardDesignProvider({ children }: { children: React.ReactNode }) {
+  const { stateValue, dispatchValue } = useCardDesignReducer();
+  return (
+    <CardDesignDispatchContext.Provider value={dispatchValue}>
+      <CardDesignStateContext.Provider value={stateValue}>
+        {children}
+      </CardDesignStateContext.Provider>
+    </CardDesignDispatchContext.Provider>
   );
 }
 
-type CardDesignContextValue = ReturnType<typeof useCardDesignState>;
-const CardDesignContext = createContext<CardDesignContextValue | null>(null);
+export function useCardDesignState() {
+  const ctx = useContext(CardDesignStateContext);
+  if (!ctx) throw new Error("useCardDesignState must be used within a CardDesignProvider");
+  return ctx;
+}
 
-export function CardDesignProvider({ children }: { children: React.ReactNode }) {
-  const value = useCardDesignState();
-  return <CardDesignContext.Provider value={value}>{children}</CardDesignContext.Provider>;
+export function useCardDesignDispatch() {
+  const ctx = useContext(CardDesignDispatchContext);
+  if (!ctx) throw new Error("useCardDesignDispatch must be used within a CardDesignProvider");
+  return ctx;
 }
 
 export function useCardDesign() {
-  const ctx = useContext(CardDesignContext);
-  if (!ctx) throw new Error("useCardDesign must be used within a CardDesignProvider");
-  return ctx;
+  const { state, canUndo, canRedo } = useCardDesignState();
+  const dispatch = useCardDesignDispatch();
+  return { state, ...dispatch, canUndo, canRedo };
 }
