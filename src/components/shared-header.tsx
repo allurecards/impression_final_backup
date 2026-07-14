@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Search, ShoppingBag, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import type { ReactNode } from "react";
 
 type SharedHeaderProps = {
@@ -29,7 +29,7 @@ export function SharedHeader({ showSubnav, subnavContent }: SharedHeaderProps) {
 
       {/* Main header */}
       <div className="border-b border-border">
-        <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-3 items-center px-6 py-5">
           <nav className="hidden items-center gap-8 text-sm lg:flex">
             <Link to="/shop" className="flex items-center gap-1 hover:opacity-70">
               Shop <ChevronDown className="h-3.5 w-3.5" />
@@ -41,23 +41,10 @@ export function SharedHeader({ showSubnav, subnavContent }: SharedHeaderProps) {
               Home
             </Link>
           </nav>
-          <Link to="/" className="font-serif text-3xl font-medium tracking-[0.2em]">
+          <Link to="/" className="justify-self-center font-serif text-3xl font-medium tracking-[0.2em]">
             IMPRESSIONS
           </Link>
-          <div className="flex items-center gap-4">
-            <button className="p-2 hover:opacity-70" aria-label="Search">
-              <Search className="h-5 w-5" />
-            </button>
-            <button className="p-2 hover:opacity-70" aria-label="Cart">
-              <ShoppingBag className="h-5 w-5" />
-            </button>
-            <button className="hidden rounded-full border border-foreground px-4 py-2 text-sm transition-[transform,color,background-color] duration-150 active:scale-[0.97] sm:inline-flex hover:bg-foreground hover:text-background">
-              Log in
-            </button>
-            <button className="rounded-full bg-foreground px-4 py-2 text-sm text-background transition-[transform,opacity] duration-150 hover:opacity-90 active:scale-[0.97]">
-              Get started
-            </button>
-          </div>
+          <div />
         </div>
 
         {/* Sub-nav */}

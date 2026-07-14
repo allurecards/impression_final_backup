@@ -238,7 +238,6 @@ export interface ChurchSection {
 }
 
 export const CHURCH_SECTIONS: ChurchSection[] = [
-  { id: "names", label: "Names", fields: ["groomName", "ampersand", "brideName"] },
   { id: "bible-verse", label: "Bible Verse", fields: ["quoteLine1", "quoteLine2"] },
   { id: "host", label: "Host", fields: ["hostNames", "hostAddressLine1", "hostAddressLine2"] },
   { id: "invitation", label: "Invitation", fields: ["inviteLine1", "inviteLine2", "inviteLine3"] },
@@ -370,7 +369,6 @@ export interface ScriptSection {
 }
 
 export const SCRIPT_SECTIONS: ScriptSection[] = [
-  { id: "script-names", label: "Names", fields: ["groomName", "brideName"] },
   { id: "script-quote", label: "Bible Verse", fields: ["quoteLine1", "quoteLine2"] },
   { id: "script-host", label: "Host", fields: ["hostNames", "hostAddress"] },
   { id: "script-invitation", label: "Invitation", fields: ["inviteLine1", "inviteLine2"] },

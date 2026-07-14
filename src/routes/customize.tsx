@@ -12,6 +12,7 @@ import { BackgroundPanel } from "@/components/customize/BackgroundPanel";
 import { TypographyPanel } from "@/components/customize/TypographyPanel";
 import { ExtrasPanel } from "@/components/customize/ExtrasPanel";
 import { ExportBar } from "@/components/customize/ExportBar";
+import { BrideGroomSection } from "@/components/customize/BrideGroomSection";
 
 export const Route = createFileRoute("/customize")({
   head: () => ({
@@ -80,8 +81,9 @@ function CustomizePageInner() {
 
         <div className="space-y-10">
           <LayoutPicker />
-          <TemplatePicker />
+          <BrideGroomSection />
           <EssentialDetailsPanel />
+          <TemplatePicker />
           <BackgroundPanel />
           <TypographyPanel />
           <ExtrasPanel />

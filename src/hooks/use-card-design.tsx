@@ -17,7 +17,7 @@ const STORAGE_KEY = "wedding-card-design:v1";
 const HISTORY_LIMIT = 50;
 
 export const DEFAULT_DESIGN: CardDesignState = {
-  templateId: TEMPLATES[0].id,
+  templateId: "crimson-court",
   imageBg: "#eee6d5",
   textOffset: 0,
 

@@ -32,7 +32,7 @@ export function EssentialDetailsPanel() {
       </div>
 
       {isClassic ? (
-        <Accordion type="multiple" defaultValue={["names", "date-venue"]} className="mt-4">
+        <Accordion type="multiple" defaultValue={["date-venue"]} className="mt-4">
           {CHURCH_SECTIONS.map((section) => (
             <AccordionItem key={section.id} value={section.id}>
               <AccordionTrigger className="text-left">
@@ -74,7 +74,7 @@ export function EssentialDetailsPanel() {
           ))}
         </Accordion>
       ) : (
-        <Accordion type="multiple" defaultValue={["script-names", "script-ceremony"]} className="mt-4">
+        <Accordion type="multiple" defaultValue={["script-ceremony"]} className="mt-4">
           {SCRIPT_SECTIONS.map((section) => (
             <AccordionItem key={section.id} value={section.id}>
               <AccordionTrigger className="text-left">
