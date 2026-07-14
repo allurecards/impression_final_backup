@@ -55,25 +55,18 @@ const ShopCard = memo(function ShopCard({ c, onSelect, onToggleFavorite, isFavor
   onToggleFavorite: (id: string) => void;
   isFavorite: boolean;
 }) {
-  const [needsPadding, setNeedsPadding] = useState(false);
   return (
     <article
       onClick={() => onSelect(c)}
-      className="group cursor-pointer rounded-lg overflow-hidden flex flex-col bg-white border border-[#f0f0f0] p-[18px]"
+      className="group cursor-pointer rounded-lg overflow-hidden flex flex-col bg-white border border-[#f0f0f0] p-3"
     >
-      <div className="relative w-full h-[360px] overflow-hidden bg-white mb-[18px]">
+      <div className="relative w-full overflow-hidden bg-white mb-[18px] aspect-[4/3]">
         {c.images.length > 0 && (
           <img
             src={imgUrl(c.images[0])}
             alt={c.id}
-            className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${
-              needsPadding ? 'object-contain p-4' : 'object-cover'
-            }`}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
-            onLoad={(e) => {
-              const ratio = e.currentTarget.naturalWidth / e.currentTarget.naturalHeight;
-              setNeedsPadding(Math.abs(ratio - 0.943) / 0.943 > 0.15);
-            }}
           />
         )}
         <button
@@ -319,7 +312,7 @@ function ShopPage() {
       result = [...result].sort((a, b) => b.price - a.price);
     } else {
       const sorted = [...result].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
-      const featured = sorted.filter(c => c.featured);
+      const featured = sorted.filter(c => c.featured).reverse();
       const notFeatured = sorted.filter(c => !c.featured).reverse();
       result = [...featured, ...notFeatured];
     }
@@ -472,34 +465,37 @@ function ShopPage() {
 
         {/* Filter pills */}
         <div className="mt-4 flex flex-wrap items-center gap-2">
-          <Select
-            value={sort}
-            onValueChange={(value) => {
-              setSort(value as "featured" | "price-asc" | "price-desc");
-              setVisible(PAGE_SIZE);
-            }}
+          <button
+            onClick={() => { setSort("featured"); setVisible(PAGE_SIZE); }}
+            className={`rounded-full border px-4 py-2 text-sm transition active:scale-[0.97] ${
+              sort === "featured"
+                ? "border-zola-ink bg-zola-ink text-zola-cream"
+                : "border-zola-ink/20 bg-zola-cream text-zola-ink hover:border-zola-ink"
+            }`}
           >
-            <SelectTrigger className="w-auto gap-1.5 rounded-full border border-zola-ink/20 bg-zola-cream px-4 py-2 text-sm text-zola-ink shadow-none transition duration-150 ease-out hover:border-zola-ink focus:border-zola-ink focus:ring-1 focus:ring-zola-ink/20 [&>svg]:h-3.5 [&>svg]:w-3.5 [&>svg]:text-zola-ink/40 [&>svg]:opacity-100">
-              <SelectValue placeholder="Sort" />
-            </SelectTrigger>
-            <SelectContent className="rounded-xl border-zola-ink/10 bg-zola-cream shadow-lg">
-              <SelectItem value="featured" className="cursor-pointer rounded-lg text-sm focus:bg-zola-ink/5 focus:text-zola-ink">Featured</SelectItem>
-              <SelectItem value="price-asc" className="cursor-pointer rounded-lg text-sm focus:bg-zola-ink/5 focus:text-zola-ink">Price: Low to High</SelectItem>
-              <SelectItem value="price-desc" className="cursor-pointer rounded-lg text-sm focus:bg-zola-ink/5 focus:text-zola-ink">Price: High to Low</SelectItem>
-            </SelectContent>
-          </Select>
-          <Select value={category} onValueChange={(value) => setCategoryAndReset(value)}>
-            <SelectTrigger className="w-auto gap-1.5 rounded-full border border-zola-ink/20 bg-zola-cream px-4 py-2 text-sm text-zola-ink shadow-none transition duration-150 ease-out hover:border-zola-ink focus:border-zola-ink focus:ring-1 focus:ring-zola-ink/20 [&>svg]:h-3.5 [&>svg]:w-3.5 [&>svg]:text-zola-ink/40 [&>svg]:opacity-100">
-              <SelectValue placeholder="Style" />
-            </SelectTrigger>
-            <SelectContent className="rounded-xl border-zola-ink/10 bg-zola-cream shadow-lg">
-              {categories.map((c) => (
-                <SelectItem key={c} value={c} className="cursor-pointer rounded-lg text-sm capitalize focus:bg-zola-ink/5 focus:text-zola-ink">
-                  {c === "All" ? "All Styles" : c.toLowerCase()}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+            Featured
+          </button>
+          <button
+            onClick={() => { setSort("price-asc"); setVisible(PAGE_SIZE); }}
+            className={`rounded-full border px-4 py-2 text-sm transition active:scale-[0.97] ${
+              sort === "price-asc"
+                ? "border-zola-ink bg-zola-ink text-zola-cream"
+                : "border-zola-ink/20 bg-zola-cream text-zola-ink hover:border-zola-ink"
+            }`}
+          >
+            Low to High
+          </button>
+          <button
+            onClick={() => { setSort("price-desc"); setVisible(PAGE_SIZE); }}
+            className={`rounded-full border px-4 py-2 text-sm transition active:scale-[0.97] ${
+              sort === "price-desc"
+                ? "border-zola-ink bg-zola-ink text-zola-cream"
+                : "border-zola-ink/20 bg-zola-cream text-zola-ink hover:border-zola-ink"
+            }`}
+          >
+            High to Low
+          </button>
+
           <div className="flex items-center gap-1.5 rounded-full border border-zola-ink/20 px-4 py-2 text-sm transition-colors hover:border-zola-ink focus-within:ring-2 focus-within:ring-zola-ink/20">
             <Search className="h-3.5 w-3.5" />
             <input
@@ -518,8 +514,8 @@ function ShopPage() {
             onClick={toggleFavFilter}
             className={`flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm transition active:scale-[0.97] ${
               showFavorites
-                ? "border-zola-ink bg-zola-ink text-zola-cream"
-                : "border-zola-ink/20 hover:border-zola-ink"
+                ? "border-red-500 bg-red-500 text-white"
+                : "border-red-500/30 text-red-600 hover:border-red-500"
             }`}
           >
             <Heart className="h-3.5 w-3.5" fill={showFavorites ? "currentColor" : "none"} />
@@ -529,14 +525,14 @@ function ShopPage() {
       </section>
 
       {/* Product grid */}
-      <section className="mx-auto max-w-[1200px] px-6 pb-12">
+      <section className="mx-auto max-w-[1600px] px-7 pb-12">
         {loading ? (
           <div className="flex items-center justify-center py-20">
             <div className="h-8 w-8 animate-spin rounded-full border-2 border-zola-ink border-t-transparent" />
           </div>
         ) : (
           <>
-            <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
               {page.slice(0, 2).map((c, i) => (
                 <ShopCard key={c.id + '-' + i} c={c} onSelect={setActive} onToggleFavorite={toggleFavorite} isFavorite={favorites.includes(c.id)} />
               ))}
@@ -554,7 +550,7 @@ function ShopPage() {
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity"
                 />
-                <div className="relative z-10 flex flex-col justify-between p-6 aspect-[1/1.06]">
+                <div className="relative z-10 flex flex-col justify-between p-6 aspect-[4/3]">
                   <div>
                     <div className="text-xs uppercase tracking-widest font-semibold opacity-90">Sponsored</div>
                     <h3 className="font-serif text-4xl leading-tight font-medium mt-3">
@@ -584,7 +580,7 @@ function ShopPage() {
                 style={{ backgroundColor: "#1a1a1a" }}
               >
                 <img src={invitations} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity" />
-                <div className="relative z-10 flex flex-col justify-between p-6 aspect-[1/1.06]">
+                <div className="relative z-10 flex flex-col justify-between p-6 aspect-[4/3]">
                   <div>
                     <div className="text-xs uppercase tracking-widest font-semibold opacity-90">Custom</div>
                     <h3 className="font-serif text-4xl leading-tight font-medium mt-3">
@@ -682,7 +678,7 @@ function ShopPage() {
                         src={displayUrl(active.images[selectedImageIndex])}
                         alt={active.id}
                         className="h-full w-full object-contain transition-transform duration-200"
-                        style={{ aspectRatio: '1 / 1.06' }}
+                        style={{ aspectRatio: '4 / 3' }}
                       />
                     )}
                     <span className="absolute bottom-2 right-2 rounded-full bg-[#1a1a1a]/80 px-3 py-1 text-[10px] uppercase tracking-wider text-[#f5f0e6]">
@@ -700,7 +696,7 @@ function ShopPage() {
                           idx === selectedImageIndex ? "border-[#1a1a1a]" : "border-transparent"
                         }`}
                       >
-                        <img src={imgUrl(src)} alt="" className="aspect-[1/1.06] w-full object-cover" />
+                        <img src={imgUrl(src)} alt="" className="aspect-[4/3] w-full object-cover" />
                       </button>
                     ))}
                   </div>
