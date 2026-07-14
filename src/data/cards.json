@@ -1,5 +1,164 @@
 [
-    {
+  {
+    "id": "Test 4",
+    "category": "Another one",
+    "price": 55,
+    "featured": false,
+    "minOrder": 100,
+    "size": "5\" x 7\"",
+    "material": "Premium 350 gsm",
+    "description": "ABC",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/test-4-1.jpeg",
+      "src/assets/cards/display/test-4-2.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/test-4-1.jpeg",
+      "src/assets/cards/originals/test-4-2.PNG"
+    ],
+    "imageWatermarks": [
+      null,
+      null
+    ],
+    "variants": [
+      {
+        "name": "Small",
+        "size_id": 1,
+        "material_id": 1,
+        "size": "5\" x 7\"",
+        "material": "Premium 350 gsm",
+        "price": 55
+      },
+      {
+        "name": "Medium",
+        "size_id": 2,
+        "material_id": 1,
+        "size": "6\" x 8\"",
+        "material": "Premium 350 gsm",
+        "price": 65
+      },
+      {
+        "name": "Large",
+        "size_id": 4,
+        "material_id": 1,
+        "size": "7\" x 9\"",
+        "material": "Premium 350 gsm",
+        "price": 75
+      }
+    ]
+  },
+  {
+    "id": "IM 201",
+    "category": "TRADITIONAL",
+    "price": 28,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195 MM X195 MM",
+    "material": "260 GSM TEXTURED",
+    "description": "DIGITALPRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "center",
+    "watermarkSize": "small",
+    "watermarkColor": "#f1f0e9",
+    "images": [
+      "src/assets/cards/display/im-201-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-201-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "MEDIUM",
+        "size_id": 6,
+        "material_id": 4,
+        "size": "195 MM X195 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 28
+      }
+    ]
+  },
+  {
+    "id": "im 104",
+    "category": "TRADITIONAL",
+    "price": 0,
+    "featured": false,
+    "minOrder": 100,
+    "size": "170 MMX 170 MM",
+    "material": "260 GSM TEXTURED",
+    "description": "",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/im-104-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-104-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "",
+        "size_id": 7,
+        "material_id": 4,
+        "size": "170 MMX 170 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "im 103",
+    "category": "TRADITIONAL",
+    "price": 0,
+    "featured": false,
+    "minOrder": 100,
+    "size": "170 MMX 170 MM",
+    "material": "260 GSM TEXTURED",
+    "description": "",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/im-103-1.jpeg"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-103-1.jpeg"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "",
+        "size_id": 7,
+        "material_id": 4,
+        "size": "170 MMX 170 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 0
+      }
+    ]
+  },
+  {
     "id": "IM 101",
     "category": "TRADITIONAL",
     "price": 30,
@@ -47,7 +206,199 @@
       }
     ]
   },
-    {
+  {
+    "id": "IM 101",
+    "category": "TRADITIONAL",
+    "price": 30,
+    "featured": true,
+    "minOrder": 100,
+    "size": "195 MM X195 MM",
+    "material": "260 GSM TEXTURED",
+    "description": "DIGITALPRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/im-101-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-101-1.PNG"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "center",
+        "size": "medium",
+        "color": "#ffffff"
+      }
+    ],
+    "variants": [
+      {
+        "name": "MEDIUM",
+        "size_id": 6,
+        "material_id": 4,
+        "size": "195 MM X195 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 30
+      },
+      {
+        "name": "SMALL",
+        "size_id": 7,
+        "material_id": 4,
+        "size": "170 MMX 170 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 25
+      }
+    ]
+  },
+  {
+    "id": "IM 101",
+    "category": "TRADITIONAL",
+    "price": 30,
+    "featured": true,
+    "minOrder": 100,
+    "size": "195 MM X195 MM",
+    "material": "260 GSM TEXTURED",
+    "description": "DIGITALPRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/im-101-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-101-1.PNG"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "center",
+        "size": "medium",
+        "color": "#ffffff"
+      }
+    ],
+    "variants": [
+      {
+        "name": "MEDIUM",
+        "size_id": 6,
+        "material_id": 4,
+        "size": "195 MM X195 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 30
+      },
+      {
+        "name": "SMALL",
+        "size_id": 7,
+        "material_id": 4,
+        "size": "170 MMX 170 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 25
+      }
+    ]
+  },
+  {
+    "id": "IM 101",
+    "category": "TRADITIONAL",
+    "price": 30,
+    "featured": true,
+    "minOrder": 100,
+    "size": "195 MM X195 MM",
+    "material": "260 GSM TEXTURED",
+    "description": "DIGITALPRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/im-101-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-101-1.PNG"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "center",
+        "size": "medium",
+        "color": "#ffffff"
+      }
+    ],
+    "variants": [
+      {
+        "name": "MEDIUM",
+        "size_id": 6,
+        "material_id": 4,
+        "size": "195 MM X195 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 30
+      },
+      {
+        "name": "SMALL",
+        "size_id": 7,
+        "material_id": 4,
+        "size": "170 MMX 170 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 25
+      }
+    ]
+  },
+  {
+    "id": "IM 101",
+    "category": "TRADITIONAL",
+    "price": 30,
+    "featured": true,
+    "minOrder": 100,
+    "size": "195 MM X195 MM",
+    "material": "260 GSM TEXTURED",
+    "description": "DIGITALPRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/im-101-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-101-1.PNG"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "center",
+        "size": "medium",
+        "color": "#ffffff"
+      }
+    ],
+    "variants": [
+      {
+        "name": "MEDIUM",
+        "size_id": 6,
+        "material_id": 4,
+        "size": "195 MM X195 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 30
+      },
+      {
+        "name": "SMALL",
+        "size_id": 7,
+        "material_id": 4,
+        "size": "170 MMX 170 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 25
+      }
+    ]
+  },
+  {
     "id": "IM 101",
     "category": "TRADITIONAL",
     "price": 30,
