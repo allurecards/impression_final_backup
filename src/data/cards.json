@@ -1,5 +1,40 @@
 [
   {
+    "id": "IM 121",
+    "category": "FLORAL",
+    "price": 28,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195 MM X195 MM",
+    "material": "260 GSM TEXTURED",
+    "description": "DIGITAL PRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/im-121-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-121-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "MEDIUM",
+        "size_id": 6,
+        "material_id": 4,
+        "size": "195 MM X195 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 28
+      }
+    ]
+  },
+  {
     "id": "VELLUM 104",
     "category": "TRANSLUCENT",
     "price": 22,
