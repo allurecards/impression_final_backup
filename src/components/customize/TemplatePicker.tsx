@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
-import { TEMPLATES, TEMPLATE_CATEGORY_LABELS, getTemplate } from "@/data/templates";
+import { TEMPLATES, TEMPLATE_CATEGORY_LABELS } from "@/data/templates";
 import { useCardDesign } from "@/hooks/use-card-design";
-import { Group } from "./shared/Group";
 
 const CATEGORY_ORDER = Object.keys(TEMPLATE_CATEGORY_LABELS) as Array<keyof typeof TEMPLATE_CATEGORY_LABELS>;
 
@@ -20,7 +19,7 @@ export function TemplatePicker() {
   );
 
   return (
-    <Group label="Template">
+    <>
       <div className="mb-4 flex flex-wrap gap-2">
         <CategoryChip label="All" active={activeCategory === "all"} onClick={() => setActiveCategory("all")} />
         {availableCategories.map((c) => (
@@ -61,7 +60,7 @@ export function TemplatePicker() {
           <p className="col-span-full py-6 text-center text-sm opacity-60">No templates in this category yet.</p>
         )}
       </div>
-    </Group>
+    </>
   );
 }
 
@@ -80,4 +79,3 @@ function CategoryChip({ label, active, onClick }: { label: string; active: boole
   );
 }
 
-export { getTemplate };

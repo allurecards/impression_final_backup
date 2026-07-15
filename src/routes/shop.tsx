@@ -1,12 +1,11 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { z } from "zod";
-import { Search, Heart, ChevronDown, ShoppingBag } from "lucide-react";
+import { Search, Heart, ShoppingBag } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ShareSheet } from "@/components/share-sheet";
 import { cn } from "@/lib/utils";
 import invitations from "@/assets/invitations.jpg";
-import heroVenue from "@/assets/hero-venue.jpg";
 import type { Catalog } from "@/lib/catalog";
 import cardsData from "@/data/cards.json";
 
@@ -167,17 +166,20 @@ function ShopPage() {
   const [modalMounted, setModalMounted] = useState(false);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const scrollPosRef = useRef(0);
+  const isClosingRef = useRef(false);
 
   useEffect(() => {
-    if (active) {
+    if (active && !isClosingRef.current) {
       scrollPosRef.current = window.scrollY;
       const raf = requestAnimationFrame(() => setModalMounted(true));
       return () => cancelAnimationFrame(raf);
     }
+    if (!active) isClosingRef.current = false;
     setModalMounted(false);
   }, [active]);
 
   const closeModal = useCallback(() => {
+    isClosingRef.current = true;
     setModalMounted(false);
     closeTimerRef.current = setTimeout(() => {
       setActive(null);
@@ -257,17 +259,19 @@ function ShopPage() {
     return () => window.removeEventListener("keydown", handler);
   }, [galleryOpen, active]);
 
-  const activeVar = active?.variants?.[selectedVariantIdx];
-  const cardCost = active ? modalQuantity * (activeVar?.price ?? active.price) : 0;
-  const minChargeExtra = active && active.minOrder < 200 && modalQuantity < 200
+  const activeVar = useMemo(() => active?.variants?.[selectedVariantIdx], [active, selectedVariantIdx]);
+  const cardCost = useMemo(() => active ? modalQuantity * (activeVar?.price ?? active.price) : 0, [active, activeVar, modalQuantity]);
+  const minChargeExtra = useMemo(() => active && active.minOrder < 200 && modalQuantity < 200
     ? { name: "Extra charge below 200", price: 600 }
-    : null;
-  const extraTotal = (active?.extraCharges?.reduce((sum, ch) => sum + ch.price, 0) || 0) + (minChargeExtra?.price ?? 0);
-  let discountPct = 0;
-  if (modalQuantity >= 1000) discountPct = 10;
-  else if (modalQuantity >= 500) discountPct = 5;
-  const discountAmt = Math.round(cardCost * discountPct / 100);
-  const finalTotal = Math.round(cardCost * (1 - discountPct / 100)) + extraTotal;
+    : null, [active?.minOrder, modalQuantity]);
+  const extraTotal = useMemo(() => (active?.extraCharges?.reduce((sum, ch) => sum + ch.price, 0) || 0) + (minChargeExtra?.price ?? 0), [active?.extraCharges, minChargeExtra?.price]);
+  const discountPct = useMemo(() => {
+    if (modalQuantity >= 1000) return 10;
+    if (modalQuantity >= 500) return 5;
+    return 0;
+  }, [modalQuantity]);
+  const discountAmt = useMemo(() => Math.round(cardCost * discountPct / 100), [cardCost, discountPct]);
+  const finalTotal = useMemo(() => Math.round(cardCost * (1 - discountPct / 100)) + extraTotal, [cardCost, discountPct, extraTotal]);
 
   useEffect(() => {
     const t = setTimeout(() => {

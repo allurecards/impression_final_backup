@@ -185,7 +185,6 @@ function loadInitialState(): CardDesignState {
     const saved = window.localStorage.getItem(STORAGE_KEY);
     if (saved) {
       const parsed = JSON.parse(saved);
-      if (parsed.textLayoutId === "simple") parsed.textLayoutId = "classic";
       return {
         ...DEFAULT_DESIGN,
         ...parsed,

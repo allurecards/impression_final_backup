@@ -6,13 +6,11 @@ import { CardDesignProvider, useCardDesign } from "@/hooks/use-card-design";
 import { getTemplate } from "@/data/templates";
 import { CardSvg } from "@/components/customize/CardSvg";
 import { LayoutPicker } from "@/components/customize/LayoutPicker";
-import { TemplatePicker } from "@/components/customize/TemplatePicker";
-import { EssentialDetailsPanel } from "@/components/customize/EssentialDetailsPanel";
+import { BrideGroomTypography } from "@/components/customize/BrideGroomTypography";
+import { ContentTogglePanel } from "@/components/customize/ContentTogglePanel";
 import { BackgroundPanel } from "@/components/customize/BackgroundPanel";
-import { TypographyPanel } from "@/components/customize/TypographyPanel";
 import { ExtrasPanel } from "@/components/customize/ExtrasPanel";
 import { ExportBar } from "@/components/customize/ExportBar";
-import { BrideGroomSection } from "@/components/customize/BrideGroomSection";
 
 export const Route = createFileRoute("/customize")({
   head: () => ({
@@ -81,11 +79,9 @@ function CustomizePageInner() {
 
         <div className="space-y-10">
           <LayoutPicker />
-          <BrideGroomSection />
-          <EssentialDetailsPanel />
-          <TemplatePicker />
+          <BrideGroomTypography />
+          <ContentTogglePanel />
           <BackgroundPanel />
-          <TypographyPanel />
           <ExtrasPanel />
         </div>
       </main>

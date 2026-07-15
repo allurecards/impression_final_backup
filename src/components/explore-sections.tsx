@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { ReactElement, ReactNode } from "react";
+import type { ReactNode } from "react";
 import invitations from "@/assets/invitations.jpg";
 import logo from "@/assets/IMP_LOGO_final.png";
 import weddingCard from "@/assets/wedding-card.jpg";
@@ -20,17 +20,7 @@ import {
   DoodleCustomize,
 } from "@/components/doodle-icons";
 
-// ── new assets (external URLs) ─────────────────────────────
-const newHeritageImg = "https://raw.githubusercontent.com/allurecards/allurecards.in/main/assets/cards/thumb/al-042-1.jpeg";
-const newMinimalImg   = "https://raw.githubusercontent.com/allurecards/allurecards.in/main/assets/cards/thumb/al-041-1.jpeg";
-const newFloralImg    = "https://raw.githubusercontent.com/allurecards/allurecards.in/main/assets/cards/thumb/al-040-1.jpeg";
-
-// unused extra images (available for future use)
-// "https://raw.githubusercontent.com/allurecards/allurecards.in/main/assets/cards/thumb/al-021-1.jpeg"
-// "https://raw.githubusercontent.com/allurecards/allurecards.in/main/assets/cards/thumb/038-1.jpeg"
-
 const instaVideo1 = "https://www.instagram.com/p/DZu0rDAy0-m/embed/";
-const instaVideo2 = "https://www.instagram.com/p/DZ-U85TSqab/embed/"; // unused for now, kept for future use
 
 type Section = {
   id: string;

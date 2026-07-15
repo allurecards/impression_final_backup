@@ -23,16 +23,9 @@ export function EssentialDetailsPanel() {
   const script = state.scriptLayout;
 
   return (
-    <section className="rounded-2xl border border-border bg-card p-6">
-      <div className="flex items-baseline justify-between gap-4">
-        <div>
-          <h2 className="font-serif text-2xl tracking-tight">Your details</h2>
-          <p className="text-sm text-muted-foreground">Edit each section — text updates the card in real time.</p>
-        </div>
-      </div>
-
+    <>
       {isClassic ? (
-        <Accordion type="multiple" defaultValue={["date-venue"]} className="mt-4">
+        <Accordion type="multiple" defaultValue={["date-venue"]}>
           {CHURCH_SECTIONS.map((section) => (
             <AccordionItem key={section.id} value={section.id}>
               <AccordionTrigger className="text-left">
@@ -74,7 +67,7 @@ export function EssentialDetailsPanel() {
           ))}
         </Accordion>
       ) : (
-        <Accordion type="multiple" defaultValue={["script-ceremony"]} className="mt-4">
+        <Accordion type="multiple" defaultValue={["script-ceremony"]}>
           {SCRIPT_SECTIONS.map((section) => (
             <AccordionItem key={section.id} value={section.id}>
               <AccordionTrigger className="text-left">
@@ -116,6 +109,6 @@ export function EssentialDetailsPanel() {
           ))}
         </Accordion>
       )}
-    </section>
+    </>
   );
 }
