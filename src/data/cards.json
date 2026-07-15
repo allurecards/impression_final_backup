@@ -45,10 +45,10 @@
   {
     "id": "im 103",
     "category": "TRADITIONAL",
-    "price": 30,
+    "price": 28,
     "featured": false,
     "minOrder": 100,
-    "size": "195 MM X195 MM",
+    "size": "170 MM X 170 MM",
     "material": "260 GSM TEXTURED",
     "description": "DIGITAL PRINTING",
     "instagram_url": "",
@@ -69,11 +69,11 @@
     "variants": [
       {
         "name": "MEDIUM",
-        "size_id": 6,
+        "size_id": 8,
         "material_id": 4,
-        "size": "195 MM X195 MM",
+        "size": "170 MM X 170 MM",
         "material": "260 GSM TEXTURED",
-        "price": 30
+        "price": 28
       },
       {
         "name": "SMALL",
