@@ -389,25 +389,6 @@ function ShopPage() {
           </div>
         </div>
 
-        {/* Sub-nav */}
-        <div className="border-t border-zola-ink/10">
-          <div className="mx-auto flex max-w-[1400px] items-center justify-center gap-8 overflow-x-auto px-6 py-4 text-sm">
-            {categories.map((c) => (
-              <button
-                key={c}
-                onClick={() => setCategoryAndReset(c)}
-                className={`flex items-center gap-1 whitespace-nowrap transition-colors ${
-                  category === c ? "border-b-2 border-zola-ink pb-1 font-semibold" : "hover:opacity-70"
-                } active:scale-[0.97]`}
-              >
-                {c === "All" ? "All cards" : c}
-              </button>
-            ))}
-            <Link to="/customize" className="flex items-center gap-1 whitespace-nowrap hover:opacity-70">
-              Customize
-            </Link>
-          </div>
-        </div>
       </header>
 
       {/* Breadcrumb */}
@@ -431,7 +412,7 @@ function ShopPage() {
 
       {/* Category circles */}
       <section className="mx-auto max-w-[1400px] px-6 pb-10 pt-8">
-        <div className="flex items-center justify-start gap-4 overflow-x-auto px-4 pb-2 -mx-4 sm:justify-center sm:gap-10 sm:pb-0 sm:mx-0 sm:px-0 snap-x snap-mandatory scrollbar-hide">
+        <div className="flex items-center justify-start gap-4 overflow-x-auto px-4 -mx-4 sm:justify-center sm:gap-10 sm:mx-0 sm:px-0 snap-x snap-mandatory scrollbar-hide">
           {circles.map((c) => (
             <button
               key={c.cat}
@@ -628,7 +609,7 @@ function ShopPage() {
           }}
         >
           <div
-            className="relative max-h-[92vh] w-full overflow-y-auto rounded-t-3xl bg-[#f5f0e6] text-[#1a1a1a] md:max-w-5xl md:rounded-3xl pb-[env(safe-area-inset-bottom)]"
+            className="relative max-h-[92vh] w-full overflow-y-auto rounded-t-3xl bg-[#f5f0e6] text-[#1a1a1a] md:max-w-5xl md:rounded-3xl "
             onClick={(e) => e.stopPropagation()}
             style={{
               opacity: modalMounted ? 1 : 0,
