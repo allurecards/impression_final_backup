@@ -352,22 +352,22 @@ function ShopPage() {
 
       {/* Header */}
       <header className="border-b border-zola-ink/10 bg-zola-cream">
-        <div className="mx-auto grid max-w-[1400px] grid-cols-3 items-center px-6 py-5">
-          <nav className="flex items-center gap-8 text-sm font-medium">
-            <button className="hover:opacity-70">
+        <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5">
+          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
+            <button className="flex items-center gap-1 hover:opacity-70">
               Shop
             </button>
-            <Link to="/customize" className="hover:opacity-70">
+            <Link to="/customize" className="flex items-center gap-1 hover:opacity-70">
               Customize
             </Link>
             <Link to="/" className="hover:opacity-70">
               Home
             </Link>
           </nav>
-          <Link to="/" className="justify-self-center font-serif text-3xl tracking-[0.2em] font-medium text-zola-ink">
+          <Link to="/" className="font-serif text-3xl tracking-[0.2em] font-medium text-zola-ink">
             IMPRESSIONS
           </Link>
-          <div className="flex items-center justify-end gap-4">
+          <div className="flex items-center gap-4">
             <button onClick={() => searchRef.current?.focus()} className="p-2 hover:opacity-70 active:scale-[0.97]" aria-label="Search">
               <Search className="h-5 w-5" />
             </button>
@@ -412,7 +412,7 @@ function ShopPage() {
 
       {/* Category circles */}
       <section className="mx-auto max-w-[1400px] px-6 pb-10 pt-8">
-        <div className="flex items-center justify-start gap-4 overflow-x-auto px-6 -mx-6 sm:justify-center sm:gap-10 sm:mx-0 sm:px-0 snap-x snap-mandatory scrollbar-hide">
+        <div className="flex items-center justify-start gap-4 overflow-x-auto px-4 -mx-4 sm:justify-center sm:gap-10 sm:mx-0 sm:px-0 snap-x snap-mandatory scrollbar-hide">
           {circles.map((c) => (
             <button
               key={c.cat}
