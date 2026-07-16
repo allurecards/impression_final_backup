@@ -330,7 +330,7 @@ function ShopPage() {
     <>
       {/* Announcement bar */}
       <div className="bg-zola-ink text-zola-cream text-sm">
-        <div className="mx-auto flex max-w-[1400px] items-center justify-between pl-6 md:pr-6 py-2.5">
+        <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-2.5">
           <div className="flex items-center gap-3">
             <span className="rounded bg-zola-cream px-2 py-0.5 text-xs font-semibold text-zola-ink">
               Premium
@@ -352,7 +352,7 @@ function ShopPage() {
 
       {/* Header */}
       <header className="border-b border-zola-ink/10 bg-zola-cream">
-        <div className="mx-auto flex max-w-[1400px] items-center justify-between pl-6 md:pr-6 py-5">
+        <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5">
           <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
             <button className="flex items-center gap-1 hover:opacity-70">
               Shop
@@ -392,7 +392,7 @@ function ShopPage() {
       </header>
 
       {/* Breadcrumb */}
-      <div className="mx-auto max-w-[1400px] pl-6 md:pr-6 pt-6 text-sm text-zola-ink/70">
+      <div className="mx-auto max-w-[1400px] px-6 pt-6 text-sm text-zola-ink/70">
         <Link to="/" className="hover:underline">
           Impressions
         </Link>
@@ -401,7 +401,7 @@ function ShopPage() {
       </div>
 
       {/* Page title */}
-      <section className="mx-auto max-w-[1400px] pl-6 md:pr-6 pt-10">
+      <section className="mx-auto max-w-[1400px] px-6 pt-10">
         <h1 className="font-serif text-4xl tracking-tight text-zola-ink">
           Wedding invitation cards
         </h1>
@@ -411,8 +411,8 @@ function ShopPage() {
       </section>
 
       {/* Category circles */}
-      <section className="mx-auto max-w-[1400px] pl-6 md:pr-6 pb-10 pt-8">
-        <div className="flex items-center justify-center gap-10 max-md:justify-start max-md:overflow-x-auto max-md:gap-3 max-md:pl-4 max-md:snap-x max-md:[scrollbar-width:none]">
+      <section className="mx-auto max-w-[1400px] px-6 pb-10 pt-8">
+        <div className="flex items-center justify-center gap-10 max-md:justify-start max-md:overflow-x-auto max-md:gap-3 max-md:px-4 max-md:snap-x max-md:[scrollbar-width:none]">
           {circles.map((c) => (
             <button
               key={c.cat}
@@ -433,7 +433,7 @@ function ShopPage() {
       </section>
 
       {/* Filter bar */}
-      <section className="mx-auto max-w-[1400px] border-t border-zola-ink/10 pl-6 md:pr-6 pb-6 pt-4">
+      <section className="mx-auto max-w-[1400px] border-t border-zola-ink/10 px-6 pb-6 pt-4">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <p className="text-sm text-zola-ink/70">
             {loading ? "Loading catalogue…" : `${filtered.length} results`}
@@ -510,7 +510,7 @@ function ShopPage() {
       </section>
 
       {/* Product grid */}
-      <section className="mx-auto max-w-[1600px] pl-7 md:pr-7 pb-12">
+      <section className="mx-auto max-w-[1600px] px-7 pb-12">
         {loading ? (
           <div className="flex items-center justify-center py-20">
             <div className="h-8 w-8 animate-spin rounded-full border-2 border-zola-ink border-t-transparent" />
@@ -575,7 +575,7 @@ function ShopPage() {
 
       {/* Footer */}
       <footer className="bg-zola-ink text-zola-cream">
-        <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-8 pl-6 md:pr-6 py-12 text-sm md:grid-cols-4">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-8 px-6 py-12 text-sm md:grid-cols-4">
           <div>
             <h4 className="font-serif text-xl mb-4">Impressions</h4>
             <p className="opacity-70">Wedding cards, made for you.</p>
@@ -591,7 +591,7 @@ function ShopPage() {
 
         </div>
         <div className="border-t border-zola-cream/10">
-          <p className="mx-auto max-w-[1400px] pl-6 md:pr-6 py-6 text-xs opacity-50">
+          <p className="mx-auto max-w-[1400px] px-6 py-6 text-xs opacity-50">
             &copy; {new Date().getFullYear()} Impressions Cards. All rights reserved.
           </p>
         </div>
