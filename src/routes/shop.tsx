@@ -431,12 +431,12 @@ function ShopPage() {
 
       {/* Category circles */}
       <section className="mx-auto max-w-[1400px] px-6 pb-10 pt-8">
-        <div className="flex items-center justify-start gap-4 overflow-x-auto px-4 pb-2 -mx-4 sm:justify-center sm:gap-10 sm:pb-0 sm:mx-0 sm:px-0 snap-x snap-mandatory scrollbar-hide">
+        <div className="flex items-center justify-center gap-10">
           {circles.map((c) => (
             <button
               key={c.cat}
               onClick={() => setCategoryAndReset(c.cat)}
-              className="flex flex-col items-center gap-2 group active:scale-[0.95] shrink-0 snap-start"
+              className="flex flex-col items-center gap-2 group active:scale-[0.95]"
             >
               <div
                 className={`h-20 w-20 overflow-hidden rounded-full ring-1 transition-all duration-200 group-hover:ring-2 group-hover:ring-zola-ink ${
@@ -445,7 +445,7 @@ function ShopPage() {
               >
                 <img src={c.image.startsWith("http") || c.image.startsWith("/") ? c.image : imgUrl(c.image)} alt={c.label} className="h-full w-full object-cover" />
               </div>
-              <span className="text-sm font-medium text-zola-ink whitespace-nowrap">{c.label}</span>
+              <span className="text-sm font-medium text-zola-ink">{c.label}</span>
             </button>
           ))}
         </div>
@@ -628,7 +628,7 @@ function ShopPage() {
           }}
         >
           <div
-            className="relative max-h-[92vh] w-full overflow-y-auto rounded-t-3xl bg-[#f5f0e6] text-[#1a1a1a] md:max-w-5xl md:rounded-3xl pb-[env(safe-area-inset-bottom)]"
+            className="relative max-h-[92vh] w-full overflow-y-auto rounded-t-3xl bg-[#f5f0e6] text-[#1a1a1a] md:max-w-5xl md:rounded-3xl "
             onClick={(e) => e.stopPropagation()}
             style={{
               opacity: modalMounted ? 1 : 0,
