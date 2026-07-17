@@ -1,5 +1,40 @@
 [
   {
+    "id": "CRAFT 1008",
+    "category": "CRAFT DIGITAL",
+    "price": 28,
+    "featured": false,
+    "minOrder": 100,
+    "size": "15 CM X 21 CM",
+    "material": "260 GSM TEXTURED",
+    "description": "DIGITALPRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#806e0a",
+    "images": [
+      "src/assets/cards/display/craft-1008-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/craft-1008-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "MEDIUM",
+        "size_id": 8,
+        "material_id": 4,
+        "size": "15 CM X 21 CM",
+        "material": "260 GSM TEXTURED",
+        "price": 28
+      }
+    ]
+  },
+  {
     "id": "CRAFT 1007",
     "category": "CRAFT DIGITAL",
     "price": 28,
