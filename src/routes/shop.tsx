@@ -316,8 +316,8 @@ function ShopPage() {
       result = [...result].sort((a, b) => b.price - a.price);
     } else {
       const sorted = [...result].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
-      const featured = sorted.filter(c => c.featured).reverse();
-      const notFeatured = sorted.filter(c => !c.featured).reverse();
+      const featured = sorted.filter(c => c.featured);
+      const notFeatured = sorted.filter(c => !c.featured);
       result = [...featured, ...notFeatured];
     }
     return result;
