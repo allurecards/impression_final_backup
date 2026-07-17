@@ -2,11 +2,11 @@
   {
     "id": "CRAFT 1001",
     "category": "CRAFT DIGITAL",
-    "price": 0,
+    "price": 28,
     "featured": false,
     "minOrder": 100,
-    "size": "",
-    "material": "",
+    "size": "195 MM X195 MM",
+    "material": "270 GSM VIRGIN CRAFT",
     "description": "DIGITALPRINTING",
     "instagram_url": "",
     "extraCharges": [],
@@ -23,7 +23,16 @@
     "imageWatermarks": [
       null
     ],
-    "variants": []
+    "variants": [
+      {
+        "name": "",
+        "size_id": 6,
+        "material_id": 7,
+        "size": "195 MM X195 MM",
+        "material": "270 GSM VIRGIN CRAFT",
+        "price": 28
+      }
+    ]
   },
   {
     "id": "IM 122",
