@@ -1,5 +1,45 @@
 [
   {
+    "id": "CRAFT 1005",
+    "category": "CRAFT DIGITAL",
+    "price": 32,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195 MM X195 MM",
+    "material": "270 GSM VIRGIN CRAFT",
+    "description": "DIGITALPRINTING +  GOLD FOILING ON ENVELOPE",
+    "instagram_url": "",
+    "extraCharges": [
+      {
+        "name": "FOILING BLOCK",
+        "price": 800
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-center",
+    "watermarkSize": "medium",
+    "watermarkColor": "#bea61e",
+    "images": [
+      "src/assets/cards/display/craft-1005-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/craft-1005-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "MEDIUM",
+        "size_id": 6,
+        "material_id": 7,
+        "size": "195 MM X195 MM",
+        "material": "270 GSM VIRGIN CRAFT",
+        "price": 32
+      }
+    ]
+  },
+  {
     "id": "CRAFT 1004",
     "category": "CRAFT DIGITAL",
     "price": 28,
