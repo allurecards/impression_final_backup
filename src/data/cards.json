@@ -1,5 +1,36 @@
 [
   {
+    "id": "ML 2002",
+    "category": "MINIMAL",
+    "price": 0,
+    "featured": false,
+    "minOrder": 100,
+    "size": "",
+    "material": "",
+    "description": "DIGITAL PRINTING + GOLD FOILING ON ENVELOPE",
+    "instagram_url": "",
+    "extraCharges": [
+      {
+        "name": "FOILING BLOCK",
+        "price": 800
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/ml-2002-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/ml-2002-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": []
+  },
+  {
     "id": "ML 2001",
     "category": "MINIMAL",
     "price": 0,
