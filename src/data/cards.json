@@ -1,45 +1,5 @@
 [
   {
-    "id": "ML 2002",
-    "category": "MINIMAL",
-    "price": 28,
-    "featured": false,
-    "minOrder": 200,
-    "size": "15 CM X 21 CM",
-    "material": "260 GSM TEXTURED",
-    "description": "DIGITAL PRINTING +GOLD FOILING ON ENVELOPE",
-    "instagram_url": "",
-    "extraCharges": [
-      {
-        "name": "FOILING BLOCK",
-        "price": 800
-      }
-    ],
-    "applyWatermark": true,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "medium",
-    "watermarkColor": "#ffd700",
-    "images": [
-      "src/assets/cards/display/ml-2002-1.PNG"
-    ],
-    "originals": [
-      "src/assets/cards/originals/ml-2002-1.PNG"
-    ],
-    "imageWatermarks": [
-      null
-    ],
-    "variants": [
-      {
-        "name": "",
-        "size_id": 8,
-        "material_id": 4,
-        "size": "15 CM X 21 CM",
-        "material": "260 GSM TEXTURED",
-        "price": 28
-      }
-    ]
-  },
-  {
     "id": "ML 2001",
     "category": "MINIMAL",
     "price": 0,
