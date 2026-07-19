@@ -5,7 +5,7 @@
     "price": 28,
     "featured": false,
     "minOrder": 100,
-    "size": "195 MMX 195 MM",
+    "size": "170 MM X 170 MM",
     "material": "260 GSM TEXTURED",
     "description": "195 MMX 195 MM",
     "instagram_url": "",
@@ -26,9 +26,9 @@
     "variants": [
       {
         "name": "MEDIUM",
-        "size_id": 4,
+        "size_id": 5,
         "material_id": 4,
-        "size": "195 MMX 195 MM",
+        "size": "170 MM X 170 MM",
         "material": "260 GSM TEXTURED",
         "price": 28
       },
