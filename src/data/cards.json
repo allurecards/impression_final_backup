@@ -1,5 +1,48 @@
 [
   {
+    "id": "IM 140",
+    "category": "FLORAL",
+    "price": 28,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195 MMX 195 MM",
+    "material": "260 GSM TEXTURED",
+    "description": "DIGITAL PRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#cb9f9f",
+    "images": [
+      "src/assets/cards/display/im-140-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-140-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "MEDIUM",
+        "size_id": 4,
+        "material_id": 4,
+        "size": "195 MMX 195 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 28
+      },
+      {
+        "name": "SMALL",
+        "size_id": 5,
+        "material_id": 4,
+        "size": "170 MM X 170 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 24
+      }
+    ]
+  },
+  {
     "id": "IM 139",
     "category": "FLORAL",
     "price": 28,
