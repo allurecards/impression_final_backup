@@ -3030,15 +3030,9 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": [
-      "src/assets/cards/display/im-108-2.png"
-    ],
-    "originals": [
-      "src/assets/cards/originals/im-108-2.png"
-    ],
-    "imageWatermarks": [
-      null
-    ],
+    "images": [],
+    "originals": [],
+    "imageWatermarks": [],
     "variants": [
       {
         "name": "MEDIUM",
