@@ -1,5 +1,40 @@
 [
   {
+    "id": "IM 128",
+    "category": "TRADITIONAL",
+    "price": 24,
+    "featured": false,
+    "minOrder": 100,
+    "size": "170 MM X 170 MM",
+    "material": "260 GSM TEXTURED",
+    "description": "DIGITAL PRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/im-128-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-128-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "SMALL",
+        "size_id": 5,
+        "material_id": 4,
+        "size": "170 MM X 170 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 24
+      }
+    ]
+  },
+  {
     "id": "IM 127",
     "category": "TRADITIONAL",
     "price": 28,
