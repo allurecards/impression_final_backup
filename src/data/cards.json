@@ -2,11 +2,11 @@
   {
     "id": "IM 1001",
     "category": "TAG CARDS",
-    "price": 0,
+    "price": 26,
     "featured": false,
     "minOrder": 100,
-    "size": "",
-    "material": "",
+    "size": "200 MM X200 MM",
+    "material": "280 GSM VIOLET + 260 GSM TEXTURED OFF WHITE",
     "description": "DIGITALPRINTING",
     "instagram_url": "",
     "extraCharges": [],
@@ -23,7 +23,16 @@
     "imageWatermarks": [
       null
     ],
-    "variants": []
+    "variants": [
+      {
+        "name": "MEDIUM",
+        "size_id": 6,
+        "material_id": 6,
+        "size": "200 MM X200 MM",
+        "material": "280 GSM VIOLET + 260 GSM TEXTURED OFF WHITE",
+        "price": 26
+      }
+    ]
   },
   {
     "id": "IM 161",
