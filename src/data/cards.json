@@ -14,15 +14,9 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": [
-      "src/assets/cards/display/tag-005-1.png"
-    ],
-    "originals": [
-      "src/assets/cards/originals/tag-005-1.png"
-    ],
-    "imageWatermarks": [
-      null
-    ],
+    "images": [],
+    "originals": [],
+    "imageWatermarks": [],
     "variants": []
   },
   {
