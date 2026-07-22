@@ -1,5 +1,31 @@
 [
   {
+    "id": "IM 1001",
+    "category": "TAG CARDS",
+    "price": 0,
+    "featured": false,
+    "minOrder": 100,
+    "size": "",
+    "material": "",
+    "description": "DIGITALPRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/im-1001-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-1001-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": []
+  },
+  {
     "id": "IM 161",
     "category": "FLORAL",
     "price": 28,
