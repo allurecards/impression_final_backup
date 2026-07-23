@@ -1,6 +1,6 @@
 [
   {
-    "id": "test two",
+    "id": "test two.0000",
     "category": "CRAFT DIGITAL",
     "price": 110,
     "featured": false,
@@ -15,12 +15,15 @@
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
     "images": [
-      "src/assets/cards/display/test-two-1.jpeg"
+      "src/assets/cards/display/test-two.0000-1.jpeg",
+      "src/assets/cards/display/test-two.0000-2.jpeg"
     ],
     "originals": [
-      "src/assets/cards/originals/test-two-1.jpeg"
+      "src/assets/cards/originals/test-two.0000-1.jpeg",
+      "src/assets/cards/originals/test-two.0000-2.jpeg"
     ],
     "imageWatermarks": [
+      null,
       null
     ],
     "variants": [
