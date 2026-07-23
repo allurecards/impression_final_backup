@@ -1,5 +1,40 @@
 [
   {
+    "id": "TAG 008",
+    "category": "TAG CARDS",
+    "price": 16,
+    "featured": false,
+    "minOrder": 100,
+    "size": "100 MM X 220 MM",
+    "material": "230 GSM BLUE + 260 GSM OFF WHITE",
+    "description": "DIGITAL PRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/tag-008-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-008-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "SMALL",
+        "size_id": 9,
+        "material_id": 10,
+        "size": "100 MM X 220 MM",
+        "material": "230 GSM BLUE + 260 GSM OFF WHITE",
+        "price": 16
+      }
+    ]
+  },
+  {
     "id": "TAG 007",
     "category": "TAG CARDS",
     "price": 20,
