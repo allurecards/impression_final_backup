@@ -1,5 +1,31 @@
 [
   {
+    "id": "TAG 019",
+    "category": "TAG CARDS",
+    "price": 0,
+    "featured": false,
+    "minOrder": 100,
+    "size": "",
+    "material": "",
+    "description": "DIGITAL PRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/tag-019-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-019-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": []
+  },
+  {
     "id": "TAG 018",
     "category": "TAG CARDS",
     "price": 22,
