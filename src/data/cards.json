@@ -1,5 +1,31 @@
 [
   {
+    "id": "VELLUM 106",
+    "category": "TRANSLUCENT",
+    "price": 0,
+    "featured": false,
+    "minOrder": 100,
+    "size": "",
+    "material": "",
+    "description": "DIGITAL PRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#bba007",
+    "images": [
+      "src/assets/cards/display/vellum-106-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vellum-106-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": []
+  },
+  {
     "id": "VELLUM 105",
     "category": "TRANSLUCENT",
     "price": 21,
