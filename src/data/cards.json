@@ -15,15 +15,12 @@
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
     "images": [
-      "src/assets/cards/display/tag-007-1.png",
       "src/assets/cards/display/tag-007-2.png"
     ],
     "originals": [
-      "src/assets/cards/originals/tag-007-1.png",
       "src/assets/cards/originals/tag-007-2.png"
     ],
     "imageWatermarks": [
-      null,
       null
     ],
     "variants": [
