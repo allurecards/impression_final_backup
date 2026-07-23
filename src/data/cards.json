@@ -1,59 +1,5 @@
 [
   {
-    "id": "AL - Tes",
-    "category": "MINIMAL",
-    "price": 99,
-    "featured": false,
-    "minOrder": 100,
-    "size": "5\" x 7\"",
-    "material": "Premium 350 gsm",
-    "description": "",
-    "instagram_url": "",
-    "extraCharges": [],
-    "applyWatermark": true,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "medium",
-    "watermarkColor": "#ffd700",
-    "images": [
-      "src/assets/cards/display/al-tes-1.jpg",
-      "src/assets/cards/display/al-tes-2.jpg"
-    ],
-    "originals": [
-      "src/assets/cards/originals/al-tes-1.jpg",
-      "src/assets/cards/originals/al-tes-2.jpg"
-    ],
-    "imageWatermarks": [
-      null,
-      null
-    ],
-    "variants": [
-      {
-        "name": "Test -Small",
-        "size_id": 1,
-        "material_id": 1,
-        "size": "5\" x 7\"",
-        "material": "Premium 350 gsm",
-        "price": 99
-      },
-      {
-        "name": "Medium",
-        "size_id": 2,
-        "material_id": 3,
-        "size": "6\" x 8\"",
-        "material": "Recycled Kraft",
-        "price": 109
-      },
-      {
-        "name": "Large",
-        "size_id": 1,
-        "material_id": 2,
-        "size": "5\" x 7\"",
-        "material": "Textured Matte",
-        "price": 129
-      }
-    ]
-  },
-  {
     "id": "VELLUM 109",
     "category": "TRANSLUCENT",
     "price": 21,
