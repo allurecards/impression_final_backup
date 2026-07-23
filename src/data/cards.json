@@ -31,12 +31,28 @@
     ],
     "variants": [
       {
-        "name": "Test",
+        "name": "Test -Small",
         "size_id": 1,
         "material_id": 1,
         "size": "5\" x 7\"",
         "material": "Premium 350 gsm",
         "price": 99
+      },
+      {
+        "name": "Medium",
+        "size_id": 2,
+        "material_id": 1,
+        "size": "6\" x 8\"",
+        "material": "Premium 350 gsm",
+        "price": 109
+      },
+      {
+        "name": "Large",
+        "size_id": 3,
+        "material_id": 1,
+        "size": "A6",
+        "material": "Premium 350 gsm",
+        "price": 129
       }
     ]
   },
