@@ -314,7 +314,7 @@ function ShopPage() {
       result = [...result].sort((a, b) => a.price - b.price);
     } else if (sort === "price-desc") {
       result = [...result].sort((a, b) => b.price - a.price);
-    } else {
+    } else if (category === "All") {
       const sorted = [...result].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
       const featured = sorted.filter(c => c.featured);
       const notFeatured = sorted.filter(c => !c.featured);
@@ -765,7 +765,7 @@ function ShopPage() {
                   <label htmlFor="modal-qty" className="text-xs font-semibold uppercase tracking-[0.18em] opacity-70">Quantity</label>
                   <div className="mt-3 flex items-center gap-3">
                     <button
-                      onClick={() => setModalQuantity((q) => Math.max(active.minOrder, q - 1))}
+                      onClick={() => setModalQuantity((q) => Math.max(active.minOrder, q - 50))}
                       className="flex h-10 w-10 items-center justify-center rounded-full border border-[#1a1a1a]/20 text-lg text-[#1a1a1a] active:scale-[0.95]"
                     >−</button>
                     <input
@@ -775,12 +775,15 @@ function ShopPage() {
                       inputMode="numeric"
                       onChange={(e) => {
                         const v = Number(e.target.value);
-                        if (Number.isFinite(v)) setModalQuantity(Math.max(active.minOrder, v));
+                        if (Number.isFinite(v)) {
+                          const snapped = Math.round(v / 50) * 50;
+                          setModalQuantity(Math.max(active.minOrder, Math.min(2000, snapped)));
+                        }
                       }}
                       className="w-24 rounded-md border border-[#1a1a1a]/20 px-3 py-2 text-center text-sm text-[#1a1a1a]"
                     />
                     <button
-                      onClick={() => setModalQuantity((q) => q + 1)}
+                      onClick={() => setModalQuantity((q) => Math.min(2000, q + 50))}
                       className="flex h-10 w-10 items-center justify-center rounded-full border border-[#1a1a1a]/20 text-lg text-[#1a1a1a] active:scale-[0.95]"
                     >+</button>
                     <span className="text-xs opacity-60">pcs</span>
@@ -788,7 +791,8 @@ function ShopPage() {
                   <input
                     type="range"
                     min={active.minOrder}
-                    max={5000}
+                    max={2000}
+                    step={50}
                     value={modalQuantity}
                     onChange={(e) => setModalQuantity(Number(e.target.value))}
                     aria-label="Select quantity"
