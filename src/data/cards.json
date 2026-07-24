@@ -4597,6 +4597,10 @@
       {
         "id": 5,
         "label": "Premium Leather"
+      },
+      {
+        "id": 6,
+        "label": "Premium"
       }
     ]
   }
