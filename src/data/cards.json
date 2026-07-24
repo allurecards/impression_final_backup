@@ -1,5 +1,51 @@
 [
   {
+    "id": "Impressions Test",
+    "category": "CRAFT DIGITAL",
+    "price": 120,
+    "featured": false,
+    "minOrder": 100,
+    "size": "15 CM X 21 CM",
+    "material": "230 GSM BLUE + 260 GSM OFF WHITE",
+    "description": "",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/impressions-test-1.jpg",
+      "src/assets/cards/display/impressions-test-2.jpg"
+    ],
+    "originals": [
+      "src/assets/cards/originals/impressions-test-1.jpg",
+      "src/assets/cards/originals/impressions-test-2.jpg"
+    ],
+    "imageWatermarks": [
+      null,
+      null
+    ],
+    "variants": [
+      {
+        "name": "Size 1",
+        "size_id": 4,
+        "material_id": 4,
+        "size": "15 CM X 21 CM",
+        "material": "230 GSM BLUE + 260 GSM OFF WHITE",
+        "price": 120
+      },
+      {
+        "name": "Size 2",
+        "size_id": 7,
+        "material_id": 7,
+        "size": "12 X 15",
+        "material": "Test material",
+        "price": 130
+      }
+    ]
+  },
+  {
     "id": "UDAMBADY 001",
     "category": "ODAMBADY",
     "price": 850,
@@ -4605,10 +4651,6 @@
       {
         "id": 6,
         "label": "Premium"
-      },
-      {
-        "id": 7,
-        "label": "Test material"
       }
     ]
   }
