@@ -89,7 +89,7 @@ function Landing() {
         }
       }, 800);
     },
-    [navigate]
+    [navigate],
   );
 
   // When Shop is clicked, show tier choice
@@ -115,7 +115,11 @@ function Landing() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-12">
           {/* Logo */}
           <a href="#">
-            <img src={logo} alt="Impressions" className="h-10 w-auto -translate-x-2 translate-y-5 scale-[1.8] origin-left" />
+            <img
+              src={logo}
+              alt="Impressions"
+              className="h-10 w-auto -translate-x-2 translate-y-5 scale-[1.8] origin-left"
+            />
           </a>
 
           {/* Links */}
@@ -138,7 +142,9 @@ function Landing() {
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-1.5 rounded-full border border-[#d9a87c]/30 px-4 py-1.5 text-sm font-medium text-[#d9a87c] transition-all duration-200 ease-out hover:bg-[#d9a87c] hover:text-[#1a1a1a] active:scale-[0.97]"
             >
-              <span className="text-xs transition-transform duration-200 ease-out group-hover:scale-110">✦</span>
+              <span className="text-xs transition-transform duration-200 ease-out group-hover:scale-110">
+                ✦
+              </span>
               <span className="tracking-[0.08em]">Allure</span>
             </a>
             <a
@@ -251,11 +257,7 @@ function Landing() {
                   transition: `transform 1100ms cubic-bezier(0.2,0.8,0.2,1) ${l.delay}ms, opacity 900ms ${l.delay}ms`,
                 }}
               >
-                {i === 3 ? (
-                  <em className="not-italic text-[#d9a87c]">{l.t}</em>
-                ) : (
-                  l.t
-                )}
+                {i === 3 ? <em className="not-italic text-[#d9a87c]">{l.t}</em> : l.t}
               </span>
             </span>
           ))}
@@ -366,8 +368,8 @@ function Landing() {
                 transitionDoor === "shop" || transitionDoor === "standard"
                   ? "#d9a87c"
                   : transitionDoor === "luxury"
-                  ? "#b48b5a"
-                  : "#e6d4f0"
+                    ? "#b48b5a"
+                    : "#e6d4f0"
               } 0%, transparent 70%)`,
               opacity: 0,
               animation: "lightBurst 800ms ease-out forwards",
@@ -678,10 +680,7 @@ function TierChoiceOverlay({
             className="group relative flex-1 aspect-[3/4] max-w-[42%] overflow-hidden rounded-[4px] border border-[#f5f0e6]/15 focus:outline-none"
             style={{
               backgroundColor: "#0f0b0a",
-              transform:
-                seqStage >= 2
-                  ? "translateY(0) scale(1)"
-                  : "translateY(18px) scale(0.86)",
+              transform: seqStage >= 2 ? "translateY(0) scale(1)" : "translateY(18px) scale(0.86)",
               opacity: seqStage >= 2 ? 1 : 0,
               transition:
                 "transform 700ms cubic-bezier(0.16,1,0.3,1) 80ms, opacity 600ms ease-out 80ms",
@@ -733,12 +732,19 @@ function TierChoiceOverlay({
               />
             </div>
             <div className="absolute inset-0 flex flex-col justify-end p-4 text-left">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-[#f5f0e6]/70">Standard</span>
+              <span className="text-[10px] uppercase tracking-[0.3em] text-[#f5f0e6]/70">
+                Standard
+              </span>
               <h3 className="font-serif text-3xl leading-none mt-1">Shop</h3>
               <p className="text-xs text-[#f5f0e6]/70 mt-1">Curated collection.</p>
-              <div className="mt-3 flex items-center gap-2 text-[10px] uppercase tracking-[0.3em]" style={{ color: tintStandard }}>
+              <div
+                className="mt-3 flex items-center gap-2 text-[10px] uppercase tracking-[0.3em]"
+                style={{ color: tintStandard }}
+              >
                 Enter
-                <span className="transition-transform duration-500 group-hover:translate-x-1.5">→</span>
+                <span className="transition-transform duration-500 group-hover:translate-x-1.5">
+                  →
+                </span>
               </div>
             </div>
           </button>
@@ -753,18 +759,14 @@ function TierChoiceOverlay({
             style={{
               borderColor: `${tintLuxury}cc`,
               boxShadow:
-                seqStage >= 2
-                  ? `0 0 25px ${tintLuxury}60, 0 0 50px ${tintLuxury}30`
-                  : "none",
+                seqStage >= 2 ? `0 0 25px ${tintLuxury}60, 0 0 50px ${tintLuxury}30` : "none",
               backgroundColor: "#0f0b0a",
-              transform:
-                seqStage >= 2
-                  ? "translateY(0) scale(1)"
-                  : "translateY(18px) scale(0.86)",
+              transform: seqStage >= 2 ? "translateY(0) scale(1)" : "translateY(18px) scale(0.86)",
               opacity: seqStage >= 2 ? 1 : 0,
               transition:
                 "transform 700ms cubic-bezier(0.16,1,0.3,1) 260ms, opacity 600ms ease-out 260ms, box-shadow 900ms ease-out 900ms",
-              animation: seqStage >= 2 ? "pulseGlow 2.8s ease-in-out infinite alternate 900ms" : "none",
+              animation:
+                seqStage >= 2 ? "pulseGlow 2.8s ease-in-out infinite alternate 900ms" : "none",
               pointerEvents: seqStage >= 2 ? "auto" : "none",
             }}
           >
@@ -785,7 +787,8 @@ function TierChoiceOverlay({
                 boxShadow: `inset 0 0 40px ${tintLuxury}50`,
                 opacity: seqStage >= 2 ? 0.7 : 0,
                 transition: "opacity 700ms ease-out 900ms",
-                animation: seqStage >= 2 ? "pulseInner 2.2s ease-in-out infinite alternate 900ms" : "none",
+                animation:
+                  seqStage >= 2 ? "pulseInner 2.2s ease-in-out infinite alternate 900ms" : "none",
               }}
             />
 
@@ -809,7 +812,8 @@ function TierChoiceOverlay({
               style={{
                 opacity: seqStage >= 2 ? 1 : 0,
                 transform: seqStage >= 2 ? "scale(1) rotate(0deg)" : "scale(0.4) rotate(-30deg)",
-                transition: "opacity 500ms ease-out 1000ms, transform 600ms cubic-bezier(0.34,1.56,0.64,1) 1000ms",
+                transition:
+                  "opacity 500ms ease-out 1000ms, transform 600ms cubic-bezier(0.34,1.56,0.64,1) 1000ms",
               }}
             >
               <path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z" />
@@ -854,7 +858,9 @@ function TierChoiceOverlay({
 
             {/* Content */}
             <div className="absolute inset-0 flex flex-col justify-end p-4 text-left">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-[#f5f0e6]/70">Luxury</span>
+              <span className="text-[10px] uppercase tracking-[0.3em] text-[#f5f0e6]/70">
+                Luxury
+              </span>
               <h3 className="font-serif text-3xl leading-none mt-1" style={{ color: tintLuxury }}>
                 Allure
               </h3>
@@ -867,9 +873,14 @@ function TierChoiceOverlay({
                 Limited
               </span>
               <p className="text-xs text-[#f5f0e6]/70 mt-1">Bespoke gold foil.</p>
-              <div className="mt-3 flex items-center gap-2 text-[10px] uppercase tracking-[0.3em]" style={{ color: tintLuxury }}>
+              <div
+                className="mt-3 flex items-center gap-2 text-[10px] uppercase tracking-[0.3em]"
+                style={{ color: tintLuxury }}
+              >
                 Enter
-                <span className="transition-transform duration-500 group-hover:translate-x-1.5">→</span>
+                <span className="transition-transform duration-500 group-hover:translate-x-1.5">
+                  →
+                </span>
               </div>
             </div>
           </button>
@@ -892,7 +903,10 @@ function TierChoiceOverlay({
             <div className="absolute inset-y-0 left-1/2 w-px">
               <div
                 className="h-full w-full"
-                style={{ background: `linear-gradient(to bottom, transparent, ${tintStandard}, transparent)`, opacity: 0.9 }}
+                style={{
+                  background: `linear-gradient(to bottom, transparent, ${tintStandard}, transparent)`,
+                  opacity: 0.9,
+                }}
               />
               <div
                 className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3 h-3 rounded-full"

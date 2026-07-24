@@ -46,7 +46,9 @@ export function BrideGroomTypography() {
       <div className="flex items-baseline justify-between gap-4">
         <div>
           <h2 className="font-serif text-2xl tracking-tight">Bride &amp; Groom</h2>
-          <p className="text-sm text-muted-foreground">Enter the names that will appear on your card.</p>
+          <p className="text-sm text-muted-foreground">
+            Enter the names that will appear on your card.
+          </p>
         </div>
       </div>
 
@@ -115,7 +117,11 @@ export function BrideGroomTypography() {
               onChange={(e) => setField("textColor", e.target.value)}
               className="h-10 w-12 rounded-md border border-input"
             />
-            <button type="button" onClick={() => setField("textColor", "")} className="text-xs underline opacity-70">
+            <button
+              type="button"
+              onClick={() => setField("textColor", "")}
+              className="text-xs underline opacity-70"
+            >
               Reset to template
             </button>
           </div>
@@ -123,9 +129,19 @@ export function BrideGroomTypography() {
         <div />
         <label className="block text-sm">
           <div className="flex items-center gap-2">
-            <Slider label="Name size" min={28} max={72} value={state.nameSize} onChange={(v) => setField("nameSize", v)} />
+            <Slider
+              label="Name size"
+              min={28}
+              max={72}
+              value={state.nameSize}
+              onChange={(v) => setField("nameSize", v)}
+            />
             {state.nameSize !== DEFAULT_DESIGN.nameSize && (
-              <button type="button" onClick={() => setField("nameSize", DEFAULT_DESIGN.nameSize)} className="shrink-0 text-xs underline opacity-70">
+              <button
+                type="button"
+                onClick={() => setField("nameSize", DEFAULT_DESIGN.nameSize)}
+                className="shrink-0 text-xs underline opacity-70"
+              >
                 Reset
               </button>
             )}

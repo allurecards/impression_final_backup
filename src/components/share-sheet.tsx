@@ -79,10 +79,16 @@ export function ShareSheet({ open, onOpenChange, productUrl, productTitle }: Sha
         window.location.href = `sms:?body=${encodeURIComponent(productUrl)}`;
         break;
       case "facebook":
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(productUrl)}`, "_blank");
+        window.open(
+          `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(productUrl)}`,
+          "_blank",
+        );
         break;
       case "twitter":
-        window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(productUrl)}`, "_blank");
+        window.open(
+          `https://twitter.com/intent/tweet?url=${encodeURIComponent(productUrl)}`,
+          "_blank",
+        );
         break;
       case "telegram":
         window.open(`https://t.me/share/url?url=${encodeURIComponent(productUrl)}`, "_blank");

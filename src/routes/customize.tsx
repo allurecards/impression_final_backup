@@ -58,17 +58,22 @@ function CustomizePageInner() {
       </div>
 
       <section className="px-6 py-16 text-center md:px-12">
-        <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] opacity-70">Interactive designer</p>
+        <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] opacity-70">
+          Interactive designer
+        </p>
         <h1 className="font-serif text-5xl tracking-tight md:text-6xl">Design your wedding card</h1>
         <p className="mx-auto mt-4 max-w-xl text-base opacity-85">
-          Pick a template, choose your typography and your story. Everything updates in real time — and autosaves as
-          you go.
+          Pick a template, choose your typography and your story. Everything updates in real time —
+          and autosaves as you go.
         </p>
       </section>
 
       <main className="mx-auto grid max-w-7xl gap-12 px-6 pb-24 md:px-12 lg:grid-cols-[1fr_1fr]">
         <div className="lg:sticky lg:top-24 lg:self-start">
-          <div className="rounded-2xl p-6 shadow-xl md:p-10" style={{ backgroundColor: template.type === "image" ? state.imageBg : template.bg }}>
+          <div
+            className="rounded-2xl p-6 shadow-xl md:p-10"
+            style={{ backgroundColor: template.type === "image" ? state.imageBg : template.bg }}
+          >
             <CardSvg ref={svgRef} />
           </div>
           <ExportBar svgRef={svgRef} />
@@ -95,12 +100,23 @@ function CustomizePageInner() {
           <div>
             <h5 className="mb-3 font-semibold">Shop</h5>
             <ul className="space-y-2 opacity-70">
-              <li><Link to="/shop" className="hover:opacity-60">All cards</Link></li>
-              <li><Link to="/customize" className="hover:opacity-60">Customize</Link></li>
-              <li><Link to="/customize" className="hover:opacity-60">Design your own</Link></li>
+              <li>
+                <Link to="/shop" className="hover:opacity-60">
+                  All cards
+                </Link>
+              </li>
+              <li>
+                <Link to="/customize" className="hover:opacity-60">
+                  Customize
+                </Link>
+              </li>
+              <li>
+                <Link to="/customize" className="hover:opacity-60">
+                  Design your own
+                </Link>
+              </li>
             </ul>
           </div>
-
         </div>
         <div className="border-t border-zola-cream/10">
           <p className="mx-auto max-w-[1400px] px-6 py-6 text-xs opacity-50">

@@ -214,11 +214,7 @@ export function ensureFontLoaded(font: FontDef) {
   if (font.scripts.every((s) => s === "latin")) return;
   if (loadedFontStylesheets.has(font.id)) return;
 
-  const familyParam = font.family
-    .split(",")[0]
-    .replace(/['"]/g, "")
-    .trim()
-    .replace(/\s+/g, "+");
+  const familyParam = font.family.split(",")[0].replace(/['"]/g, "").trim().replace(/\s+/g, "+");
   const italicParam = font.italic ? "1" : "0";
   const href = `https://fonts.googleapis.com/css2?family=${familyParam}:ital,wght@0,400;0,600;${italicParam},400;${italicParam},600&display=swap`;
 

@@ -6,34 +6,48 @@ import { createShare } from "@/lib/share-store";
 const OWNER_WHATSAPP_NUMBER = "919526577999";
 
 export function ExportBar({ svgRef: _svgRef }: { svgRef: React.RefObject<SVGSVGElement | null> }) {
-  const { state, undo, redo, canUndo, canRedo, resetChurchPositions, resetScriptPositions } = useCardDesign();
+  const { state, undo, redo, canUndo, canRedo, resetChurchPositions, resetScriptPositions } =
+    useCardDesign();
   const [shareUrl, setShareUrl] = useState("");
   const [isCreating, setIsCreating] = useState(false);
   const creatingRef = useRef(false);
 
   useEffect(() => {
-    setShareUrl(`${window.location.origin}${window.location.pathname}?design=${encodeDesignForUrl(state)}`);
+    setShareUrl(
+      `${window.location.origin}${window.location.pathname}?design=${encodeDesignForUrl(state)}`,
+    );
   }, [state]);
 
-  const handleWhatsApp = useCallback(async (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    if (creatingRef.current) return;
-    creatingRef.current = true;
-    setIsCreating(true);
-    try {
-      const { key } = await createShare({ data: { state: JSON.stringify(state) } });
-      const short = `${window.location.origin}${window.location.pathname}?d=${key}`;
-      const msg = `Hi! Here's my wedding card design for ${state.groom} & ${state.bride} — could you take a look? ${short}`;
-      window.open(`https://wa.me/${OWNER_WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
-    } catch {
-      const fallback = `${window.location.origin}${window.location.pathname}?design=${encodeDesignForUrl(state)}`;
-      const msg = `Hi! Here's my wedding card design for ${state.groom} & ${state.bride} — could you take a look? ${fallback}`;
-      window.open(`https://wa.me/${OWNER_WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
-    } finally {
-      creatingRef.current = false;
-      setIsCreating(false);
-    }
-  }, [state]);
+  const handleWhatsApp = useCallback(
+    async (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      if (creatingRef.current) return;
+      creatingRef.current = true;
+      setIsCreating(true);
+      try {
+        const { key } = await createShare({ data: { state: JSON.stringify(state) } });
+        const short = `${window.location.origin}${window.location.pathname}?d=${key}`;
+        const msg = `Hi! Here's my wedding card design for ${state.groom} & ${state.bride} — could you take a look? ${short}`;
+        window.open(
+          `https://wa.me/${OWNER_WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,
+          "_blank",
+          "noopener",
+        );
+      } catch {
+        const fallback = `${window.location.origin}${window.location.pathname}?design=${encodeDesignForUrl(state)}`;
+        const msg = `Hi! Here's my wedding card design for ${state.groom} & ${state.bride} — could you take a look? ${fallback}`;
+        window.open(
+          `https://wa.me/${OWNER_WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,
+          "_blank",
+          "noopener",
+        );
+      } finally {
+        creatingRef.current = false;
+        setIsCreating(false);
+      }
+    },
+    [state],
+  );
 
   const shareMessage = `Hi! Here's my wedding card design for ${state.groom} & ${state.bride} — could you take a look? ${shareUrl}`;
 
@@ -64,10 +78,20 @@ export function ExportBar({ svgRef: _svgRef }: { svgRef: React.RefObject<SVGSVGE
 
       <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs">
         <div className="flex gap-3">
-          <button type="button" onClick={undo} disabled={!canUndo} className="underline opacity-70 disabled:opacity-30">
+          <button
+            type="button"
+            onClick={undo}
+            disabled={!canUndo}
+            className="underline opacity-70 disabled:opacity-30"
+          >
             Undo
           </button>
-          <button type="button" onClick={redo} disabled={!canRedo} className="underline opacity-70 disabled:opacity-30">
+          <button
+            type="button"
+            onClick={redo}
+            disabled={!canRedo}
+            className="underline opacity-70 disabled:opacity-30"
+          >
             Redo
           </button>
         </div>
@@ -81,8 +105,8 @@ export function ExportBar({ svgRef: _svgRef }: { svgRef: React.RefObject<SVGSVGE
       </div>
 
       <p className="mt-3 min-h-5 text-center text-xs opacity-70" role="status" aria-live="polite">
-        Share your design with us and we'll prepare it for print — direct downloads aren't available here. Your
-        progress is saved automatically.
+        Share your design with us and we'll prepare it for print — direct downloads aren't available
+        here. Your progress is saved automatically.
       </p>
     </div>
   );

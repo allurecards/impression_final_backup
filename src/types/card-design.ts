@@ -86,13 +86,7 @@ export type MonogramDef = {
   categories: TemplateCategory[];
 };
 
-export type VerseTradition =
-  | "christian"
-  | "hindu"
-  | "muslim"
-  | "jewish"
-  | "sikh"
-  | "secular";
+export type VerseTradition = "christian" | "hindu" | "muslim" | "jewish" | "sikh" | "secular";
 
 export type Verse = {
   id: string;
@@ -144,9 +138,7 @@ export type TextElementId =
   | "lunchLine2"
   | "sharingHappiness";
 
-export type GraphicElementId =
-  | "leftDivider"
-  | "rightDivider";
+export type GraphicElementId = "leftDivider" | "rightDivider";
 
 export type CardElementId = TextElementId | GraphicElementId;
 
@@ -216,14 +208,8 @@ export const DEFAULT_TEXT: CardText = {
 };
 
 export const TEXT_ELEMENT_IDS: TextElementId[] = Object.keys(DEFAULT_TEXT) as TextElementId[];
-export const GRAPHIC_ELEMENT_IDS: GraphicElementId[] = [
-  "leftDivider",
-  "rightDivider",
-];
-export const ALL_ELEMENT_IDS: CardElementId[] = [
-  ...TEXT_ELEMENT_IDS,
-  ...GRAPHIC_ELEMENT_IDS,
-];
+export const GRAPHIC_ELEMENT_IDS: GraphicElementId[] = ["leftDivider", "rightDivider"];
+export const ALL_ELEMENT_IDS: CardElementId[] = [...TEXT_ELEMENT_IDS, ...GRAPHIC_ELEMENT_IDS];
 
 export const createDefaultClassicChurchState = (): ClassicChurchCardState => ({
   text: { ...DEFAULT_TEXT },
@@ -241,7 +227,11 @@ export const CHURCH_SECTIONS: ChurchSection[] = [
   { id: "bible-verse", label: "Bible Verse", fields: ["quoteLine1", "quoteLine2"] },
   { id: "host", label: "Host", fields: ["hostNames", "hostAddressLine1", "hostAddressLine2"] },
   { id: "invitation", label: "Invitation", fields: ["inviteLine1", "inviteLine2", "inviteLine3"] },
-  { id: "bride-details", label: "Bride Details", fields: ["brideDetailsLine1", "brideDetailsLine2"] },
+  {
+    id: "bride-details",
+    label: "Bride Details",
+    fields: ["brideDetailsLine1", "brideDetailsLine2"],
+  },
   { id: "solemnised", label: "Solemnised", fields: ["solemnisedLine"] },
   {
     id: "date-venue",
@@ -372,7 +362,11 @@ export const SCRIPT_SECTIONS: ScriptSection[] = [
   { id: "script-quote", label: "Bible Verse", fields: ["quoteLine1", "quoteLine2"] },
   { id: "script-host", label: "Host", fields: ["hostNames", "hostAddress"] },
   { id: "script-invitation", label: "Invitation", fields: ["inviteLine1", "inviteLine2"] },
-  { id: "script-bride-details", label: "Bride Details", fields: ["brideDetailsLine1", "brideDetailsLine2"] },
+  {
+    id: "script-bride-details",
+    label: "Bride Details",
+    fields: ["brideDetailsLine1", "brideDetailsLine2"],
+  },
   {
     id: "script-ceremony",
     label: "Ceremony",
@@ -428,7 +422,11 @@ export const SCRIPT_TEXT_STYLES: Record<
 export type TextLayoutId = "classic" | "script";
 
 export const TEXT_LAYOUTS: { id: TextLayoutId; label: string; description: string }[] = [
-  { id: "classic", label: "Layout One", description: "Structured layout with date box, venue block and icons." },
+  {
+    id: "classic",
+    label: "Layout One",
+    description: "Structured layout with date box, venue block and icons.",
+  },
   { id: "script", label: "Layout Two", description: "Flowing script-style invitation, text only." },
 ];
 

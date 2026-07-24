@@ -25,19 +25,15 @@ type Selection =
   | { kind: "icon" | "monogram"; key: string }
   | null;
 
-type DragTarget = { scope: "core"; id: CardElementId } | { scope: "script"; id: ScriptTextElementId };
+type DragTarget =
+  { scope: "core"; id: CardElementId } | { scope: "script"; id: ScriptTextElementId };
 
 export const CardSvg = forwardRef<SVGSVGElement, { className?: string }>(function CardSvg(
   { className },
   forwardedRef,
 ) {
-  const {
-    state,
-    updateDecoration,
-    removeDecoration,
-    updateChurchPosition,
-    updateScriptPosition,
-  } = useCardDesign();
+  const { state, updateDecoration, removeDecoration, updateChurchPosition, updateScriptPosition } =
+    useCardDesign();
 
   const template = getTemplate(state.templateId);
   const bodyFont = getFont(state.bodyFontId);
@@ -62,7 +58,9 @@ export const CardSvg = forwardRef<SVGSVGElement, { className?: string }>(functio
     generateQrDataUrl(normalizedMapsUrl, { darkColor: ink }).then((url) => {
       if (!cancelled) setQrDataUrl(url);
     });
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [state.showQr, normalizedMapsUrl, ink]);
 
   /* ── Canvas sizing ── */
@@ -103,7 +101,11 @@ export const CardSvg = forwardRef<SVGSVGElement, { className?: string }>(functio
     function onKeyDown(e: KeyboardEvent) {
       if (e.key !== "Delete" && e.key !== "Backspace") return;
       const target = e.target as HTMLElement | null;
-      if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)) return;
+      if (
+        target &&
+        (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)
+      )
+        return;
       setSelected((sel) => {
         if (sel && (sel.kind === "icon" || sel.kind === "monogram")) {
           e.preventDefault();
@@ -132,10 +134,13 @@ export const CardSvg = forwardRef<SVGSVGElement, { className?: string }>(functio
 
   const startTextDrag = (e: PointerEvent<SVGGElement>, target: DragTarget) => {
     e.stopPropagation();
-    setSelected(target.scope === "core" ? { kind: "core", id: target.id } : { kind: "script", id: target.id });
+    setSelected(
+      target.scope === "core" ? { kind: "core", id: target.id } : { kind: "script", id: target.id },
+    );
     const svg = svgLocalRef.current;
     svg?.setPointerCapture(e.pointerId);
-    const startPosition = target.scope === "core" ? church.positions[target.id] : script.positions[target.id];
+    const startPosition =
+      target.scope === "core" ? church.positions[target.id] : script.positions[target.id];
     setDrag({
       target,
       pointerId: e.pointerId,
@@ -181,7 +186,10 @@ export const CardSvg = forwardRef<SVGSVGElement, { className?: string }>(functio
   const designScriptYFor = (id: ScriptTextElementId) => script.positions[id].y + state.textOffset;
 
   /* ── Classic text rendering ── */
-  const classicTextStyles: Record<TextElementId, { size: number; weight?: number; ls?: number; script?: boolean }> = {
+  const classicTextStyles: Record<
+    TextElementId,
+    { size: number; weight?: number; ls?: number; script?: boolean }
+  > = {
     quoteLine1: { size: 9.4, weight: 500 },
     quoteLine2: { size: 9.4, weight: 500 },
     hostNames: { size: 10.5, weight: 500 },
@@ -217,20 +225,40 @@ export const CardSvg = forwardRef<SVGSVGElement, { className?: string }>(functio
     const italic = st.script ? nameFont.italic : bodyFont.italic;
     const sel = selected?.kind === "core" && selected.id === id;
     return (
-      <g key={id} onPointerDown={(e) => startTextDrag(e, { scope: "core", id })} style={{ cursor: "move" }}>
+      <g
+        key={id}
+        onPointerDown={(e) => startTextDrag(e, { scope: "core", id })}
+        style={{ cursor: "move" }}
+      >
         {sel && (
           <>
-            <line x1={cp.x - 60 * scale} x2={cp.x + 60 * scale} y1={cp.y} y2={cp.y}
-              stroke={accent} strokeDasharray="2 2" strokeWidth="0.6" pointerEvents="none" />
+            <line
+              x1={cp.x - 60 * scale}
+              x2={cp.x + 60 * scale}
+              y1={cp.y}
+              y2={cp.y}
+              stroke={accent}
+              strokeDasharray="2 2"
+              strokeWidth="0.6"
+              pointerEvents="none"
+            />
             <circle cx={cp.x} cy={cp.y} fill={accent} r="2.2" pointerEvents="none" />
           </>
         )}
-        <text x={cp.x} y={cp.y} fill={ink}
-          fontFamily={ff} fontStyle={italic ? "italic" : "normal"}
-          fontSize={st.size * scale} fontWeight={st.weight}
+        <text
+          x={cp.x}
+          y={cp.y}
+          fill={ink}
+          fontFamily={ff}
+          fontStyle={italic ? "italic" : "normal"}
+          fontSize={st.size * scale}
+          fontWeight={st.weight}
           letterSpacing={(st.ls ?? 0) * scale}
-          textAnchor="middle" dominantBaseline="middle"
-          pointerEvents="visiblePainted" style={{ userSelect: "none" }}>
+          textAnchor="middle"
+          dominantBaseline="middle"
+          pointerEvents="visiblePainted"
+          style={{ userSelect: "none" }}
+        >
           {church.text[id]}
         </text>
       </g>
@@ -245,20 +273,40 @@ export const CardSvg = forwardRef<SVGSVGElement, { className?: string }>(functio
     const fontSize = (st.isName ? state.nameSize : st.size) * scale;
     const sel = selected?.kind === "script" && selected.id === id;
     return (
-      <g key={id} onPointerDown={(e) => startTextDrag(e, { scope: "script", id })} style={{ cursor: "move" }}>
+      <g
+        key={id}
+        onPointerDown={(e) => startTextDrag(e, { scope: "script", id })}
+        style={{ cursor: "move" }}
+      >
         {sel && (
           <>
-            <line x1={cp.x - 60 * scale} x2={cp.x + 60 * scale} y1={cp.y} y2={cp.y}
-              stroke={accent} strokeDasharray="2 2" strokeWidth="0.6" pointerEvents="none" />
+            <line
+              x1={cp.x - 60 * scale}
+              x2={cp.x + 60 * scale}
+              y1={cp.y}
+              y2={cp.y}
+              stroke={accent}
+              strokeDasharray="2 2"
+              strokeWidth="0.6"
+              pointerEvents="none"
+            />
             <circle cx={cp.x} cy={cp.y} fill={accent} r="2.2" pointerEvents="none" />
           </>
         )}
-        <text x={cp.x} y={cp.y} fill={ink}
-          fontFamily={nameFont.family} fontStyle={nameFont.italic ? "italic" : "normal"}
-          fontSize={fontSize} fontWeight={st.weight ?? 400}
+        <text
+          x={cp.x}
+          y={cp.y}
+          fill={ink}
+          fontFamily={nameFont.family}
+          fontStyle={nameFont.italic ? "italic" : "normal"}
+          fontSize={fontSize}
+          fontWeight={st.weight ?? 400}
           letterSpacing={(st.ls ?? 0) * scale}
-          textAnchor="middle" dominantBaseline="middle"
-          pointerEvents="visiblePainted" style={{ userSelect: "none" }}>
+          textAnchor="middle"
+          dominantBaseline="middle"
+          pointerEvents="visiblePainted"
+          style={{ userSelect: "none" }}
+        >
           {script.text[id]}
         </text>
       </g>
@@ -271,9 +319,32 @@ export const CardSvg = forwardRef<SVGSVGElement, { className?: string }>(functio
     const sel = selected?.kind === "core" && selected.id === id;
     const half = 34 * scale;
     return (
-      <g key={id} onPointerDown={(e) => startTextDrag(e, { scope: "core", id })} style={{ cursor: "move" }}>
-        <line x1={cp.x} x2={cp.x} y1={cp.y - half} y2={cp.y + half} stroke={ink} strokeWidth="0.8" />
-        {sel && <rect x={cp.x - 4} y={cp.y - half - 4} width="8" height={half * 2 + 8} fill="none" stroke={accent} strokeDasharray="2 2" strokeWidth="0.7" pointerEvents="none" />}
+      <g
+        key={id}
+        onPointerDown={(e) => startTextDrag(e, { scope: "core", id })}
+        style={{ cursor: "move" }}
+      >
+        <line
+          x1={cp.x}
+          x2={cp.x}
+          y1={cp.y - half}
+          y2={cp.y + half}
+          stroke={ink}
+          strokeWidth="0.8"
+        />
+        {sel && (
+          <rect
+            x={cp.x - 4}
+            y={cp.y - half - 4}
+            width="8"
+            height={half * 2 + 8}
+            fill="none"
+            stroke={accent}
+            strokeDasharray="2 2"
+            strokeWidth="0.7"
+            pointerEvents="none"
+          />
+        )}
       </g>
     );
   };
@@ -281,14 +352,53 @@ export const CardSvg = forwardRef<SVGSVGElement, { className?: string }>(functio
   /* ── Background ── */
   const renderBackground = () => {
     if (template.type === "image" && template.imageSrc) {
-      return <image href={template.imageSrc} x="0" y="0" width={canvas.width} height={canvas.height} preserveAspectRatio="xMidYMid slice" />;
+      return (
+        <image
+          href={template.imageSrc}
+          x="0"
+          y="0"
+          width={canvas.width}
+          height={canvas.height}
+          preserveAspectRatio="xMidYMid slice"
+        />
+      );
     }
     return (
       <>
-        <rect x="0" y="0" width={canvas.width} height={canvas.height} fill={template.bg || "#ffffff"} />
-        <rect x="14" y="14" width={canvas.width - 28} height={canvas.height - 28} fill={template.panel || "#ffffff"} />
-        <rect x="22" y="22" width={canvas.width - 44} height={canvas.height - 44} fill="none" stroke={border} strokeOpacity="0.55" strokeWidth="1" />
-        <rect x="26" y="26" width={canvas.width - 52} height={canvas.height - 52} fill="none" stroke={border} strokeOpacity="0.25" strokeWidth="0.5" />
+        <rect
+          x="0"
+          y="0"
+          width={canvas.width}
+          height={canvas.height}
+          fill={template.bg || "#ffffff"}
+        />
+        <rect
+          x="14"
+          y="14"
+          width={canvas.width - 28}
+          height={canvas.height - 28}
+          fill={template.panel || "#ffffff"}
+        />
+        <rect
+          x="22"
+          y="22"
+          width={canvas.width - 44}
+          height={canvas.height - 44}
+          fill="none"
+          stroke={border}
+          strokeOpacity="0.55"
+          strokeWidth="1"
+        />
+        <rect
+          x="26"
+          y="26"
+          width={canvas.width - 52}
+          height={canvas.height - 52}
+          fill="none"
+          stroke={border}
+          strokeOpacity="0.25"
+          strokeWidth="0.5"
+        />
       </>
     );
   };
@@ -307,24 +417,49 @@ export const CardSvg = forwardRef<SVGSVGElement, { className?: string }>(functio
         const isSel = selected?.kind === "icon" && selected.key === inst.key;
         return (
           <g key={inst.key} transform={`translate(${inst.position.x} ${inst.position.y})`}>
-            <circle cx="0" cy="0" r={Math.max(24, Math.round(50 * inst.scale))}
-              fill="transparent" stroke="none" pointerEvents="all"
+            <circle
+              cx="0"
+              cy="0"
+              r={Math.max(24, Math.round(50 * inst.scale))}
+              fill="transparent"
+              stroke="none"
+              pointerEvents="all"
               style={{ cursor: "grab", touchAction: "none" }}
               onPointerDown={(e) => {
                 setSelected({ kind: "icon", key: inst.key });
-                beginDrag(e, inst.key, inst.position, inst.scale, (x, y) => updateDecoration("icons", inst.key, { position: { x, y } }));
+                beginDrag(e, inst.key, inst.position, inst.scale, (x, y) =>
+                  updateDecoration("icons", inst.key, { position: { x, y } }),
+                );
               }}
-              onDoubleClick={() => removeDecoration("icons", inst.key)} />
-            <g transform={`scale(${inst.scale}) translate(-50 -50)`}
-              fill="none" stroke={inst.color || accent}
-              strokeOpacity={isActive ? 0.55 : 0.7} strokeWidth="1.4"
-              opacity={isActive ? 0.85 : undefined}>
-              <path d={def.path}
+              onDoubleClick={() => removeDecoration("icons", inst.key)}
+            />
+            <g
+              transform={`scale(${inst.scale}) translate(-50 -50)`}
+              fill="none"
+              stroke={inst.color || accent}
+              strokeOpacity={isActive ? 0.55 : 0.7}
+              strokeWidth="1.4"
+              opacity={isActive ? 0.85 : undefined}
+            >
+              <path
+                d={def.path}
                 fill={def.fillable ? inst.color || accent : "transparent"}
                 fillOpacity={def.fillable ? (isActive ? 0.5 : 0.65) : 0}
-                pointerEvents="none" />
+                pointerEvents="none"
+              />
             </g>
-            {isSel && <circle cx="0" cy="0" r={Math.max(28, Math.round(56 * inst.scale))} fill="none" stroke={accent} strokeDasharray="2 2" strokeWidth="0.7" pointerEvents="none" />}
+            {isSel && (
+              <circle
+                cx="0"
+                cy="0"
+                r={Math.max(28, Math.round(56 * inst.scale))}
+                fill="none"
+                stroke={accent}
+                strokeDasharray="2 2"
+                strokeWidth="0.7"
+                pointerEvents="none"
+              />
+            )}
           </g>
         );
       })}
@@ -335,17 +470,47 @@ export const CardSvg = forwardRef<SVGSVGElement, { className?: string }>(functio
         const isSel = selected?.kind === "monogram" && selected.key === inst.key;
         return (
           <g key={inst.key} transform={`translate(${inst.position.x} ${inst.position.y})`}>
-            <rect x="-50" y="-50" width="100" height="100" fill="transparent" stroke="none"
-              pointerEvents="all" style={{ cursor: "grab" }}
+            <rect
+              x="-50"
+              y="-50"
+              width="100"
+              height="100"
+              fill="transparent"
+              stroke="none"
+              pointerEvents="all"
+              style={{ cursor: "grab" }}
               onPointerDown={(e) => {
                 setSelected({ kind: "monogram", key: inst.key });
-                beginDrag(e, inst.key, inst.position, inst.scale, (x, y) => updateDecoration("monograms", inst.key, { position: { x, y } }));
+                beginDrag(e, inst.key, inst.position, inst.scale, (x, y) =>
+                  updateDecoration("monograms", inst.key, { position: { x, y } }),
+                );
               }}
-              onDoubleClick={() => removeDecoration("monograms", inst.key)} />
+              onDoubleClick={() => removeDecoration("monograms", inst.key)}
+            />
             <g transform={`scale(${inst.scale})`} color={ink} opacity={isActive ? 0.85 : undefined}>
-              <image href={def.src} x="-50" y="-50" width="100" height="100" preserveAspectRatio="xMidYMid meet" pointerEvents="none" />
+              <image
+                href={def.src}
+                x="-50"
+                y="-50"
+                width="100"
+                height="100"
+                preserveAspectRatio="xMidYMid meet"
+                pointerEvents="none"
+              />
             </g>
-            {isSel && <rect x={-52 * inst.scale} y={-52 * inst.scale} width={104 * inst.scale} height={104 * inst.scale} fill="none" stroke={accent} strokeDasharray="2 2" strokeWidth="0.7" pointerEvents="none" />}
+            {isSel && (
+              <rect
+                x={-52 * inst.scale}
+                y={-52 * inst.scale}
+                width={104 * inst.scale}
+                height={104 * inst.scale}
+                fill="none"
+                stroke={accent}
+                strokeDasharray="2 2"
+                strokeWidth="0.7"
+                pointerEvents="none"
+              />
+            )}
           </g>
         );
       })}
@@ -359,7 +524,7 @@ export const CardSvg = forwardRef<SVGSVGElement, { className?: string }>(functio
       className={className ?? "mx-auto block w-full max-w-sm rounded-md shadow-2xl"}
       style={{
         aspectRatio: `${canvas.width} / ${canvas.height}`,
-        backgroundColor: template.type === "image" ? state.imageBg : (template.bg || "#ffffff"),
+        backgroundColor: template.type === "image" ? state.imageBg : template.bg || "#ffffff",
         cursor: isDragging ? "grabbing" : undefined,
         touchAction: "none",
         userSelect: "none",

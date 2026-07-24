@@ -143,7 +143,6 @@ export function ExploreSections() {
       className="min-h-screen transition-colors duration-700 ease-out"
       style={{ backgroundColor: activeBg }}
     >
-
       <main>
         <BentoSection />
 
@@ -194,10 +193,7 @@ export function ExploreSections() {
                 >
                   {s.title}
                 </h2>
-                <p
-                  className="mt-6 max-w-md text-lg leading-relaxed"
-                  style={{ color: s.body }}
-                >
+                <p className="mt-6 max-w-md text-lg leading-relaxed" style={{ color: s.body }}>
                   {s.copy}
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -246,9 +242,19 @@ function Footer() {
               <p>Thrissur, Kerala — 680005</p>
             </address>
             <p className="mt-4 text-sm text-[#f5f0e6]/60">
-              <a href="tel:+919526577999" className="text-[#d9a87c] transition-colors hover:text-[#f5f0e6]">+91 95265 77 999</a>
+              <a
+                href="tel:+919526577999"
+                className="text-[#d9a87c] transition-colors hover:text-[#f5f0e6]"
+              >
+                +91 95265 77 999
+              </a>
               <span className="mx-2 text-[#f5f0e6]/30">·</span>
-              <a href="tel:+919020077999" className="text-[#d9a87c] transition-colors hover:text-[#f5f0e6]">+91 90200 77 999</a>
+              <a
+                href="tel:+919020077999"
+                className="text-[#d9a87c] transition-colors hover:text-[#f5f0e6]"
+              >
+                +91 90200 77 999
+              </a>
               <br />
             </p>
             <div className="mt-6">
@@ -290,7 +296,8 @@ function Footer() {
 
         <div className="mt-16 border-t border-[#f5f0e6]/10 pt-8 text-center">
           <p className="text-xs text-[#f5f0e6]/40">
-            © {new Date().getFullYear()} Allure by Impressions Wedding Cards. All rights reserved. Crafted with devotion in Thrissur.
+            © {new Date().getFullYear()} Allure by Impressions Wedding Cards. All rights reserved.
+            Crafted with devotion in Thrissur.
           </p>
         </div>
       </div>
@@ -307,12 +314,48 @@ function BentoSection() {
     to?: string;
     href?: string;
   }[] = [
-    { title: "Heritage Collection", desc: "Rich, traditional luxury on heirloom-inspired paper.", img: heritageImg, icon: DoodleHeritage, to: "/shop" },
-    { title: "Minimal Collection", desc: "Understated elegance for modern couples.", img: minimalImg, icon: DoodleMinimal, to: "/shop" },
-    { title: "Floral Collection", desc: "Watercolour-inspired botanical prints.", img: floralImg, icon: DoodleFloral, to: "/shop" },
-    { title: "Modern Collection", desc: "Contemporary & bold designs.", img: invitations, icon: DoodleModern, to: "/shop" },
-    { title: "Allure Cards", desc: "Our premium sub-brand — gold foil & elevated finishes.", img: allureImg, icon: DoodleAllure, href: "https://www.allurecards.in" },
-    { title: "Customise Your Card", desc: "Live preview — design your invitation in minutes.", img: customiseImg, icon: DoodleCustomize, to: "/customize" },
+    {
+      title: "Heritage Collection",
+      desc: "Rich, traditional luxury on heirloom-inspired paper.",
+      img: heritageImg,
+      icon: DoodleHeritage,
+      to: "/shop",
+    },
+    {
+      title: "Minimal Collection",
+      desc: "Understated elegance for modern couples.",
+      img: minimalImg,
+      icon: DoodleMinimal,
+      to: "/shop",
+    },
+    {
+      title: "Floral Collection",
+      desc: "Watercolour-inspired botanical prints.",
+      img: floralImg,
+      icon: DoodleFloral,
+      to: "/shop",
+    },
+    {
+      title: "Modern Collection",
+      desc: "Contemporary & bold designs.",
+      img: invitations,
+      icon: DoodleModern,
+      to: "/shop",
+    },
+    {
+      title: "Allure Cards",
+      desc: "Our premium sub-brand — gold foil & elevated finishes.",
+      img: allureImg,
+      icon: DoodleAllure,
+      href: "https://www.allurecards.in",
+    },
+    {
+      title: "Customise Your Card",
+      desc: "Live preview — design your invitation in minutes.",
+      img: customiseImg,
+      icon: DoodleCustomize,
+      to: "/customize",
+    },
   ];
 
   return (
@@ -322,7 +365,9 @@ function BentoSection() {
           <h2 className="font-serif text-5xl leading-[1.05] tracking-tight text-[#1a1a1a] md:text-6xl">
             Everything you <em className="not-italic">need</em> for the perfect invitation
           </h2>
-          <p className="mt-8 text-base text-[#1a1a1a]/75">From our Thrissur atelier to your guests’ hands</p>
+          <p className="mt-8 text-base text-[#1a1a1a]/75">
+            From our Thrissur atelier to your guests’ hands
+          </p>
         </div>
         <div className="grid grid-cols-1 gap-px bg-[#1a1a1a]/10 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it) => {

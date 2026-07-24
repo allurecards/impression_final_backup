@@ -17,7 +17,11 @@ type DragState = {
  * single implementation both use. viewBoxWidth/Height let it work for any
  * SVG coordinate system, not just the 400x560 card.
  */
-export function useDraggableOnSvg(svgRef: RefObject<SVGSVGElement | null>, viewBoxWidth = 400, viewBoxHeight = 560) {
+export function useDraggableOnSvg(
+  svgRef: RefObject<SVGSVGElement | null>,
+  viewBoxWidth = 400,
+  viewBoxHeight = 560,
+) {
   const dragRef = useRef<DragState | null>(null);
   const [draggedKey, setDraggedKey] = useState<string | null>(null);
   const [isDragging, setIsDragging] = useState(false);

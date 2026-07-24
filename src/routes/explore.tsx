@@ -13,7 +13,8 @@ export const Route = createFileRoute("/explore")({
       { property: "og:title", content: "Impressions Wedding Cards — Bespoke Wedding Invitations" },
       {
         property: "og:description",
-        content: "Heritage, minimal, floral, modern collections. Customise your card with live preview.",
+        content:
+          "Heritage, minimal, floral, modern collections. Customise your card with live preview.",
       },
     ],
   }),
@@ -23,5 +24,3 @@ export const Route = createFileRoute("/explore")({
 function Index() {
   return <ExploreSections />;
 }
-
-

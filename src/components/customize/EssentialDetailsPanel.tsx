@@ -7,16 +7,16 @@ import {
 } from "@/types/card-design";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export function EssentialDetailsPanel() {
-  const {
-    state,
-    setChurchText,
-    toggleChurchElement,
-    setScriptText,
-    toggleScriptElement,
-  } = useCardDesign();
+  const { state, setChurchText, toggleChurchElement, setScriptText, toggleScriptElement } =
+    useCardDesign();
 
   const isClassic = state.textLayoutId === "classic";
   const church = state.classicChurch;
@@ -31,7 +31,9 @@ export function EssentialDetailsPanel() {
               <AccordionTrigger className="text-left">
                 <span className="flex items-baseline gap-3">
                   <span className="font-medium">{section.label}</span>
-                  <span className="text-xs text-muted-foreground">{section.fields.length} fields</span>
+                  <span className="text-xs text-muted-foreground">
+                    {section.fields.length} fields
+                  </span>
                 </span>
               </AccordionTrigger>
               <AccordionContent>
@@ -41,7 +43,10 @@ export function EssentialDetailsPanel() {
                     return (
                       <div key={field} className="grid gap-1.5">
                         <div className="flex items-center justify-between">
-                          <Label htmlFor={`f-${field}`} className="text-xs uppercase tracking-wider text-muted-foreground">
+                          <Label
+                            htmlFor={`f-${field}`}
+                            className="text-xs uppercase tracking-wider text-muted-foreground"
+                          >
                             {FIELD_LABELS[field as keyof typeof FIELD_LABELS]}
                           </Label>
                           <button
@@ -73,7 +78,9 @@ export function EssentialDetailsPanel() {
               <AccordionTrigger className="text-left">
                 <span className="flex items-baseline gap-3">
                   <span className="font-medium">{section.label}</span>
-                  <span className="text-xs text-muted-foreground">{section.fields.length} fields</span>
+                  <span className="text-xs text-muted-foreground">
+                    {section.fields.length} fields
+                  </span>
                 </span>
               </AccordionTrigger>
               <AccordionContent>
@@ -83,7 +90,10 @@ export function EssentialDetailsPanel() {
                     return (
                       <div key={field} className="grid gap-1.5">
                         <div className="flex items-center justify-between">
-                          <Label htmlFor={`s-${field}`} className="text-xs uppercase tracking-wider text-muted-foreground">
+                          <Label
+                            htmlFor={`s-${field}`}
+                            className="text-xs uppercase tracking-wider text-muted-foreground"
+                          >
                             {SCRIPT_FIELD_LABELS[field as keyof typeof SCRIPT_FIELD_LABELS]}
                           </Label>
                           <button

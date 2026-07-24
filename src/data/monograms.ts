@@ -23,7 +23,14 @@ function toDataUri(svg: string): string {
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 }
 
-function radialTicks(cx: number, cy: number, rInner: number, rOuter: number, count: number, color: string): string {
+function radialTicks(
+  cx: number,
+  cy: number,
+  rInner: number,
+  rOuter: number,
+  count: number,
+  color: string,
+): string {
   return Array.from({ length: count }, (_, i) => {
     const angle = (Math.PI * 2 * i) / count;
     const x1 = (cx + rInner * Math.cos(angle)).toFixed(1);
@@ -81,22 +88,36 @@ export const MONOGRAM_DEFS: MonogramDef[] = [
 
   // ── New Hindu monograms (appended) ───────────────────────────────────────
   { id: "om", label: "Om", src: toDataUri(omSvg), categories: ["hindu"] },
-  { id: "lotus-monogram", label: "Lotus", src: toDataUri(lotusSvg), categories: ["hindu", "botanical"] },
+  {
+    id: "lotus-monogram",
+    label: "Lotus",
+    src: toDataUri(lotusSvg),
+    categories: ["hindu", "botanical"],
+  },
   { id: "kalash", label: "Kalash", src: toDataUri(kalashSvg), categories: ["hindu"] },
   { id: "diya", label: "Diya Lamp", src: toDataUri(diyaSvg), categories: ["hindu"] },
-  { id: "mandala-ring", label: "Mandala Ring", src: toDataUri(mandalaSvg), categories: ["hindu", "classic", "modern"] },
+  {
+    id: "mandala-ring",
+    label: "Mandala Ring",
+    src: toDataUri(mandalaSvg),
+    categories: ["hindu", "classic", "modern"],
+  },
 
   // ── Inline church & clock monograms ──────────────────────────────────────
   {
     id: "church-monogram",
     label: "Church",
-    src: toDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M18 1.5v5"/><path d="M15.5 4h5"/><path d="m18 7-6 7h12l-6-7Z" fill="currentColor" stroke="none"/><path d="M13 14h10v18H13z" fill="currentColor" stroke="none"/><path d="M5 20h8v12H5zM23 20h8v12h-8z" fill="currentColor" stroke="none"/><path d="M16 23h4v9h-4z" fill="#fff" stroke="none"/><path d="M16 17h4v4h-4z" fill="#fff" stroke="none"/><path d="M3 32h30"/></g></svg>`),
+    src: toDataUri(
+      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M18 1.5v5"/><path d="M15.5 4h5"/><path d="m18 7-6 7h12l-6-7Z" fill="currentColor" stroke="none"/><path d="M13 14h10v18H13z" fill="currentColor" stroke="none"/><path d="M5 20h8v12H5zM23 20h8v12h-8z" fill="currentColor" stroke="none"/><path d="M16 23h4v9h-4z" fill="#fff" stroke="none"/><path d="M16 17h4v4h-4z" fill="#fff" stroke="none"/><path d="M3 32h30"/></g></svg>`,
+    ),
     categories: ["christian", "classic"],
   },
   {
     id: "clock-monogram",
     label: "Clock",
-    src: toDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" transform="translate(0,1)"><circle cx="18" cy="18" r="11.5"/><path d="M18 10v8l5 3"/><path d="m8.5 29-2.5 3M27.5 29l2.5 3"/><path d="M8 7 4 3M28 7l4-4"/><path d="M3.5 6.5a5 5 0 0 1 7-7M32.5 6.5a5 5 0 0 0-7-7"/><path d="M18 4.5V2"/></g></svg>`),
+    src: toDataUri(
+      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" transform="translate(0,1)"><circle cx="18" cy="18" r="11.5"/><path d="M18 10v8l5 3"/><path d="m8.5 29-2.5 3M27.5 29l2.5 3"/><path d="M8 7 4 3M28 7l4-4"/><path d="M3.5 6.5a5 5 0 0 1 7-7M32.5 6.5a5 5 0 0 0-7-7"/><path d="M18 4.5V2"/></g></svg>`,
+    ),
     categories: ["secular", "classic"],
   },
 ];

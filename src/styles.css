@@ -179,12 +179,14 @@
     border-color: var(--color-border);
   }
 
-body {
-  background-color: #ffffff;
-  color: var(--color-zola-ink);
-  font-family: var(--font-sans);
-  font-feature-settings: "ss01";
-}
+  body {
+    background-color: #ffffff;
+    color: var(--color-zola-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01";
+  }
 
-  .font-serif { font-family: var(--font-serif); }
+  .font-serif {
+    font-family: var(--font-serif);
+  }
 }

@@ -27,7 +27,9 @@ export async function generateQrDataUrl(
   });
   const encoded =
     typeof window !== "undefined"
-      ? btoa(Array.from(new TextEncoder().encode(svgString), (b) => String.fromCharCode(b)).join(""))
+      ? btoa(
+          Array.from(new TextEncoder().encode(svgString), (b) => String.fromCharCode(b)).join(""),
+        )
       : Buffer.from(svgString).toString("base64");
   return `data:image/svg+xml;base64,${encoded}`;
 }

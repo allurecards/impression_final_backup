@@ -1,4 +1,12 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useReducer, useRef } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useReducer,
+  useRef,
+} from "react";
 import lzString from "lz-string";
 import type {
   CardDesignState,
@@ -58,10 +66,24 @@ export const DEFAULT_DESIGN: CardDesignState = {
 };
 
 type Action =
-  | { type: "SET_FIELD"; field: keyof CardDesignState; value: CardDesignState[keyof CardDesignState] }
+  | {
+      type: "SET_FIELD";
+      field: keyof CardDesignState;
+      value: CardDesignState[keyof CardDesignState];
+    }
   | { type: "SET_TEMPLATE"; templateId: string }
-  | { type: "ADD_DECORATION"; kind: "icons" | "monograms"; defId: string; position: { x: number; y: number } }
-  | { type: "UPDATE_DECORATION"; kind: "icons" | "monograms"; key: string; patch: Partial<DecorationInstance> }
+  | {
+      type: "ADD_DECORATION";
+      kind: "icons" | "monograms";
+      defId: string;
+      position: { x: number; y: number };
+    }
+  | {
+      type: "UPDATE_DECORATION";
+      kind: "icons" | "monograms";
+      key: string;
+      patch: Partial<DecorationInstance>;
+    }
   | { type: "REMOVE_DECORATION"; kind: "icons" | "monograms"; key: string }
   | { type: "LOAD"; state: CardDesignState }
   | { type: "RESET" }
@@ -83,11 +105,18 @@ function reducer(state: CardDesignState, action: Action): CardDesignState {
       return { ...state, templateId: action.templateId };
     case "ADD_DECORATION": {
       const key = `${action.defId}-${Date.now()}-${Math.round(Math.random() * 1000)}`;
-      const instance: DecorationInstance = { key, defId: action.defId, position: action.position, scale: 0.45 };
+      const instance: DecorationInstance = {
+        key,
+        defId: action.defId,
+        position: action.position,
+        scale: 0.45,
+      };
       return { ...state, [action.kind]: [...state[action.kind], instance] };
     }
     case "UPDATE_DECORATION": {
-      const list = state[action.kind].map((d) => (d.key === action.key ? { ...d, ...action.patch } : d));
+      const list = state[action.kind].map((d) =>
+        d.key === action.key ? { ...d, ...action.patch } : d,
+      );
       return { ...state, [action.kind]: list };
     }
     case "REMOVE_DECORATION": {
@@ -127,12 +156,20 @@ function reducer(state: CardDesignState, action: Action): CardDesignState {
         ...state,
         classicChurch: {
           ...state.classicChurch,
-          hiddenElements: isHidden ? hidden.filter((id) => id !== action.elementId) : [...hidden, action.elementId],
+          hiddenElements: isHidden
+            ? hidden.filter((id) => id !== action.elementId)
+            : [...hidden, action.elementId],
         },
       };
     }
     case "RESET_CHURCH_POSITIONS":
-      return { ...state, classicChurch: { ...state.classicChurch, positions: { ...DEFAULT_DESIGN.classicChurch.positions } } };
+      return {
+        ...state,
+        classicChurch: {
+          ...state.classicChurch,
+          positions: { ...DEFAULT_DESIGN.classicChurch.positions },
+        },
+      };
     case "SET_SCRIPT_TEXT":
       return {
         ...state,
@@ -156,18 +193,29 @@ function reducer(state: CardDesignState, action: Action): CardDesignState {
         ...state,
         scriptLayout: {
           ...state.scriptLayout,
-          hiddenElements: isHidden ? hidden.filter((id) => id !== action.elementId) : [...hidden, action.elementId],
+          hiddenElements: isHidden
+            ? hidden.filter((id) => id !== action.elementId)
+            : [...hidden, action.elementId],
         },
       };
     }
     case "RESET_SCRIPT_POSITIONS":
-      return { ...state, scriptLayout: { ...state.scriptLayout, positions: { ...DEFAULT_DESIGN.scriptLayout.positions } } };
+      return {
+        ...state,
+        scriptLayout: {
+          ...state.scriptLayout,
+          positions: { ...DEFAULT_DESIGN.scriptLayout.positions },
+        },
+      };
     default:
       return state;
   }
 }
 
-const LOADING_SHARE: CardDesignState = { ...DEFAULT_DESIGN, textLayoutId: "classic" as TextLayoutId };
+const LOADING_SHARE: CardDesignState = {
+  ...DEFAULT_DESIGN,
+  textLayoutId: "classic" as TextLayoutId,
+};
 
 function loadInitialState(): CardDesignState {
   if (typeof window === "undefined") return DEFAULT_DESIGN;
@@ -175,7 +223,8 @@ function loadInitialState(): CardDesignState {
     const params = new URLSearchParams(window.location.search);
     const designParam = params.get("design");
     if (designParam) {
-      const json = lzString.decompressFromEncodedURIComponent(designParam) ?? window.atob(designParam);
+      const json =
+        lzString.decompressFromEncodedURIComponent(designParam) ?? window.atob(designParam);
       const decoded = JSON.parse(json);
       return { ...DEFAULT_DESIGN, ...decoded };
     }
@@ -260,11 +309,17 @@ function useCardDesignReducer() {
     [],
   );
 
-  const setTemplate = useCallback((templateId: string) => dispatch({ type: "SET_TEMPLATE", templateId }), []);
+  const setTemplate = useCallback(
+    (templateId: string) => dispatch({ type: "SET_TEMPLATE", templateId }),
+    [],
+  );
 
   const addDecoration = useCallback(
-    (kind: "icons" | "monograms", defId: string, position: { x: number; y: number } = { x: 200, y: 280 }) =>
-      dispatch({ type: "ADD_DECORATION", kind, defId, position }),
+    (
+      kind: "icons" | "monograms",
+      defId: string,
+      position: { x: number; y: number } = { x: 200, y: 280 },
+    ) => dispatch({ type: "ADD_DECORATION", kind, defId, position }),
     [],
   );
   const updateDecoration = useCallback(
@@ -273,7 +328,8 @@ function useCardDesignReducer() {
     [],
   );
   const removeDecoration = useCallback(
-    (kind: "icons" | "monograms", key: string) => dispatch({ type: "REMOVE_DECORATION", kind, key }),
+    (kind: "icons" | "monograms", key: string) =>
+      dispatch({ type: "REMOVE_DECORATION", kind, key }),
     [],
   );
 
@@ -295,14 +351,19 @@ function useCardDesignReducer() {
 
   const reset = useCallback(() => dispatch({ type: "RESET" }), []);
 
-  const setTextLayout = useCallback((layoutId: TextLayoutId) => dispatch({ type: "SET_TEXT_LAYOUT", layoutId }), []);
+  const setTextLayout = useCallback(
+    (layoutId: TextLayoutId) => dispatch({ type: "SET_TEXT_LAYOUT", layoutId }),
+    [],
+  );
 
   const setChurchText = useCallback(
-    (elementId: TextElementId, value: string) => dispatch({ type: "SET_CHURCH_TEXT", elementId, value }),
+    (elementId: TextElementId, value: string) =>
+      dispatch({ type: "SET_CHURCH_TEXT", elementId, value }),
     [],
   );
   const updateChurchPosition = useCallback(
-    (elementId: CardElementId, point: CardPoint) => dispatch({ type: "UPDATE_CHURCH_POSITION", elementId, point }),
+    (elementId: CardElementId, point: CardPoint) =>
+      dispatch({ type: "UPDATE_CHURCH_POSITION", elementId, point }),
     [],
   );
   const toggleChurchElement = useCallback(
@@ -312,7 +373,8 @@ function useCardDesignReducer() {
   const resetChurchPositions = useCallback(() => dispatch({ type: "RESET_CHURCH_POSITIONS" }), []);
 
   const setScriptText = useCallback(
-    (elementId: ScriptTextElementId, value: string) => dispatch({ type: "SET_SCRIPT_TEXT", elementId, value }),
+    (elementId: ScriptTextElementId, value: string) =>
+      dispatch({ type: "SET_SCRIPT_TEXT", elementId, value }),
     [],
   );
   const updateScriptPosition = useCallback(
@@ -329,7 +391,11 @@ function useCardDesignReducer() {
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
       const target = e.target as HTMLElement | null;
-      if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)) return;
+      if (
+        target &&
+        (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)
+      )
+        return;
       if ((e.ctrlKey || e.metaKey) && e.key === "z" && !e.shiftKey) {
         e.preventDefault();
         undo();
@@ -373,10 +439,23 @@ function useCardDesignReducer() {
       resetScriptPositions,
     }),
     [
-      setField, setTemplate, addDecoration, updateDecoration, removeDecoration,
-      undo, redo, reset,
-      setTextLayout, setChurchText, updateChurchPosition, toggleChurchElement, resetChurchPositions,
-      setScriptText, updateScriptPosition, toggleScriptElement, resetScriptPositions,
+      setField,
+      setTemplate,
+      addDecoration,
+      updateDecoration,
+      removeDecoration,
+      undo,
+      redo,
+      reset,
+      setTextLayout,
+      setChurchText,
+      updateChurchPosition,
+      toggleChurchElement,
+      resetChurchPositions,
+      setScriptText,
+      updateScriptPosition,
+      toggleScriptElement,
+      resetScriptPositions,
     ],
   );
 
@@ -394,8 +473,16 @@ const CardDesignStateContext = createContext<CardDesignStateValue | null>(null);
 const CardDesignDispatchContext = createContext<{
   setField: <K extends keyof CardDesignState>(field: K, value: CardDesignState[K]) => void;
   setTemplate: (templateId: string) => void;
-  addDecoration: (kind: "icons" | "monograms", defId: string, position?: { x: number; y: number }) => void;
-  updateDecoration: (kind: "icons" | "monograms", key: string, patch: Partial<DecorationInstance>) => void;
+  addDecoration: (
+    kind: "icons" | "monograms",
+    defId: string,
+    position?: { x: number; y: number },
+  ) => void;
+  updateDecoration: (
+    kind: "icons" | "monograms",
+    key: string,
+    patch: Partial<DecorationInstance>,
+  ) => void;
   removeDecoration: (kind: "icons" | "monograms", key: string) => void;
   undo: () => void;
   redo: () => void;

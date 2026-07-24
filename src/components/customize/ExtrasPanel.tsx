@@ -12,7 +12,15 @@ import { Slider } from "./shared/Slider";
 import { Group } from "./shared/Group";
 
 export function ExtrasPanel() {
-  const { state, setField, addDecoration, updateDecoration, removeDecoration, setChurchText, setScriptText } = useCardDesign();
+  const {
+    state,
+    setField,
+    addDecoration,
+    updateDecoration,
+    removeDecoration,
+    setChurchText,
+    setScriptText,
+  } = useCardDesign();
   const template = getTemplate(state.templateId);
   const [tradition, setTradition] = useState<VerseTradition | "all">("all");
 
@@ -49,16 +57,20 @@ export function ExtrasPanel() {
   const mapsUrlIsInvalid = Boolean(state.showQr && deferredMapsUrl.trim() && !normalizedMapsUrl);
 
   const inkColor = state.textColor || template.ink || "#000000";
-  const bgColor = template.type === "image" ? state.imageBg : (template.panel ?? template.bg ?? "#ffffff");
+  const bgColor =
+    template.type === "image" ? state.imageBg : (template.panel ?? template.bg ?? "#ffffff");
   const ratio = contrastRatio(inkColor, bgColor);
   const lowContrast = ratio !== null && ratio < MIN_LEGIBLE_CONTRAST;
 
   return (
     <Group label="Extras">
       {lowContrast && (
-        <p className="mb-4 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900" role="status">
-          Your text colour is close to the background colour — this may be hard to read once printed. Consider
-          adjusting the text colour above.
+        <p
+          className="mb-4 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900"
+          role="status"
+        >
+          Your text colour is close to the background colour — this may be hard to read once
+          printed. Consider adjusting the text colour above.
         </p>
       )}
 
@@ -87,7 +99,8 @@ export function ExtrasPanel() {
           <option value="">— No verse —</option>
           {versesByTradition(tradition).map((v) => (
             <option key={v.id} value={v.id} title={v.ref || v.text}>
-              {v.ref || v.text.slice(0, 60)}{!v.ref && v.text.length > 60 ? "…" : ""}
+              {v.ref || v.text.slice(0, 60)}
+              {!v.ref && v.text.length > 60 ? "…" : ""}
             </option>
           ))}
         </select>
@@ -136,7 +149,9 @@ export function ExtrasPanel() {
               />
             );
           })}
-          {state.icons.length === 0 && <p className="text-xs opacity-50">No icons placed yet — add one above.</p>}
+          {state.icons.length === 0 && (
+            <p className="text-xs opacity-50">No icons placed yet — add one above.</p>
+          )}
         </div>
       </div>
 
@@ -170,7 +185,9 @@ export function ExtrasPanel() {
               />
             );
           })}
-          {state.monograms.length === 0 && <p className="text-xs opacity-50">No monograms placed yet — add one above.</p>}
+          {state.monograms.length === 0 && (
+            <p className="text-xs opacity-50">No monograms placed yet — add one above.</p>
+          )}
         </div>
       </div>
 
@@ -200,7 +217,9 @@ export function ExtrasPanel() {
           </p>
         )}
         {state.showQr && normalizedMapsUrl && (
-          <p className="mt-2 text-xs opacity-70">QR code generated locally — no external service required.</p>
+          <p className="mt-2 text-xs opacity-70">
+            QR code generated locally — no external service required.
+          </p>
         )}
       </div>
     </Group>
@@ -219,7 +238,9 @@ function DecorationRow({
   instance: { key: string; scale: number; color?: string; position: { x: number; y: number } };
   inkFallback: string;
   showColor: boolean;
-  onChange: (patch: Partial<{ scale: number; color: string; position: { x: number; y: number } }>) => void;
+  onChange: (
+    patch: Partial<{ scale: number; color: string; position: { x: number; y: number } }>,
+  ) => void;
   onRemove: () => void;
 }) {
   const [expanded, setExpanded] = useState(false);
@@ -247,7 +268,14 @@ function DecorationRow({
       </button>
       {expanded && (
         <div className="space-y-4 px-4 pb-4 pt-3">
-          <Slider label="Size" min={0.15} max={1} value={instance.scale} onChange={(v) => onChange({ scale: v })} step={0.01} />
+          <Slider
+            label="Size"
+            min={0.15}
+            max={1}
+            value={instance.scale}
+            onChange={(v) => onChange({ scale: v })}
+            step={0.01}
+          />
           {showColor && (
             <label className="block text-sm">
               <span className="mb-1 block text-xs opacity-70">Colour</span>
@@ -258,18 +286,40 @@ function DecorationRow({
                   onChange={(e) => onChange({ color: e.target.value })}
                   className="h-9 w-10 rounded-md border border-input"
                 />
-                <span className="font-mono text-xs opacity-70">{instance.color || "Template ink"}</span>
+                <span className="font-mono text-xs opacity-70">
+                  {instance.color || "Template ink"}
+                </span>
                 {instance.color && (
-                  <button type="button" onClick={() => onChange({ color: "" })} className="ml-auto text-xs underline opacity-70">
+                  <button
+                    type="button"
+                    onClick={() => onChange({ color: "" })}
+                    className="ml-auto text-xs underline opacity-70"
+                  >
                     Reset
                   </button>
                 )}
               </div>
             </label>
           )}
-          <Slider label="X" min={20} max={380} value={instance.position.x} onChange={(v) => onChange({ position: { ...instance.position, x: v } })} />
-          <Slider label="Y" min={20} max={540} value={instance.position.y} onChange={(v) => onChange({ position: { ...instance.position, y: v } })} />
-          <button type="button" onClick={onRemove} className="text-xs font-medium text-red-700 underline underline-offset-4">
+          <Slider
+            label="X"
+            min={20}
+            max={380}
+            value={instance.position.x}
+            onChange={(v) => onChange({ position: { ...instance.position, x: v } })}
+          />
+          <Slider
+            label="Y"
+            min={20}
+            max={540}
+            value={instance.position.y}
+            onChange={(v) => onChange({ position: { ...instance.position, y: v } })}
+          />
+          <button
+            type="button"
+            onClick={onRemove}
+            className="text-xs font-medium text-red-700 underline underline-offset-4"
+          >
             Remove from card
           </button>
         </div>
