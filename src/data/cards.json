@@ -1,5 +1,48 @@
 [
   {
+    "id": "IM 164",
+    "category": "TRADITIONAL",
+    "price": 28,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195 MM X 195 MM",
+    "material": "260 GSM TEXTURED",
+    "description": "DIGITALPRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#917e0d",
+    "images": [
+      "src/assets/cards/display/im-164-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-164-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "MEDIUM",
+        "size_id": 1,
+        "material_id": 1,
+        "size": "195 MM X 195 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 28
+      },
+      {
+        "name": "SMALL",
+        "size_id": 2,
+        "material_id": 1,
+        "size": "170 MM X 170 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 24
+      }
+    ]
+  },
+  {
     "id": "IM 163",
     "category": "TRADITIONAL",
     "price": 28,
