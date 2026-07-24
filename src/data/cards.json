@@ -1,40 +1,5 @@
 [
   {
-    "id": "454",
-    "category": "ODAMBADY",
-    "price": 850,
-    "featured": false,
-    "minOrder": 100,
-    "size": "15 CM X 21 CM",
-    "material": "230 GSM BLUE + 260 GSM OFF WHITE",
-    "description": "jhghjgj",
-    "instagram_url": "https://www.instagram.com/impressionsweddingcards",
-    "extraCharges": [],
-    "applyWatermark": true,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "medium",
-    "watermarkColor": "#ffd700",
-    "images": [
-      "src/assets/cards/display/454-1.png"
-    ],
-    "originals": [
-      "src/assets/cards/originals/454-1.png"
-    ],
-    "imageWatermarks": [
-      null
-    ],
-    "variants": [
-      {
-        "name": "odddd",
-        "size_id": 4,
-        "material_id": 4,
-        "size": "15 CM X 21 CM",
-        "material": "230 GSM BLUE + 260 GSM OFF WHITE",
-        "price": 850
-      }
-    ]
-  },
-  {
     "id": "UDAMBADY 001",
     "category": "ODAMBADY",
     "price": 850,
