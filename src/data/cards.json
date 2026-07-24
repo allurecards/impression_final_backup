@@ -3662,43 +3662,6 @@
     ]
   },
   {
-    "id": "IM 120",
-    "category": "TRADITIONAL",
-    "price": 28,
-    "featured": false,
-    "minOrder": 100,
-    "size": "100 MM X 220 MM",
-    "material": "230 DARK GREEN + 260 GSM TEXTURED OFF WHITE",
-    "description": "DIGITALPRINTING",
-    "instagram_url": "",
-    "extraCharges": [],
-    "applyWatermark": true,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "medium",
-    "watermarkColor": "#ffd700",
-    "images": [],
-    "originals": [],
-    "imageWatermarks": [],
-    "variants": [
-      {
-        "name": "MEDIUM",
-        "size_id": 9,
-        "material_id": 14,
-        "size": "100 MM X 220 MM",
-        "material": "230 DARK GREEN + 260 GSM TEXTURED OFF WHITE",
-        "price": 28
-      },
-      {
-        "name": "SMALL",
-        "size_id": 9,
-        "material_id": 14,
-        "size": "100 MM X 220 MM",
-        "material": "230 DARK GREEN + 260 GSM TEXTURED OFF WHITE",
-        "price": 24
-      }
-    ]
-  },
-  {
     "id": "IM 119",
     "category": "FLORAL",
     "price": 28,
