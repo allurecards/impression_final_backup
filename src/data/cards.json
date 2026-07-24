@@ -1447,8 +1447,8 @@
     "price": 28,
     "featured": false,
     "minOrder": 100,
-    "size": "195 MMX 195 MM",
-    "material": "260 GSM TEXTURED",
+    "size": "195 MM X 195 MM",
+    "material": "230 GSM BLUE + 260 GSM OFF WHITE",
     "description": "DIGITAL PRINTING",
     "instagram_url": "",
     "extraCharges": [],
@@ -1468,18 +1468,18 @@
     "variants": [
       {
         "name": "MEDIUM",
-        "size_id": 4,
+        "size_id": 1,
         "material_id": 4,
-        "size": "195 MMX 195 MM",
-        "material": "260 GSM TEXTURED",
+        "size": "195 MM X 195 MM",
+        "material": "230 GSM BLUE + 260 GSM OFF WHITE",
         "price": 28
       },
       {
         "name": "SMALL",
-        "size_id": 5,
+        "size_id": 2,
         "material_id": 4,
         "size": "170 MM X 170 MM",
-        "material": "260 GSM TEXTURED",
+        "material": "230 GSM BLUE + 260 GSM OFF WHITE",
         "price": 24
       }
     ]
