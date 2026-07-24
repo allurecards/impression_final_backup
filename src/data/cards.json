@@ -4373,5 +4373,40 @@
         "price": 24
       }
     ]
+  },
+  {
+    "id": "system_options",
+    "sizes": [
+      {
+        "id": 1,
+        "label": "5\" x 7\""
+      },
+      {
+        "id": 2,
+        "label": "6\" x 8\""
+      },
+      {
+        "id": 3,
+        "label": "A6"
+      },
+      {
+        "id": 4,
+        "label": "190MM X 190MM"
+      }
+    ],
+    "materials": [
+      {
+        "id": 1,
+        "label": "Premium 350 gsm"
+      },
+      {
+        "id": 2,
+        "label": "Textured Matte"
+      },
+      {
+        "id": 3,
+        "label": "Recycled Kraft"
+      }
+    ]
   }
 ]
