@@ -4548,5 +4548,48 @@
         "price": 24
       }
     ]
+  },
+  {
+    "id": "system_options",
+    "sizes": [
+      {
+        "id": 1,
+        "label": "195 MM X 195 MM"
+      },
+      {
+        "id": 2,
+        "label": "170 MM X 170 MM"
+      },
+      {
+        "id": 3,
+        "label": "200 MM X 200 MM"
+      },
+      {
+        "id": 4,
+        "label": "15 CM X 21 CM"
+      },
+      {
+        "id": 5,
+        "label": "12 CM X 24 CM"
+      }
+    ],
+    "materials": [
+      {
+        "id": 1,
+        "label": "260 GSM TEXTURED"
+      },
+      {
+        "id": 2,
+        "label": "270 GSM VIRGIN CRAFT"
+      },
+      {
+        "id": 3,
+        "label": "260 GSM TEXTURED CARD + 120 GSM TRANSLUCENT PAPER"
+      },
+      {
+        "id": 4,
+        "label": "230 GSM BLUE + 260 GSM OFF WHITE"
+      }
+    ]
   }
 ]
