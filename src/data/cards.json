@@ -1,5 +1,45 @@
 [
   {
+    "id": "Test 2",
+    "category": "New Test",
+    "price": 69,
+    "featured": false,
+    "minOrder": 100,
+    "size": "1234",
+    "material": "Poly test",
+    "description": "",
+    "instagram_url": "https://www.allurecards.in",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/test-2-1.jpg"
+    ],
+    "originals": [
+      "src/assets/cards/originals/test-2-1.jpg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "#00ff11"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Test Size",
+        "size_id": 5,
+        "material_id": 5,
+        "size": "1234",
+        "material": "Poly test",
+        "price": 69
+      }
+    ]
+  },
+  {
     "id": "imp test two",
     "category": "testingg",
     "price": 100,
@@ -4679,53 +4719,6 @@
         "size": "170 MM X 170 MM",
         "material": "260 GSM TEXTURED",
         "price": 24
-      }
-    ]
-  },
-  {
-    "id": "system_options",
-    "sizes": [
-      {
-        "id": 1,
-        "label": "195 MM X 195 MM"
-      },
-      {
-        "id": 2,
-        "label": "170 MM X 170 MM"
-      },
-      {
-        "id": 3,
-        "label": "200 MM X 200 MM"
-      },
-      {
-        "id": 4,
-        "label": "15 CM X 21 CM"
-      },
-      {
-        "id": 5,
-        "label": "500"
-      }
-    ],
-    "materials": [
-      {
-        "id": 1,
-        "label": "260 GSM TEXTURED"
-      },
-      {
-        "id": 2,
-        "label": "270 GSM VIRGIN CRAFT"
-      },
-      {
-        "id": 3,
-        "label": "260 GSM TEXTURED CARD + 120 GSM TRANSLUCENT PAPER"
-      },
-      {
-        "id": 4,
-        "label": "230 GSM BLUE + 260 GSM OFF WHITE"
-      },
-      {
-        "id": 5,
-        "label": "8000"
       }
     ]
   }
