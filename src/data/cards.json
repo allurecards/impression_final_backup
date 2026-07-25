@@ -5,7 +5,7 @@
     "price": 69,
     "featured": false,
     "minOrder": 100,
-    "size": "1234",
+    "size": "54321",
     "material": "Poly test",
     "description": "",
     "instagram_url": "https://www.allurecards.in",
@@ -32,8 +32,8 @@
       {
         "name": "Test Size",
         "size_id": 5,
-        "material_id": 5,
-        "size": "1234",
+        "material_id": null,
+        "size": "54321",
         "material": "Poly test",
         "price": 69
       }
