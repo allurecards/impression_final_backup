@@ -1,5 +1,80 @@
 [
   {
+    "id": "Test 2",
+    "category": "New Test",
+    "price": 69,
+    "featured": false,
+    "minOrder": 100,
+    "size": "1234",
+    "material": "Poly test",
+    "description": "",
+    "instagram_url": "https://www.allurecards.in",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/test-2-1.jpg"
+    ],
+    "originals": [
+      "src/assets/cards/originals/test-2-1.jpg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "#00ff11"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Test Size",
+        "size_id": 5,
+        "material_id": 5,
+        "size": "1234",
+        "material": "Poly test",
+        "price": 69
+      }
+    ]
+  },
+  {
+    "id": "imp test two",
+    "category": "testingg",
+    "price": 100,
+    "featured": false,
+    "minOrder": 100,
+    "size": "500",
+    "material": "8000",
+    "description": "johnnn",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/imp-test-two-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/imp-test-two-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "hello",
+        "size_id": 5,
+        "material_id": 5,
+        "size": "500",
+        "material": "8000",
+        "price": 100
+      }
+    ]
+  },
+  {
     "id": "IM 165",
     "category": "TRADITIONAL",
     "price": 28,
@@ -14,9 +89,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#c9ac08",
-    "images": ["src/assets/cards/display/im-165-1.png"],
-    "originals": ["src/assets/cards/originals/im-165-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-165-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-165-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -51,9 +132,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#917e0d",
-    "images": ["src/assets/cards/display/im-164-1.png"],
-    "originals": ["src/assets/cards/originals/im-164-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-164-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-164-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -88,9 +175,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-163-1.jpg"],
-    "originals": ["src/assets/cards/originals/im-163-1.jpg"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-163-1.jpg"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-163-1.jpg"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -125,9 +218,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#a38c0a",
-    "images": ["src/assets/cards/display/im-162-1.png"],
-    "originals": ["src/assets/cards/originals/im-162-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-162-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-162-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -162,9 +261,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#717104",
-    "images": ["src/assets/cards/display/udambady-001-1.jpeg"],
-    "originals": ["src/assets/cards/originals/udambady-001-1.jpeg"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/udambady-001-1.jpeg"
+    ],
+    "originals": [
+      "src/assets/cards/originals/udambady-001-1.jpeg"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -191,9 +296,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/vellum-115-1.PNG"],
-    "originals": ["src/assets/cards/originals/vellum-115-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/vellum-115-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vellum-115-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -220,9 +331,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#5f5102",
-    "images": ["src/assets/cards/display/vellum-114-1.png"],
-    "originals": ["src/assets/cards/originals/vellum-114-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/vellum-114-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vellum-114-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -249,9 +366,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/vellum-113-1.png"],
-    "originals": ["src/assets/cards/originals/vellum-113-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/vellum-113-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vellum-113-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -278,9 +401,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#342f13",
-    "images": ["src/assets/cards/display/vellum-112-1.png"],
-    "originals": ["src/assets/cards/originals/vellum-112-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/vellum-112-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vellum-112-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -307,9 +436,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/vellum-111-1.jpg"],
-    "originals": ["src/assets/cards/originals/vellum-111-1.jpg"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/vellum-111-1.jpg"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vellum-111-1.jpg"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -336,9 +471,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/vellum-110-1.jpg"],
-    "originals": ["src/assets/cards/originals/vellum-110-1.jpg"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/vellum-110-1.jpg"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vellum-110-1.jpg"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -365,9 +506,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#8a7605",
-    "images": ["src/assets/cards/display/vellum-109-1.png"],
-    "originals": ["src/assets/cards/originals/vellum-109-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/vellum-109-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vellum-109-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -394,9 +541,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/vellum-108-1.png"],
-    "originals": ["src/assets/cards/originals/vellum-108-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/vellum-108-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vellum-108-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -423,9 +576,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/vellum-107-1.png"],
-    "originals": ["src/assets/cards/originals/vellum-107-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/vellum-107-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vellum-107-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -452,9 +611,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#bba007",
-    "images": ["src/assets/cards/display/vellum-106-1.png"],
-    "originals": ["src/assets/cards/originals/vellum-106-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/vellum-106-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vellum-106-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -481,9 +646,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#8d7b11",
-    "images": ["src/assets/cards/display/vellum-105-1.png"],
-    "originals": ["src/assets/cards/originals/vellum-105-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/vellum-105-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vellum-105-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -510,9 +681,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#70620f",
-    "images": ["src/assets/cards/display/tag-022-1.png"],
-    "originals": ["src/assets/cards/originals/tag-022-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-022-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-022-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": []
   },
   {
@@ -530,9 +707,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#b6b4a4",
-    "images": ["src/assets/cards/display/tag-021-2.png"],
-    "originals": ["src/assets/cards/originals/tag-021-2.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-021-2.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-021-2.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -559,9 +742,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/tag-020-1.png"],
-    "originals": ["src/assets/cards/originals/tag-020-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-020-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-020-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -588,9 +777,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/tag-019-1.png"],
-    "originals": ["src/assets/cards/originals/tag-019-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-019-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-019-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -617,9 +812,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/tag-018-1.png"],
-    "originals": ["src/assets/cards/originals/tag-018-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-018-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-018-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -646,9 +847,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#816f09",
-    "images": ["src/assets/cards/display/tag-017-1.png"],
-    "originals": ["src/assets/cards/originals/tag-017-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-017-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-017-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -675,9 +882,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/tag-016-1.png"],
-    "originals": ["src/assets/cards/originals/tag-016-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-016-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-016-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -704,9 +917,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#8f7b0a",
-    "images": ["src/assets/cards/display/tag-015-1.png"],
-    "originals": ["src/assets/cards/originals/tag-015-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-015-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-015-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -733,9 +952,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#b8a019",
-    "images": ["src/assets/cards/display/tag-014-1.png"],
-    "originals": ["src/assets/cards/originals/tag-014-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-014-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-014-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -762,9 +987,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#524605",
-    "images": ["src/assets/cards/display/tag-013-1.png"],
-    "originals": ["src/assets/cards/originals/tag-013-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-013-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-013-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "SMALL",
@@ -791,9 +1022,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/tag-012-1.png"],
-    "originals": ["src/assets/cards/originals/tag-012-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-012-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-012-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "SMALL",
@@ -820,9 +1057,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/tag-011-1.png"],
-    "originals": ["src/assets/cards/originals/tag-011-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-011-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-011-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "SMALL",
@@ -849,9 +1092,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/tag-010-1.png"],
-    "originals": ["src/assets/cards/originals/tag-010-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-010-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-010-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "SMALL",
@@ -878,9 +1127,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/tag-009-1.png"],
-    "originals": ["src/assets/cards/originals/tag-009-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-009-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-009-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "SMALL",
@@ -907,9 +1162,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/tag-008-1.png"],
-    "originals": ["src/assets/cards/originals/tag-008-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-008-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-008-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "SMALL",
@@ -936,9 +1197,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/tag-007-2.png"],
-    "originals": ["src/assets/cards/originals/tag-007-2.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-007-2.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-007-2.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "SMALL",
@@ -965,9 +1232,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#908347",
-    "images": ["src/assets/cards/display/tag-006-1.png"],
-    "originals": ["src/assets/cards/originals/tag-006-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-006-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-006-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -994,9 +1267,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/tag-005-2.png"],
-    "originals": ["src/assets/cards/originals/tag-005-2.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-005-2.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-005-2.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "LARGE",
@@ -1023,9 +1302,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/tag-004-1.png"],
-    "originals": ["src/assets/cards/originals/tag-004-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-004-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-004-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "LARGE",
@@ -1052,9 +1337,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/tag-003-1.png"],
-    "originals": ["src/assets/cards/originals/tag-003-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-003-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-003-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "LARGE",
@@ -1081,9 +1372,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/tag-002-1.png"],
-    "originals": ["src/assets/cards/originals/tag-002-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-002-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-002-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "LARGE",
@@ -1110,9 +1407,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/tag-001-1.png"],
-    "originals": ["src/assets/cards/originals/tag-001-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/tag-001-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/tag-001-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "LARGE",
@@ -1139,9 +1442,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-161-1.png"],
-    "originals": ["src/assets/cards/originals/im-161-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-161-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-161-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1176,12 +1485,18 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-160-1.png", "src/assets/cards/display/im-160-2.png"],
+    "images": [
+      "src/assets/cards/display/im-160-1.png",
+      "src/assets/cards/display/im-160-2.png"
+    ],
     "originals": [
       "src/assets/cards/originals/im-160-1.png",
       "src/assets/cards/originals/im-160-2.png"
     ],
-    "imageWatermarks": [null, null],
+    "imageWatermarks": [
+      null,
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1216,9 +1531,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-159-1.png"],
-    "originals": ["src/assets/cards/originals/im-159-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-159-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-159-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1253,9 +1574,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#9995db",
-    "images": ["src/assets/cards/display/im-1578-1.png"],
-    "originals": ["src/assets/cards/originals/im-1578-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-1578-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-1578-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1290,9 +1617,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-157-1.png"],
-    "originals": ["src/assets/cards/originals/im-157-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-157-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-157-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1327,9 +1660,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#6d5e08",
-    "images": ["src/assets/cards/display/im-156-1.png"],
-    "originals": ["src/assets/cards/originals/im-156-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-156-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-156-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1364,9 +1703,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-155-1.png"],
-    "originals": ["src/assets/cards/originals/im-155-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-155-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-155-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1401,9 +1746,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ee6889",
-    "images": ["src/assets/cards/display/im-154-1.png"],
-    "originals": ["src/assets/cards/originals/im-154-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-154-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-154-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1438,9 +1789,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-153-1.png"],
-    "originals": ["src/assets/cards/originals/im-153-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-153-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-153-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1475,9 +1832,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-152-1.png"],
-    "originals": ["src/assets/cards/originals/im-152-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-152-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-152-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1512,9 +1875,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-151-1.png"],
-    "originals": ["src/assets/cards/originals/im-151-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-151-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-151-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1549,9 +1918,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-150-1.png"],
-    "originals": ["src/assets/cards/originals/im-150-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-150-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-150-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1586,9 +1961,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-149-1.png"],
-    "originals": ["src/assets/cards/originals/im-149-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-149-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-149-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1623,9 +2004,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#e69965",
-    "images": ["src/assets/cards/display/im-148-1.png"],
-    "originals": ["src/assets/cards/originals/im-148-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-148-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-148-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1660,9 +2047,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-147-1.png"],
-    "originals": ["src/assets/cards/originals/im-147-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-147-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-147-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1697,9 +2090,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#c274e7",
-    "images": ["src/assets/cards/display/im-146-1.png"],
-    "originals": ["src/assets/cards/originals/im-146-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-146-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-146-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1734,9 +2133,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-145-1.png"],
-    "originals": ["src/assets/cards/originals/im-145-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-145-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-145-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1771,9 +2176,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-144-1.png"],
-    "originals": ["src/assets/cards/originals/im-144-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-144-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-144-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1808,9 +2219,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-143-1.png"],
-    "originals": ["src/assets/cards/originals/im-143-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-143-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-143-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1845,9 +2262,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-140-1.jpg"],
-    "originals": ["src/assets/cards/originals/im-140-1.jpg"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-140-1.jpg"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-140-1.jpg"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1882,9 +2305,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-142-1.png"],
-    "originals": ["src/assets/cards/originals/im-142-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-142-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-142-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1919,12 +2348,18 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#7473a5",
-    "images": ["src/assets/cards/display/im-141-1.png", "src/assets/cards/display/im-141-2.png"],
+    "images": [
+      "src/assets/cards/display/im-141-1.png",
+      "src/assets/cards/display/im-141-2.png"
+    ],
     "originals": [
       "src/assets/cards/originals/im-141-1.png",
       "src/assets/cards/originals/im-141-2.png"
     ],
-    "imageWatermarks": [null, null],
+    "imageWatermarks": [
+      null,
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1959,9 +2394,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-139-1.png"],
-    "originals": ["src/assets/cards/originals/im-139-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-139-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-139-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -1996,9 +2437,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-138-1.png"],
-    "originals": ["src/assets/cards/originals/im-138-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-138-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-138-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2041,9 +2488,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-137-1.png"],
-    "originals": ["src/assets/cards/originals/im-137-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-137-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-137-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2078,9 +2531,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-136-1.png"],
-    "originals": ["src/assets/cards/originals/im-136-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-136-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-136-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2115,9 +2574,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-135-1.png"],
-    "originals": ["src/assets/cards/originals/im-135-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-135-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-135-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2152,9 +2617,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#1c1702",
-    "images": ["src/assets/cards/display/im-134-1.png"],
-    "originals": ["src/assets/cards/originals/im-134-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-134-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-134-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2189,9 +2660,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-133-1.png"],
-    "originals": ["src/assets/cards/originals/im-133-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-133-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-133-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2226,9 +2703,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#509b5f",
-    "images": ["src/assets/cards/display/im-132-1.png"],
-    "originals": ["src/assets/cards/originals/im-132-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-132-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-132-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2263,9 +2746,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-131-1.png"],
-    "originals": ["src/assets/cards/originals/im-131-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-131-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-131-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2300,9 +2789,15 @@
     "watermarkPos": "bottom-right",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-130-1.png"],
-    "originals": ["src/assets/cards/originals/im-130-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-130-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-130-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2337,9 +2832,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-129-1.png"],
-    "originals": ["src/assets/cards/originals/im-129-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-129-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-129-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2374,9 +2875,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-128-1.png"],
-    "originals": ["src/assets/cards/originals/im-128-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-128-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-128-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2411,9 +2918,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-127-1.png"],
-    "originals": ["src/assets/cards/originals/im-127-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-127-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-127-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2453,9 +2966,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#b5b3a6",
-    "images": ["src/assets/cards/display/im-126-1.PNG"],
-    "originals": ["src/assets/cards/originals/im-126-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-126-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-126-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2490,9 +3009,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#8b897e",
-    "images": ["src/assets/cards/display/im-125-1.PNG"],
-    "originals": ["src/assets/cards/originals/im-125-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-125-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-125-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2527,9 +3052,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#979487",
-    "images": ["src/assets/cards/display/im-124-1.PNG"],
-    "originals": ["src/assets/cards/originals/im-124-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-124-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-124-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2564,9 +3095,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-123-1.PNG"],
-    "originals": ["src/assets/cards/originals/im-123-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-123-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-123-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2606,9 +3143,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/ml-2002-1.PNG"],
-    "originals": ["src/assets/cards/originals/ml-2002-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/ml-2002-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/ml-2002-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -2640,9 +3183,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/ml-2001-1.PNG"],
-    "originals": ["src/assets/cards/originals/ml-2001-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/ml-2001-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/ml-2001-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -2669,9 +3218,15 @@
     "watermarkPos": "top-right",
     "watermarkSize": "medium",
     "watermarkColor": "#877612",
-    "images": ["src/assets/cards/display/craft-1014-1.PNG"],
-    "originals": ["src/assets/cards/originals/craft-1014-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/craft-1014-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/craft-1014-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -2698,9 +3253,15 @@
     "watermarkPos": "top-left",
     "watermarkSize": "medium",
     "watermarkColor": "#fbf0b1",
-    "images": ["src/assets/cards/display/craft-1013-1.PNG"],
-    "originals": ["src/assets/cards/originals/craft-1013-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/craft-1013-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/craft-1013-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -2727,9 +3288,15 @@
     "watermarkPos": "top-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/craft-1012-1.PNG"],
-    "originals": ["src/assets/cards/originals/craft-1012-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/craft-1012-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/craft-1012-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -2756,9 +3323,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#776a22",
-    "images": ["src/assets/cards/display/craft-1011-1.PNG"],
-    "originals": ["src/assets/cards/originals/craft-1011-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/craft-1011-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/craft-1011-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -2785,9 +3358,15 @@
     "watermarkPos": "top-left",
     "watermarkSize": "medium",
     "watermarkColor": "#f4f4f0",
-    "images": ["src/assets/cards/display/craft-1010-1.PNG"],
-    "originals": ["src/assets/cards/originals/craft-1010-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/craft-1010-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/craft-1010-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -2814,9 +3393,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#8a7815",
-    "images": ["src/assets/cards/display/craft-1009-1.PNG"],
-    "originals": ["src/assets/cards/originals/craft-1009-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/craft-1009-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/craft-1009-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2843,9 +3428,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#806e0a",
-    "images": ["src/assets/cards/display/craft-1008-1.PNG"],
-    "originals": ["src/assets/cards/originals/craft-1008-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/craft-1008-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/craft-1008-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2872,9 +3463,15 @@
     "watermarkPos": "top-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/craft-1007-1.PNG"],
-    "originals": ["src/assets/cards/originals/craft-1007-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/craft-1007-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/craft-1007-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2901,9 +3498,15 @@
     "watermarkPos": "bottom-right",
     "watermarkSize": "medium",
     "watermarkColor": "#9c8b2b",
-    "images": ["src/assets/cards/display/craft-1006-1.PNG"],
-    "originals": ["src/assets/cards/originals/craft-1006-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/craft-1006-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/craft-1006-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2935,9 +3538,15 @@
     "watermarkPos": "bottom-center",
     "watermarkSize": "medium",
     "watermarkColor": "#bea61e",
-    "images": ["src/assets/cards/display/craft-1005-1.PNG"],
-    "originals": ["src/assets/cards/originals/craft-1005-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/craft-1005-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/craft-1005-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2964,9 +3573,15 @@
     "watermarkPos": "top-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/craft-1004-1.PNG"],
-    "originals": ["src/assets/cards/originals/craft-1004-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/craft-1004-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/craft-1004-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -2993,9 +3608,15 @@
     "watermarkPos": "center",
     "watermarkSize": "medium",
     "watermarkColor": "#eeece7",
-    "images": ["src/assets/cards/display/craft-1003-1.PNG"],
-    "originals": ["src/assets/cards/originals/craft-1003-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/craft-1003-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/craft-1003-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -3022,9 +3643,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#685903",
-    "images": ["src/assets/cards/display/craft-1002-1.PNG"],
-    "originals": ["src/assets/cards/originals/craft-1002-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/craft-1002-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/craft-1002-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -3051,9 +3678,15 @@
     "watermarkPos": "top-left",
     "watermarkSize": "medium",
     "watermarkColor": "#918022",
-    "images": ["src/assets/cards/display/craft-1001-1.PNG"],
-    "originals": ["src/assets/cards/originals/craft-1001-1.PNG"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/craft-1001-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/craft-1001-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -3080,9 +3713,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-122-1.png"],
-    "originals": ["src/assets/cards/originals/im-122-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-122-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-122-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -3109,9 +3748,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-121-1.png"],
-    "originals": ["src/assets/cards/originals/im-121-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-121-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-121-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -3138,9 +3783,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/vellum-104-1.png"],
-    "originals": ["src/assets/cards/originals/vellum-104-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/vellum-104-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vellum-104-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -3167,9 +3818,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/vellum-1013-1.png"],
-    "originals": ["src/assets/cards/originals/vellum-1013-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/vellum-1013-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vellum-1013-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -3196,9 +3853,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/vellum-102-1.png"],
-    "originals": ["src/assets/cards/originals/vellum-102-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/vellum-102-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vellum-102-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -3225,9 +3888,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/vellum-101-1.png"],
-    "originals": ["src/assets/cards/originals/vellum-101-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/vellum-101-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vellum-101-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "",
@@ -3254,9 +3923,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-119-1.png"],
-    "originals": ["src/assets/cards/originals/im-119-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-119-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-119-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -3291,7 +3966,10 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-118-1.png", "src/assets/cards/display/im-118-2.png"],
+    "images": [
+      "src/assets/cards/display/im-118-1.png",
+      "src/assets/cards/display/im-118-2.png"
+    ],
     "originals": [
       "src/assets/cards/originals/im-118-1.png",
       "src/assets/cards/originals/im-118-2.png"
@@ -3339,9 +4017,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-117-1.png"],
-    "originals": ["src/assets/cards/originals/im-117-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-117-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-117-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -3376,8 +4060,12 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-116-1.png"],
-    "originals": ["src/assets/cards/originals/im-116-1.png"],
+    "images": [
+      "src/assets/cards/display/im-116-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-116-1.png"
+    ],
     "imageWatermarks": [
       {
         "apply": true,
@@ -3420,9 +4108,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-115-1.png"],
-    "originals": ["src/assets/cards/originals/im-115-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-115-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-115-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -3457,8 +4151,12 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#dbd4ad",
-    "images": ["src/assets/cards/display/im-114-1.png"],
-    "originals": ["src/assets/cards/originals/im-114-1.png"],
+    "images": [
+      "src/assets/cards/display/im-114-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-114-1.png"
+    ],
     "imageWatermarks": [
       {
         "apply": true,
@@ -3501,9 +4199,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-113-1.png"],
-    "originals": ["src/assets/cards/originals/im-113-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-113-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-113-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -3530,8 +4234,12 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#f0eac7",
-    "images": ["src/assets/cards/display/im-112-1.png"],
-    "originals": ["src/assets/cards/originals/im-112-1.png"],
+    "images": [
+      "src/assets/cards/display/im-112-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-112-1.png"
+    ],
     "imageWatermarks": [
       {
         "apply": true,
@@ -3574,8 +4282,12 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-111-1.png"],
-    "originals": ["src/assets/cards/originals/im-111-1.png"],
+    "images": [
+      "src/assets/cards/display/im-111-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-111-1.png"
+    ],
     "imageWatermarks": [
       {
         "apply": true,
@@ -3618,8 +4330,12 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-110-1.png"],
-    "originals": ["src/assets/cards/originals/im-110-1.png"],
+    "images": [
+      "src/assets/cards/display/im-110-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-110-1.png"
+    ],
     "imageWatermarks": [
       {
         "apply": true,
@@ -3662,9 +4378,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-109-1.png"],
-    "originals": ["src/assets/cards/originals/im-109-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-109-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-109-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -3699,9 +4421,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-108-1.png"],
-    "originals": ["src/assets/cards/originals/im-108-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-108-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-108-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -3736,9 +4464,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-107-2.png"],
-    "originals": ["src/assets/cards/originals/im-107-2.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-107-2.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-107-2.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -3773,8 +4507,12 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-106-1.png"],
-    "originals": ["src/assets/cards/originals/im-106-1.png"],
+    "images": [
+      "src/assets/cards/display/im-106-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-106-1.png"
+    ],
     "imageWatermarks": [
       {
         "apply": true,
@@ -3817,8 +4555,12 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-105-1.png"],
-    "originals": ["src/assets/cards/originals/im-105-1.png"],
+    "images": [
+      "src/assets/cards/display/im-105-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-105-1.png"
+    ],
     "imageWatermarks": [
       {
         "apply": true,
@@ -3861,9 +4603,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-103-1.png"],
-    "originals": ["src/assets/cards/originals/im-103-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-103-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-103-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
@@ -3898,8 +4646,12 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-102-1.png"],
-    "originals": ["src/assets/cards/originals/im-102-1.png"],
+    "images": [
+      "src/assets/cards/display/im-102-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-102-1.png"
+    ],
     "imageWatermarks": [
       {
         "apply": true,
@@ -3942,9 +4694,15 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
-    "images": ["src/assets/cards/display/im-101-1.png"],
-    "originals": ["src/assets/cards/originals/im-101-1.png"],
-    "imageWatermarks": [null],
+    "images": [
+      "src/assets/cards/display/im-101-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-101-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
     "variants": [
       {
         "name": "MEDIUM",
