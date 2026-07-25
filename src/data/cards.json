@@ -1,45 +1,5 @@
 [
   {
-    "id": "Test 2",
-    "category": "New Test",
-    "price": 69,
-    "featured": false,
-    "minOrder": 100,
-    "size": "54321",
-    "material": "Poly test",
-    "description": "",
-    "instagram_url": "https://www.allurecards.in",
-    "extraCharges": [],
-    "applyWatermark": true,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "medium",
-    "watermarkColor": "#ffd700",
-    "images": [
-      "src/assets/cards/display/test-2-1.jpg"
-    ],
-    "originals": [
-      "src/assets/cards/originals/test-2-1.jpg"
-    ],
-    "imageWatermarks": [
-      {
-        "apply": true,
-        "pos": "bottom-left",
-        "size": "medium",
-        "color": "#00ff11"
-      }
-    ],
-    "variants": [
-      {
-        "name": "Test Size",
-        "size_id": 5,
-        "material_id": null,
-        "size": "54321",
-        "material": "Poly test",
-        "price": 69
-      }
-    ]
-  },
-  {
     "id": "imp test two",
     "category": "testingg",
     "price": 100,
