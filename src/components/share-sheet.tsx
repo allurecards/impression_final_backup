@@ -112,7 +112,9 @@ export function ShareSheet({ open, onOpenChange, productUrl, productTitle }: Sha
     if (typeof navigator !== "undefined" && "share" in navigator) {
       try {
         await navigator.share({ title: productTitle, url: productUrl });
-      } catch {}
+      } catch {
+        // User cancelled native share.
+      }
     }
     onOpenChange(false);
   };
