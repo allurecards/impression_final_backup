@@ -1,6 +1,6 @@
-import { Link } from "@tanstack/react-router";
+﻿import { Link } from "@tanstack/react-router";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 import invitations from "@/assets/invitations.jpg";
 import logo from "@/assets/IMP_LOGO_final.png";
 import weddingCard from "@/assets/wedding-card.jpg";
@@ -34,14 +34,14 @@ type Section = {
   primary: string;
   /** internal route for the primary button */
   to?: string;
-  /** external link for the primary button — takes priority over `to` */
+  /** external link for the primary button â€” takes priority over `to` */
   href?: string;
   image: string;
   imageAlt: string;
   video?: boolean;
 };
 
-// Story after the bento grid: Allure (aspirational, external) → Customise (product) → Impressions (about us + Instagram)
+// Story after the bento grid: Allure (aspirational, external) â†’ Customise (product) â†’ Impressions (about us + Instagram)
 const sections: Section[] = [
   {
     id: "allure",
@@ -57,7 +57,7 @@ const sections: Section[] = [
         <em className="not-italic">more luxurious world</em>
       </>
     ),
-    copy: "Allure is our premium sub-brand, built for couples who want their invitation suite to feel like a keepsake from the very first touch — richer papers, elevated foiling, and a more considered presentation throughout. It lives on its own address, designed entirely around that feeling.",
+    copy: "Allure is our premium sub-brand, built for couples who want their invitation suite to feel like a keepsake from the very first touch â€” richer papers, elevated foiling, and a more considered presentation throughout. It lives on its own address, designed entirely around that feeling.",
     primary: "Visit Allure Cards",
     href: "https://www.allurecards.in",
     image: redCard,
@@ -77,9 +77,9 @@ const sections: Section[] = [
         <em className="not-italic">your invitation</em>
       </>
     ),
-    copy: "Pick a design you love, add your names, dates, and wording, and watch it update in real time. Once it looks right, send the final version straight to our team for printing — no back-and-forth, no guesswork.",
+    copy: "Pick a design you love, add your names, dates, and wording, and watch it update in real time. Once it looks right, send the final version straight to our team for printing â€” no back-and-forth, no guesswork.",
     primary: "Start Customising",
-    to: "/customize",
+    to: "/customise",
     image: greenCard,
     imageAlt: "Live preview of a customised wedding invitation on screen",
   },
@@ -97,7 +97,7 @@ const sections: Section[] = [
         <em className="not-italic">one standard</em>
       </>
     ),
-    copy: "Every Impressions design starts as one of four collections — Heritage, Minimal, Floral, or Modern — art-directed in-house, then personalised with your details before we print on premium cardstock and finish with foil or texture. Follow along on Instagram to see new collections and real weddings as they happen.",
+    copy: "Every Impressions design starts as one of four collections â€” Heritage, Minimal, Floral, or Modern â€” art-directed in-house, then personalised with your details before we print on premium cardstock and finish with foil or texture. Follow along on Instagram to see new collections and real weddings as they happen.",
     primary: "Follow @impressions_wedding_cards",
     href: "https://www.instagram.com/impressions_wedding_cards/",
     image: instaVideo1,
@@ -109,7 +109,7 @@ const sections: Section[] = [
 /**
  * Shared content block: the bento grid + the scrolling story sections + footer.
  * Used by both the "/" (Landing) route and the "/explore" route.
- * Neither route file imports the other — they both import this instead.
+ * Neither route file imports the other â€” they both import this instead.
  */
 export function ExploreSections() {
   const [activeBg, setActiveBg] = useState(sections[0].bg);
@@ -209,7 +209,7 @@ export function ExploreSections() {
                     </a>
                   ) : (
                     <Link
-                      to={s.to ?? "/shop"}
+                      to={s.to ?? "/collections"}
                       className="rounded-full px-7 py-3.5 text-sm font-semibold transition-transform hover:scale-[1.02] active:scale-[0.98]"
                       style={{ backgroundColor: s.card, color: s.bg }}
                     >
@@ -234,21 +234,21 @@ function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-12 md:grid-cols-2 md:gap-20">
           <div>
-            <img src={logo} alt="Impressions" className="h-20 w-auto" />
+            <img src={logo} alt="Impressions Wedding Cards logo" className="h-20 w-auto" />
             <div className="my-4 h-px w-10 bg-[#d9a87c]" />
             <address className="space-y-1 text-sm not-italic leading-relaxed text-[#f5f0e6]/60">
-              <p>Paravattani, Opp. Childrens Park,</p>
-              <p>East Fort P.O.,</p>
-              <p>Thrissur, Kerala — 680005</p>
+              <p>Impressions Castle, Paravattani</p>
+              <p>Opp. Childrens Park, East Fort P.O.</p>
+              <p>Thrissur, Kerala - 680005, India</p>
             </address>
             <p className="mt-4 text-sm text-[#f5f0e6]/60">
               <a
                 href="tel:+919526577999"
                 className="text-[#d9a87c] transition-colors hover:text-[#f5f0e6]"
               >
-                +91 95265 77 999
+                095265 77999
               </a>
-              <span className="mx-2 text-[#f5f0e6]/30">·</span>
+              <span className="mx-2 text-[#f5f0e6]/30">Â·</span>
               <a
                 href="tel:+919020077999"
                 className="text-[#d9a87c] transition-colors hover:text-[#f5f0e6]"
@@ -256,6 +256,11 @@ function Footer() {
                 +91 90200 77 999
               </a>
               <br />
+            </p>
+            <p className="mt-3 text-sm leading-6 text-[#f5f0e6]/60">
+              Monday to Saturday: 10 am - 6 pm
+              <br />
+              Sunday: Closed
             </p>
             <div className="mt-6">
               <a
@@ -280,7 +285,7 @@ function Footer() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Impressions Wedding Cards — Atelier Location"
+                title="Impressions Wedding Cards â€” Atelier Location"
               />
             </div>
             <a
@@ -296,8 +301,8 @@ function Footer() {
 
         <div className="mt-16 border-t border-[#f5f0e6]/10 pt-8 text-center">
           <p className="text-xs text-[#f5f0e6]/40">
-            © {new Date().getFullYear()} Allure by Impressions Wedding Cards. All rights reserved.
-            Crafted with devotion in Thrissur.
+            © {new Date().getFullYear()} Impressions Wedding Cards. All rights reserved. Crafted
+            with devotion in Thrissur.
           </p>
         </div>
       </div>
@@ -319,42 +324,42 @@ function BentoSection() {
       desc: "Rich, traditional luxury on heirloom-inspired paper.",
       img: heritageImg,
       icon: DoodleHeritage,
-      to: "/shop",
+      to: "/collections",
     },
     {
       title: "Minimal Collection",
       desc: "Understated elegance for modern couples.",
       img: minimalImg,
       icon: DoodleMinimal,
-      to: "/shop",
+      to: "/collections",
     },
     {
       title: "Floral Collection",
       desc: "Watercolour-inspired botanical prints.",
       img: floralImg,
       icon: DoodleFloral,
-      to: "/shop",
+      to: "/collections",
     },
     {
       title: "Modern Collection",
       desc: "Contemporary & bold designs.",
       img: invitations,
       icon: DoodleModern,
-      to: "/shop",
+      to: "/collections",
     },
     {
       title: "Allure Cards",
-      desc: "Our premium sub-brand — gold foil & elevated finishes.",
+      desc: "Our premium sub-brand â€” gold foil & elevated finishes.",
       img: allureImg,
       icon: DoodleAllure,
       href: "https://www.allurecards.in",
     },
     {
       title: "Customise Your Card",
-      desc: "Live preview — design your invitation in minutes.",
+      desc: "Live preview â€” design your invitation in minutes.",
       img: customiseImg,
       icon: DoodleCustomize,
-      to: "/customize",
+      to: "/customise",
     },
   ];
 
@@ -366,7 +371,7 @@ function BentoSection() {
             Everything you <em className="not-italic">need</em> for the perfect invitation
           </h2>
           <p className="mt-8 text-base text-[#1a1a1a]/75">
-            From our Thrissur atelier to your guests’ hands
+            From our Thrissur atelier to your guestsâ€™ hands
           </p>
         </div>
         <div className="grid grid-cols-1 gap-px bg-[#1a1a1a]/10 sm:grid-cols-2 lg:grid-cols-3">
@@ -374,7 +379,7 @@ function BentoSection() {
             const Icon = it.icon;
             const inner = (
               <>
-                <p className="font-serif text-2xl tracking-tight text-[#1a1a1a]">{it.title} →</p>
+                <p className="font-serif text-2xl tracking-tight text-[#1a1a1a]">{it.title} â†’</p>
                 <p className="text-sm text-[#1a1a1a]/75">{it.desc}</p>
                 <div className="relative mt-2 overflow-hidden rounded-2xl">
                   <span
@@ -406,7 +411,7 @@ function BentoSection() {
             ) : (
               <Link
                 key={it.title}
-                to={it.to ?? "/shop"}
+                to={it.to ?? "/collections"}
                 className="group flex flex-col gap-4 bg-[#f5f0e6] p-6 transition-colors hover:bg-[#efe7d6]"
               >
                 {inner}

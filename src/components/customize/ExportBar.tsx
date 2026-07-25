@@ -59,7 +59,7 @@ export function ExportBar({ svgRef: _svgRef }: { svgRef: React.RefObject<SVGSVGE
     <div>
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
         <Link
-          to="/shop"
+          to="/collections"
           className="flex-1 rounded-full border border-foreground px-5 py-3 text-center text-sm font-semibold transition-transform duration-150 active:scale-[0.97]"
         >
           Browse ready-made
