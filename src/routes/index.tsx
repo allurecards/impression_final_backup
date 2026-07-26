@@ -5,26 +5,18 @@ import weddingCard from "@/assets/wedding-card.jpg";
 import invitations from "@/assets/invitations.jpg";
 import registry from "@/assets/register.jpeg";
 import logo from "@/assets/IMP_LOGO_final.png";
+import { canonicalLink, seoMeta } from "@/lib/seo";
 const luxuryImage = weddingCard;
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: [
-      { title: "Impressions Wedding Cards — Where your love story begins" },
-      {
-        name: "description",
-        content:
-          "Step into Impressions — a cinematic front door to wedding invitations you can shop or design from scratch.",
-      },
-      {
-        property: "og:title",
-        content: "Impressions Wedding Cards — Where your love story begins",
-      },
-      {
-        property: "og:description",
-        content: "Shop timeless invitations or customise one from scratch.",
-      },
-    ],
+    meta: seoMeta({
+      title: "Luxury Wedding Cards in Thrissur Kerala | Impressions Wedding Cards",
+      description:
+        "Impressions Wedding Cards creates premium wedding invitation cards, customised invitations, and designer wedding stationery in Thrissur, Kerala.",
+      path: "/",
+    }),
+    links: [canonicalLink("/")],
   }),
   component: Landing,
 });

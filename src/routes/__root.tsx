@@ -14,6 +14,8 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
+import { SeoScripts } from "@/components/seo-scripts";
+import { BRAND_NAME, SITE_URL } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -80,17 +82,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Luxury Wedding Cards in Thrissur Kerala | Impressions Wedding Cards" },
+      {
+        name: "description",
+        content:
+          "Impressions Wedding Cards creates premium wedding invitation cards, customised invitations, and designer wedding stationery in Thrissur, Kerala.",
+      },
+      { name: "author", content: BRAND_NAME },
+      { name: "theme-color", content: "#0f0b0a" },
+      { property: "og:title", content: "Luxury Wedding Cards in Thrissur Kerala" },
+      {
+        property: "og:description",
+        content: "Premium wedding invitation card design and printing studio in Thrissur, Kerala.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:site_name", content: BRAND_NAME },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "canonical", href: SITE_URL },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -125,6 +138,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+      <SeoScripts />
       <Outlet />
       <Toaster position="bottom-center" />
       <Analytics />

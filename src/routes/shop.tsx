@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/select";
 import { ShareSheet } from "@/components/share-sheet";
 import { cn } from "@/lib/utils";
+import { canonicalLink, seoMeta } from "@/lib/seo";
 import invitations from "@/assets/invitations.jpg";
 import type { Catalog } from "@/lib/catalog";
 import cardsData from "@/data/cards.json";
@@ -1128,12 +1129,13 @@ function ShopPage() {
 export const Route = createFileRoute("/shop")({
   validateSearch: shopSearchSchema,
   head: () => ({
-    meta: [
-      {
-        title: "Shop Wedding Cards",
-        description: "Browse our curated collection of wedding invitation cards by Impressions.",
-      },
-    ],
+    meta: seoMeta({
+      title: "Wedding Card Collections Thrissur | Impressions Wedding Cards",
+      description:
+        "Browse premium wedding invitation card collections, designer stationery, and customised wedding cards from Impressions Wedding Cards in Thrissur.",
+      path: "/shop",
+    }),
+    links: [canonicalLink("/shop")],
   }),
   component: ShopPage,
 });

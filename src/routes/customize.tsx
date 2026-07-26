@@ -11,19 +11,17 @@ import { ContentTogglePanel } from "@/components/customize/ContentTogglePanel";
 import { BackgroundPanel } from "@/components/customize/BackgroundPanel";
 import { ExtrasPanel } from "@/components/customize/ExtrasPanel";
 import { ExportBar } from "@/components/customize/ExportBar";
+import { canonicalLink, seoMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/customize")({
   head: () => ({
-    meta: [
-      { title: "Design your wedding card — Impressions Cards" },
-      {
-        name: "description",
-        content:
-          "An interactive designer for your wedding invitation: templates, fonts, colors, verses, icons and a venue QR code.",
-      },
-      { property: "og:title", content: "Design your wedding card — Impressions Cards" },
-      { property: "og:description", content: "Design a card that's truly yours." },
-    ],
+    meta: seoMeta({
+      title: "Custom Wedding Invitation Design | Impressions Wedding Cards",
+      description:
+        "Design a custom wedding invitation card online with Impressions Wedding Cards. Personalise templates, fonts, colours, wording, icons, and venue details.",
+      path: "/customize",
+    }),
+    links: [canonicalLink("/customize")],
   }),
   component: CustomizePage,
 });
