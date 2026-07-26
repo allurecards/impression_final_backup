@@ -14,8 +14,6 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
-import { GlobalStructuredData } from "@/components/seo";
-import { BRAND_NAME, DEFAULT_OG_IMAGE, SITE_URL } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -82,33 +80,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        title: "Luxury Wedding Cards in Thrissur Kerala | Impressions Wedding Cards",
-      },
-      {
-        name: "description",
-        content:
-          "Impressions Wedding Cards creates premium luxury wedding invitation cards, customised wedding invitations, and designer stationery in Thrissur, Kerala.",
-      },
-      { name: "author", content: BRAND_NAME },
-      { name: "theme-color", content: "#0f0b0a" },
-      { property: "og:title", content: "Luxury Wedding Cards in Thrissur Kerala" },
-      {
-        property: "og:description",
-        content: "Premium wedding invitation card design and printing studio in Thrissur, Kerala.",
-      },
+      { title: "Lovable App" },
+      { name: "description", content: "Lovable Generated Project" },
+      { name: "author", content: "Lovable" },
+      { property: "og:title", content: "Lovable App" },
+      { property: "og:description", content: "Lovable Generated Project" },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: SITE_URL },
-      { property: "og:site_name", content: BRAND_NAME },
-      { property: "og:image", content: DEFAULT_OG_IMAGE },
-      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "canonical", href: SITE_URL },
-      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-      { rel: "manifest", href: "/manifest.webmanifest" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -125,7 +107,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en-IN">
+    <html lang="en">
       <head>
         <HeadContent />
       </head>
@@ -143,7 +125,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <GlobalStructuredData />
       <Outlet />
       <Toaster position="bottom-center" />
       <Analytics />

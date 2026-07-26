@@ -34,17 +34,14 @@ export function SharedHeader({ showSubnav, subnavContent }: SharedHeaderProps) {
       <div className="border-b border-border">
         <div className="mx-auto grid max-w-[1400px] grid-cols-3 items-center px-6 py-5">
           <nav className="hidden items-center gap-8 text-sm lg:flex">
-            <Link to="/collections" className="flex items-center gap-1 hover:opacity-70">
-              Collections <ChevronDown className="h-3.5 w-3.5" />
+            <Link to="/shop" className="flex items-center gap-1 hover:opacity-70">
+              Shop <ChevronDown className="h-3.5 w-3.5" />
             </Link>
-            <Link to="/customise" className="flex items-center gap-1 hover:opacity-70">
-              Customise <ChevronDown className="h-3.5 w-3.5" />
+            <Link to="/customize" className="flex items-center gap-1 hover:opacity-70">
+              Customize <ChevronDown className="h-3.5 w-3.5" />
             </Link>
-            <Link to="/portfolio" className="hover:opacity-70">
-              Portfolio
-            </Link>
-            <Link to="/contact" className="hover:opacity-70">
-              Contact
+            <Link to="/" className="hover:opacity-70">
+              Home
             </Link>
           </nav>
           <Link

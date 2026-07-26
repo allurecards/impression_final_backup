@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/select";
 import { ShareSheet } from "@/components/share-sheet";
 import { cn } from "@/lib/utils";
-import { canonicalLink, seoMeta } from "@/lib/seo";
 import invitations from "@/assets/invitations.jpg";
 import type { Catalog } from "@/lib/catalog";
 import cardsData from "@/data/cards.json";
@@ -82,10 +81,7 @@ const ShopCard = memo(function ShopCard({
         {c.images.length > 0 && (
           <img
             src={imgUrl(c.images[0])}
-            alt={`Wedding invitation card ${c.id} from Impressions Wedding Cards Thrissur`}
-            title={`Wedding invitation card ${c.id} by Impressions Wedding Cards`}
-            width={400}
-            height={300}
+            alt={c.id}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />
@@ -123,7 +119,7 @@ const ShopCard = memo(function ShopCard({
   );
 });
 
-export function ShopPage() {
+function ShopPage() {
   const navigate = Route.useNavigate();
   const { category: urlCategory } = Route.useSearch();
 
@@ -417,8 +413,8 @@ export function ShopPage() {
         <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5">
           <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
             <button className="flex items-center gap-1 hover:opacity-70">Shop</button>
-            <Link to="/customise" className="flex items-center gap-1 hover:opacity-70">
-              Customise
+            <Link to="/customize" className="flex items-center gap-1 hover:opacity-70">
+              Customize
             </Link>
             <Link to="/" className="hover:opacity-70">
               Home
@@ -451,7 +447,7 @@ export function ShopPage() {
               )}
             </button>
             <Link
-              to="/customise"
+              to="/customize"
               className="max-sm:hidden rounded-full bg-zola-ink px-5 py-2.5 text-sm font-semibold text-zola-cream transition-transform duration-150 active:scale-[0.97]"
             >
               Design your own
@@ -497,11 +493,7 @@ export function ShopPage() {
                       ? c.image
                       : imgUrl(c.image)
                   }
-                  alt={`${c.label} wedding card collection by Impressions Wedding Cards Thrissur`}
-                  title={`${c.label} wedding card collection`}
-                  width={80}
-                  height={80}
-                  loading="lazy"
+                  alt={c.label}
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -679,25 +671,25 @@ export function ShopPage() {
       <footer className="bg-zola-ink text-zola-cream">
         <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-8 px-6 py-12 text-sm md:grid-cols-4">
           <div>
-            <h4 className="font-serif text-xl mb-4">Impressions Wedding Cards</h4>
+            <h4 className="font-serif text-xl mb-4">Impressions</h4>
             <p className="opacity-70">Wedding cards, made for you.</p>
           </div>
           <div>
             <h5 className="mb-3 font-semibold">Shop</h5>
             <ul className="space-y-2 opacity-70">
               <li>
-                <Link to="/collections" className="hover:opacity-60">
-                  Luxury wedding cards in Thrissur
+                <Link to="/shop" className="hover:opacity-60">
+                  All cards
                 </Link>
               </li>
               <li>
-                <Link to="/customise" className="hover:opacity-60">
-                  Customise wedding invitations
+                <Link to="/customize" className="hover:opacity-60">
+                  Customize
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:opacity-60">
-                  Contact the Thrissur studio
+                <Link to="/customize" className="hover:opacity-60">
+                  Design your own
                 </Link>
               </li>
             </ul>
@@ -705,7 +697,7 @@ export function ShopPage() {
         </div>
         <div className="border-t border-zola-cream/10">
           <p className="mx-auto max-w-[1400px] px-6 py-6 text-xs opacity-50">
-            &copy; {new Date().getFullYear()} Impressions Wedding Cards. All rights reserved.
+            &copy; {new Date().getFullYear()} Impressions Cards. All rights reserved.
           </p>
         </div>
       </footer>
@@ -754,10 +746,7 @@ export function ShopPage() {
                       {active.images.length > 0 && (
                         <img
                           src={displayUrl(active.images[selectedImageIndex])}
-                          alt={`Large preview of wedding invitation card ${active.id} by Impressions Wedding Cards`}
-                          title={`Wedding invitation card ${active.id} preview`}
-                          width={900}
-                          height={675}
+                          alt={active.id}
                           className="h-full w-full object-contain transition-transform duration-200"
                           style={{ aspectRatio: "4 / 3" }}
                         />
@@ -779,10 +768,7 @@ export function ShopPage() {
                         >
                           <img
                             src={imgUrl(src)}
-                            alt={`Thumbnail ${idx + 1} for wedding invitation card ${active.id}`}
-                            title={`Wedding invitation card ${active.id} thumbnail ${idx + 1}`}
-                            width={180}
-                            height={135}
+                            alt=""
                             className="aspect-[4/3] w-full object-cover"
                           />
                         </button>
@@ -1114,10 +1100,7 @@ export function ShopPage() {
               </button>
               <img
                 src={displayUrl(active.images[galleryIndex])}
-                alt={`Full-screen wedding invitation card ${active.id} by Impressions Wedding Cards`}
-                title={`Wedding invitation card ${active.id} full-screen preview`}
-                width={1200}
-                height={900}
+                alt={active.id}
                 className="max-h-[88vh] max-w-[92vw] rounded-lg object-contain"
               />
               {active.images.length > 1 && (
@@ -1145,13 +1128,12 @@ export function ShopPage() {
 export const Route = createFileRoute("/shop")({
   validateSearch: shopSearchSchema,
   head: () => ({
-    meta: seoMeta({
-      title: "Wedding Card Catalogue Thrissur | Impressions Wedding Cards",
-      description:
-        "Browse the Impressions Wedding Cards catalogue for premium wedding invitation cards, custom designs and luxury card printing in Thrissur, Kerala.",
-      path: "/collections",
-    }),
-    links: [canonicalLink("/collections")],
+    meta: [
+      {
+        title: "Shop Wedding Cards",
+        description: "Browse our curated collection of wedding invitation cards by Impressions.",
+      },
+    ],
   }),
   component: ShopPage,
 });

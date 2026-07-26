@@ -11,21 +11,24 @@ import { ContentTogglePanel } from "@/components/customize/ContentTogglePanel";
 import { BackgroundPanel } from "@/components/customize/BackgroundPanel";
 import { ExtrasPanel } from "@/components/customize/ExtrasPanel";
 import { ExportBar } from "@/components/customize/ExportBar";
-import { canonicalLink, seoMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/customize")({
   head: () => ({
-    meta: seoMeta({
-      title: "Customise Wedding Invitation Cards | Impressions Wedding Cards",
-      description:
-        "Customise wedding invitation cards with Impressions Wedding Cards in Thrissur. Personalise templates, fonts, colours, wording and venue details.",
-      path: "/customise",
-    }),
-    links: [canonicalLink("/customise")],
+    meta: [
+      { title: "Design your wedding card — Impressions Cards" },
+      {
+        name: "description",
+        content:
+          "An interactive designer for your wedding invitation: templates, fonts, colors, verses, icons and a venue QR code.",
+      },
+      { property: "og:title", content: "Design your wedding card — Impressions Cards" },
+      { property: "og:description", content: "Design a card that's truly yours." },
+    ],
   }),
   component: CustomizePage,
 });
-export function CustomizePage() {
+
+function CustomizePage() {
   return (
     <CardDesignProvider>
       <CustomizePageInner />
@@ -47,8 +50,8 @@ function CustomizePageInner() {
           Home
         </Link>
         <span className="mx-2">/</span>
-        <Link to="/customise" className="hover:underline">
-          Customise
+        <Link to="/customize" className="hover:underline">
+          Customize
         </Link>
         <span className="mx-2">/</span>
         <span className="text-foreground">Design your own</span>
@@ -91,25 +94,25 @@ function CustomizePageInner() {
       <footer className="bg-zola-ink text-zola-cream">
         <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-8 px-6 py-12 text-sm md:grid-cols-4">
           <div>
-            <h4 className="font-serif text-xl mb-4">Impressions Wedding Cards</h4>
+            <h4 className="font-serif text-xl mb-4">Impressions</h4>
             <p className="opacity-70">Wedding cards, made for you.</p>
           </div>
           <div>
             <h5 className="mb-3 font-semibold">Shop</h5>
             <ul className="space-y-2 opacity-70">
               <li>
-                <Link to="/collections" className="hover:opacity-60">
-                  Luxury wedding cards in Thrissur
+                <Link to="/shop" className="hover:opacity-60">
+                  All cards
                 </Link>
               </li>
               <li>
-                <Link to="/customise" className="hover:opacity-60">
-                  Customise wedding invitations
+                <Link to="/customize" className="hover:opacity-60">
+                  Customize
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:opacity-60">
-                  Contact the Thrissur studio
+                <Link to="/customize" className="hover:opacity-60">
+                  Design your own
                 </Link>
               </li>
             </ul>
@@ -117,7 +120,7 @@ function CustomizePageInner() {
         </div>
         <div className="border-t border-zola-cream/10">
           <p className="mx-auto max-w-[1400px] px-6 py-6 text-xs opacity-50">
-            &copy; {new Date().getFullYear()} Impressions Wedding Cards. All rights reserved.
+            &copy; {new Date().getFullYear()} Impressions Cards. All rights reserved.
           </p>
         </div>
       </footer>

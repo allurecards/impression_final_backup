@@ -1,7 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ExploreSections } from "@/components/explore-sections";
-import { PremiumSeoSections } from "@/components/seo";
-import { canonicalLink, seoMeta } from "@/lib/seo";
 import { useEffect, useRef, useState, useCallback } from "react";
 import weddingCard from "@/assets/wedding-card.jpg";
 import invitations from "@/assets/invitations.jpg";
@@ -11,13 +9,22 @@ const luxuryImage = weddingCard;
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: seoMeta({
-      title: "Luxury Wedding Cards in Thrissur Kerala | Impressions Wedding Cards",
-      description:
-        "Impressions Wedding Cards creates premium luxury wedding invitation cards, customised wedding invitations, and designer stationery in Thrissur, Kerala.",
-      path: "/",
-    }),
-    links: [canonicalLink("/")],
+    meta: [
+      { title: "Impressions Wedding Cards — Where your love story begins" },
+      {
+        name: "description",
+        content:
+          "Step into Impressions — a cinematic front door to wedding invitations you can shop or design from scratch.",
+      },
+      {
+        property: "og:title",
+        content: "Impressions Wedding Cards — Where your love story begins",
+      },
+      {
+        property: "og:description",
+        content: "Shop timeless invitations or customise one from scratch.",
+      },
+    ],
   }),
   component: Landing,
 });
@@ -110,7 +117,7 @@ function Landing() {
           <a href="#">
             <img
               src={logo}
-              alt="Impressions Wedding Cards logo"
+              alt="Impressions"
               className="h-10 w-auto -translate-x-2 translate-y-5 scale-[1.8] origin-left"
             />
           </a>
@@ -118,13 +125,13 @@ function Landing() {
           {/* Links */}
           <nav className="hidden items-center gap-8 lg:flex">
             <Link
-              to="/collections"
+              to="/shop"
               className="text-sm font-medium text-[#f5f0e6] transition-opacity hover:opacity-70"
             >
-              Collections
+              Shop
             </Link>
             <Link
-              to="/customise"
+              to="/customize"
               className="text-sm font-medium text-[#f5f0e6] transition-opacity hover:opacity-70"
             >
               Customise
@@ -141,7 +148,7 @@ function Landing() {
               <span className="tracking-[0.08em]">Allure</span>
             </a>
             <a
-              href="/contact"
+              href="/#contact"
               className="text-sm font-medium text-[#f5f0e6] transition-opacity hover:opacity-70"
             >
               Contact
@@ -150,7 +157,7 @@ function Landing() {
 
           {/* CTA button */}
           <Link
-            to="/customise"
+            to="/customize"
             className="rounded-full bg-[#f5f0e6] px-5 py-2.5 text-sm font-semibold text-[#1a1a1a] transition-colors hover:bg-white"
           >
             Customise
@@ -290,7 +297,7 @@ function Landing() {
         >
           <Door
             door="shop"
-            to="/collections"
+            to="/shop"
             label="Shop"
             eyebrow="Door I"
             badge="Browse Ready‑to‑Send"
@@ -312,7 +319,7 @@ function Landing() {
           />
           <Door
             door="custom"
-            to="/customise"
+            to="/customize"
             label="Customise"
             eyebrow="Door II"
             badge="Create From Scratch"
@@ -340,7 +347,6 @@ function Landing() {
 
       {/* ========== FULL SITE BELOW ========== */}
       <div id="explore" className="relative z-20">
-        <PremiumSeoSections />
         <ExploreSections />
       </div>
 
@@ -377,7 +383,7 @@ function Landing() {
         <TierChoiceOverlay
           onStandard={() => {
             setTierChoice(false);
-            handleDoorClick("standard", "/collections");
+            handleDoorClick("standard", "/shop");
           }}
           onLuxury={() => {
             setTierChoice(false);
@@ -683,7 +689,7 @@ function TierChoiceOverlay({
           >
             <img
               src={imageStandard}
-              alt="Wedding card collections by Impressions Wedding Cards Thrissur"
+              alt="Standard Cards"
               className="absolute inset-0 h-full w-full object-cover"
               style={{
                 filter: `brightness(${hoveredSmall === "standard" ? 0.75 : 0.5})`,
@@ -789,7 +795,7 @@ function TierChoiceOverlay({
             {/* Background image */}
             <img
               src={imageLuxury}
-              alt="Luxury wedding invitations by Allure Cards"
+              alt="Luxury Allure"
               className="absolute inset-0 h-full w-full object-cover"
               style={{
                 filter: `brightness(${hoveredSmall === "luxury" ? 0.8 : 0.5}) saturate(1.2)`,

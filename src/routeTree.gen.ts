@@ -10,43 +10,13 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as CollectionsRouteImport } from './routes/collections'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CustomWeddingInvitationsRouteImport } from './routes/custom-wedding-invitations'
-import { Route as CustomiseRouteImport } from './routes/customise'
 import { Route as CustomizeRouteImport } from './routes/customize'
 import { Route as ExploreRouteImport } from './routes/explore'
-import { Route as LuxuryWeddingCardsKeralaRouteImport } from './routes/luxury-wedding-cards-kerala'
-import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as ShopRouteImport } from './routes/shop'
-import { Route as WeddingCardPrintingThrissurRouteImport } from './routes/wedding-card-printing-thrissur'
-import { Route as WeddingCardsThrissurRouteImport } from './routes/wedding-cards-thrissur'
-import { Route as WeddingInvitationCardsThrissurRouteImport } from './routes/wedding-invitation-cards-thrissur'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CollectionsRoute = CollectionsRouteImport.update({
-  id: '/collections',
-  path: '/collections',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CustomWeddingInvitationsRoute =
-  CustomWeddingInvitationsRouteImport.update({
-    id: '/custom-wedding-invitations',
-    path: '/custom-wedding-invitations',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const CustomiseRoute = CustomiseRouteImport.update({
-  id: '/customise',
-  path: '/customise',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CustomizeRoute = CustomizeRouteImport.update({
@@ -59,148 +29,44 @@ const ExploreRoute = ExploreRouteImport.update({
   path: '/explore',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LuxuryWeddingCardsKeralaRoute =
-  LuxuryWeddingCardsKeralaRouteImport.update({
-    id: '/luxury-wedding-cards-kerala',
-    path: '/luxury-wedding-cards-kerala',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const PortfolioRoute = PortfolioRouteImport.update({
-  id: '/portfolio',
-  path: '/portfolio',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ShopRoute = ShopRouteImport.update({
   id: '/shop',
   path: '/shop',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WeddingCardPrintingThrissurRoute =
-  WeddingCardPrintingThrissurRouteImport.update({
-    id: '/wedding-card-printing-thrissur',
-    path: '/wedding-card-printing-thrissur',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const WeddingCardsThrissurRoute = WeddingCardsThrissurRouteImport.update({
-  id: '/wedding-cards-thrissur',
-  path: '/wedding-cards-thrissur',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const WeddingInvitationCardsThrissurRoute =
-  WeddingInvitationCardsThrissurRouteImport.update({
-    id: '/wedding-invitation-cards-thrissur',
-    path: '/wedding-invitation-cards-thrissur',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/collections': typeof CollectionsRoute
-  '/contact': typeof ContactRoute
-  '/custom-wedding-invitations': typeof CustomWeddingInvitationsRoute
-  '/customise': typeof CustomiseRoute
   '/customize': typeof CustomizeRoute
   '/explore': typeof ExploreRoute
-  '/luxury-wedding-cards-kerala': typeof LuxuryWeddingCardsKeralaRoute
-  '/portfolio': typeof PortfolioRoute
   '/shop': typeof ShopRoute
-  '/wedding-card-printing-thrissur': typeof WeddingCardPrintingThrissurRoute
-  '/wedding-cards-thrissur': typeof WeddingCardsThrissurRoute
-  '/wedding-invitation-cards-thrissur': typeof WeddingInvitationCardsThrissurRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/collections': typeof CollectionsRoute
-  '/contact': typeof ContactRoute
-  '/custom-wedding-invitations': typeof CustomWeddingInvitationsRoute
-  '/customise': typeof CustomiseRoute
   '/customize': typeof CustomizeRoute
   '/explore': typeof ExploreRoute
-  '/luxury-wedding-cards-kerala': typeof LuxuryWeddingCardsKeralaRoute
-  '/portfolio': typeof PortfolioRoute
   '/shop': typeof ShopRoute
-  '/wedding-card-printing-thrissur': typeof WeddingCardPrintingThrissurRoute
-  '/wedding-cards-thrissur': typeof WeddingCardsThrissurRoute
-  '/wedding-invitation-cards-thrissur': typeof WeddingInvitationCardsThrissurRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/collections': typeof CollectionsRoute
-  '/contact': typeof ContactRoute
-  '/custom-wedding-invitations': typeof CustomWeddingInvitationsRoute
-  '/customise': typeof CustomiseRoute
   '/customize': typeof CustomizeRoute
   '/explore': typeof ExploreRoute
-  '/luxury-wedding-cards-kerala': typeof LuxuryWeddingCardsKeralaRoute
-  '/portfolio': typeof PortfolioRoute
   '/shop': typeof ShopRoute
-  '/wedding-card-printing-thrissur': typeof WeddingCardPrintingThrissurRoute
-  '/wedding-cards-thrissur': typeof WeddingCardsThrissurRoute
-  '/wedding-invitation-cards-thrissur': typeof WeddingInvitationCardsThrissurRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/collections'
-    | '/contact'
-    | '/custom-wedding-invitations'
-    | '/customise'
-    | '/customize'
-    | '/explore'
-    | '/luxury-wedding-cards-kerala'
-    | '/portfolio'
-    | '/shop'
-    | '/wedding-card-printing-thrissur'
-    | '/wedding-cards-thrissur'
-    | '/wedding-invitation-cards-thrissur'
+  fullPaths: '/' | '/customize' | '/explore' | '/shop'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/collections'
-    | '/contact'
-    | '/custom-wedding-invitations'
-    | '/customise'
-    | '/customize'
-    | '/explore'
-    | '/luxury-wedding-cards-kerala'
-    | '/portfolio'
-    | '/shop'
-    | '/wedding-card-printing-thrissur'
-    | '/wedding-cards-thrissur'
-    | '/wedding-invitation-cards-thrissur'
-  id:
-    | '__root__'
-    | '/'
-    | '/collections'
-    | '/contact'
-    | '/custom-wedding-invitations'
-    | '/customise'
-    | '/customize'
-    | '/explore'
-    | '/luxury-wedding-cards-kerala'
-    | '/portfolio'
-    | '/shop'
-    | '/wedding-card-printing-thrissur'
-    | '/wedding-cards-thrissur'
-    | '/wedding-invitation-cards-thrissur'
+  to: '/' | '/customize' | '/explore' | '/shop'
+  id: '__root__' | '/' | '/customize' | '/explore' | '/shop'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  CollectionsRoute: typeof CollectionsRoute
-  ContactRoute: typeof ContactRoute
-  CustomWeddingInvitationsRoute: typeof CustomWeddingInvitationsRoute
-  CustomiseRoute: typeof CustomiseRoute
   CustomizeRoute: typeof CustomizeRoute
   ExploreRoute: typeof ExploreRoute
-  LuxuryWeddingCardsKeralaRoute: typeof LuxuryWeddingCardsKeralaRoute
-  PortfolioRoute: typeof PortfolioRoute
   ShopRoute: typeof ShopRoute
-  WeddingCardPrintingThrissurRoute: typeof WeddingCardPrintingThrissurRoute
-  WeddingCardsThrissurRoute: typeof WeddingCardsThrissurRoute
-  WeddingInvitationCardsThrissurRoute: typeof WeddingInvitationCardsThrissurRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -210,34 +76,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/collections': {
-      id: '/collections'
-      path: '/collections'
-      fullPath: '/collections'
-      preLoaderRoute: typeof CollectionsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/custom-wedding-invitations': {
-      id: '/custom-wedding-invitations'
-      path: '/custom-wedding-invitations'
-      fullPath: '/custom-wedding-invitations'
-      preLoaderRoute: typeof CustomWeddingInvitationsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/customise': {
-      id: '/customise'
-      path: '/customise'
-      fullPath: '/customise'
-      preLoaderRoute: typeof CustomiseRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/customize': {
@@ -254,20 +92,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExploreRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/luxury-wedding-cards-kerala': {
-      id: '/luxury-wedding-cards-kerala'
-      path: '/luxury-wedding-cards-kerala'
-      fullPath: '/luxury-wedding-cards-kerala'
-      preLoaderRoute: typeof LuxuryWeddingCardsKeralaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/portfolio': {
-      id: '/portfolio'
-      path: '/portfolio'
-      fullPath: '/portfolio'
-      preLoaderRoute: typeof PortfolioRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/shop': {
       id: '/shop'
       path: '/shop'
@@ -275,44 +99,14 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShopRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/wedding-card-printing-thrissur': {
-      id: '/wedding-card-printing-thrissur'
-      path: '/wedding-card-printing-thrissur'
-      fullPath: '/wedding-card-printing-thrissur'
-      preLoaderRoute: typeof WeddingCardPrintingThrissurRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/wedding-cards-thrissur': {
-      id: '/wedding-cards-thrissur'
-      path: '/wedding-cards-thrissur'
-      fullPath: '/wedding-cards-thrissur'
-      preLoaderRoute: typeof WeddingCardsThrissurRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/wedding-invitation-cards-thrissur': {
-      id: '/wedding-invitation-cards-thrissur'
-      path: '/wedding-invitation-cards-thrissur'
-      fullPath: '/wedding-invitation-cards-thrissur'
-      preLoaderRoute: typeof WeddingInvitationCardsThrissurRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  CollectionsRoute: CollectionsRoute,
-  ContactRoute: ContactRoute,
-  CustomWeddingInvitationsRoute: CustomWeddingInvitationsRoute,
-  CustomiseRoute: CustomiseRoute,
   CustomizeRoute: CustomizeRoute,
   ExploreRoute: ExploreRoute,
-  LuxuryWeddingCardsKeralaRoute: LuxuryWeddingCardsKeralaRoute,
-  PortfolioRoute: PortfolioRoute,
   ShopRoute: ShopRoute,
-  WeddingCardPrintingThrissurRoute: WeddingCardPrintingThrissurRoute,
-  WeddingCardsThrissurRoute: WeddingCardsThrissurRoute,
-  WeddingInvitationCardsThrissurRoute: WeddingInvitationCardsThrissurRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
