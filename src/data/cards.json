@@ -1,5 +1,40 @@
 [
   {
+    "id": "EYELET 003",
+    "category": "EYLET CARDS",
+    "price": 22,
+    "featured": false,
+    "minOrder": 100,
+    "size": "180 MMX 180 MM",
+    "material": "260 GSM MEHNDI GREEN + 260 OFF WHITE TEXTURED",
+    "description": "DIGITAL PRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/eyelet-003-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/eyelet-003-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "",
+        "size_id": 5,
+        "material_id": 5,
+        "size": "180 MMX 180 MM",
+        "material": "260 GSM MEHNDI GREEN + 260 OFF WHITE TEXTURED",
+        "price": 22
+      }
+    ]
+  },
+  {
     "id": "EYELET 002",
     "category": "EYLET CARDS",
     "price": 22,
