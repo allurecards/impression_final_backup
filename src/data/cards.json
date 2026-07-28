@@ -2,12 +2,12 @@
   {
     "id": "EYELET 001",
     "category": "EYLET CARDS",
-    "price": 20,
+    "price": 22,
     "featured": false,
     "minOrder": 100,
-    "size": "15 CM X 21 CM",
-    "material": "230 GSM BLUE + 260 GSM OFF WHITE",
-    "description": "",
+    "size": "180 MM X 180 MM",
+    "material": "280 GSM RED + 260 GSM TEXTURED OFF WHITE",
+    "description": "DIGITAL PRINTING",
     "instagram_url": "",
     "extraCharges": [],
     "applyWatermark": true,
@@ -26,11 +26,11 @@
     "variants": [
       {
         "name": "",
-        "size_id": 4,
-        "material_id": 4,
-        "size": "15 CM X 21 CM",
-        "material": "230 GSM BLUE + 260 GSM OFF WHITE",
-        "price": 20
+        "size_id": 5,
+        "material_id": 5,
+        "size": "180 MM X 180 MM",
+        "material": "280 GSM RED + 260 GSM TEXTURED OFF WHITE",
+        "price": 22
       }
     ]
   },
