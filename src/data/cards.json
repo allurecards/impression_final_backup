@@ -1,40 +1,5 @@
 [
   {
-    "id": "EYELET 001",
-    "category": "EYLET CARDS",
-    "price": 20,
-    "featured": false,
-    "minOrder": 100,
-    "size": "173 MMX 173 MM",
-    "material": "220 GSM ORIGINAL TEXTURED OFF WHITE",
-    "description": "DIGITAL PRINTING",
-    "instagram_url": "",
-    "extraCharges": [],
-    "applyWatermark": true,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "medium",
-    "watermarkColor": "#ffd700",
-    "images": [
-      "src/assets/cards/display/eyelet-001-1.PNG"
-    ],
-    "originals": [
-      "src/assets/cards/originals/eyelet-001-1.PNG"
-    ],
-    "imageWatermarks": [
-      null
-    ],
-    "variants": [
-      {
-        "name": "",
-        "size_id": 5,
-        "material_id": 5,
-        "size": "173 MMX 173 MM",
-        "material": "220 GSM ORIGINAL TEXTURED OFF WHITE",
-        "price": 20
-      }
-    ]
-  },
-  {
     "id": "imp test two",
     "category": "testingg",
     "price": 100,
