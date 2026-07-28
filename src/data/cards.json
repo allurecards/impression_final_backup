@@ -1,5 +1,40 @@
 [
   {
+    "id": "EYELET 004",
+    "category": "EYLET CARDS",
+    "price": 22,
+    "featured": false,
+    "minOrder": 100,
+    "size": "180 MM X 180 MM",
+    "material": "220 GSM  BLUE+ 260 OFF WHITE TEXTURED",
+    "description": "DIGITALPRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "top-right",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/eyelet-004-1.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/eyelet-004-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "",
+        "size_id": 5,
+        "material_id": 5,
+        "size": "180 MM X 180 MM",
+        "material": "220 GSM  BLUE+ 260 OFF WHITE TEXTURED",
+        "price": 22
+      }
+    ]
+  },
+  {
     "id": "EYELET 003",
     "category": "EYLET CARDS",
     "price": 22,
