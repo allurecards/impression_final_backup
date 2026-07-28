@@ -1,40 +1,5 @@
 [
   {
-    "id": "imp test two",
-    "category": "testingg",
-    "price": 100,
-    "featured": false,
-    "minOrder": 100,
-    "size": "500",
-    "material": "8000",
-    "description": "johnnn",
-    "instagram_url": "",
-    "extraCharges": [],
-    "applyWatermark": true,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "medium",
-    "watermarkColor": "#ffd700",
-    "images": [
-      "src/assets/cards/display/imp-test-two-1.png"
-    ],
-    "originals": [
-      "src/assets/cards/originals/imp-test-two-1.png"
-    ],
-    "imageWatermarks": [
-      null
-    ],
-    "variants": [
-      {
-        "name": "hello",
-        "size_id": 5,
-        "material_id": 5,
-        "size": "500",
-        "material": "8000",
-        "price": 100
-      }
-    ]
-  },
-  {
     "id": "IM 165",
     "category": "TRADITIONAL",
     "price": 28,
