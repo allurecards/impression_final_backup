@@ -111,7 +111,7 @@
     "featured": false,
     "minOrder": 100,
     "size": "180MMX 180 MM",
-    "material": "260 GSM MEHNDI GREEN + 260 OFF WHITE TEXTURED",
+    "material": "240 GSM GREY + 260 GSM TEXTURED",
     "description": "DIGITAL PRINTING",
     "instagram_url": "",
     "extraCharges": [],
@@ -131,10 +131,10 @@
     "variants": [
       {
         "name": "",
-        "size_id": 5,
+        "size_id": null,
         "material_id": 5,
         "size": "180MMX 180 MM",
-        "material": "260 GSM MEHNDI GREEN + 260 OFF WHITE TEXTURED",
+        "material": "240 GSM GREY + 260 GSM TEXTURED",
         "price": 22
       }
     ]
