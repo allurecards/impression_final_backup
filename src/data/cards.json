@@ -187,7 +187,7 @@
     "extraCharges": [],
     "applyWatermark": true,
     "watermarkPos": "bottom-left",
-    "watermarkSize": "medium",
+    "watermarkSize": "small",
     "watermarkColor": "#302903",
     "images": [
       "src/assets/cards/display/eyelet-002-1.PNG"
@@ -202,7 +202,7 @@
       {
         "name": "",
         "size_id": null,
-        "material_id": 5,
+        "material_id": null,
         "size": "180MMX 180 MM",
         "material": "240 GSM GREY + 260 GSM TEXTURED",
         "price": 22
