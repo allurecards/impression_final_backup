@@ -15,10 +15,10 @@
     "watermarkSize": "medium",
     "watermarkColor": "#2f2804",
     "images": [
-      "src/assets/cards/display/eyelet-005-1.jpeg"
+      "src/assets/cards/display/eyelet-005-1.PNG"
     ],
     "originals": [
-      "src/assets/cards/originals/eyelet-005-1.jpeg"
+      "src/assets/cards/originals/eyelet-005-1.PNG"
     ],
     "imageWatermarks": [
       null
@@ -26,8 +26,8 @@
     "variants": [
       {
         "name": "",
-        "size_id": 5,
-        "material_id": 5,
+        "size_id": null,
+        "material_id": null,
         "size": "180 MM X 180 MM",
         "material": "260 PURPLE  + 260 OFF WHITE TEXTURED",
         "price": 22
