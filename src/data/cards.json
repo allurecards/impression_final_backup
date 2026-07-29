@@ -61,8 +61,8 @@
     "variants": [
       {
         "name": "",
-        "size_id": 5,
-        "material_id": 5,
+        "size_id": null,
+        "material_id": null,
         "size": "180 MM X 180 MM",
         "material": "220 GSM  BLUE+ 260 OFF WHITE TEXTURED",
         "price": 22
