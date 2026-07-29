@@ -1,5 +1,40 @@
 [
   {
+    "id": "EYELET 006",
+    "category": "EYLET CARDS",
+    "price": 21,
+    "featured": false,
+    "minOrder": 100,
+    "size": "173 MM X 173 MM",
+    "material": "220 GSM TEXTURED",
+    "description": "DIGITAL PRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "top-right",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/eyelet-006-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/eyelet-006-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "",
+        "size_id": 5,
+        "material_id": 5,
+        "size": "173 MM X 173 MM",
+        "material": "220 GSM TEXTURED",
+        "price": 21
+      }
+    ]
+  },
+  {
     "id": "EYELET 005",
     "category": "EYLET CARDS",
     "price": 22,
