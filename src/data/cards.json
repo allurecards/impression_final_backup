@@ -81,9 +81,9 @@
     "instagram_url": "",
     "extraCharges": [],
     "applyWatermark": true,
-    "watermarkPos": "bottom-left",
+    "watermarkPos": "top-right",
     "watermarkSize": "medium",
-    "watermarkColor": "#ffd700",
+    "watermarkColor": "#4e4304",
     "images": [
       "src/assets/cards/display/eyelet-003-1.PNG"
     ],
