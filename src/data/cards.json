@@ -1336,7 +1336,7 @@
     "applyWatermark": true,
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
-    "watermarkColor": "#342f13",
+    "watermarkColor": "#5c531f",
     "images": [
       "src/assets/cards/display/vellum-112-1.png"
     ],
