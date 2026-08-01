@@ -2,7 +2,7 @@
   {
     "id": "UDAMBADY 002",
     "category": "ODAMBADY",
-    "price": 75,
+    "price": 750,
     "featured": false,
     "minOrder": 100,
     "size": "15 CM X 21 CM",
@@ -30,7 +30,7 @@
         "material_id": 4,
         "size": "15 CM X 21 CM",
         "material": "230 GSM BLUE + 260 GSM OFF WHITE",
-        "price": 75
+        "price": 750
       }
     ]
   },
