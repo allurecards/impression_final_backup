@@ -142,7 +142,7 @@
   {
     "id": "IM 007",
     "category": "RECTANGULAR SERIES",
-    "price": 0,
+    "price": 23,
     "featured": false,
     "minOrder": 100,
     "size": "140 MM X 200 MM",
@@ -166,11 +166,11 @@
     "variants": [
       {
         "name": "",
-        "size_id": 5,
+        "size_id": null,
         "material_id": 1,
         "size": "140 MM X 200 MM",
         "material": "260 GSM TEXTURED",
-        "price": 0
+        "price": 23
       }
     ]
   },
