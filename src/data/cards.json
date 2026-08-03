@@ -1,5 +1,40 @@
 [
   {
+    "id": "IM 003",
+    "category": "RECTANGULAR SERIES",
+    "price": 23,
+    "featured": false,
+    "minOrder": 100,
+    "size": "140 MM X 200 MM",
+    "material": "260 GSM TEXTURED",
+    "description": "DIGITAL PRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/im-003-1.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-003-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ],
+    "variants": [
+      {
+        "name": "",
+        "size_id": 5,
+        "material_id": 1,
+        "size": "140 MM X 200 MM",
+        "material": "260 GSM TEXTURED",
+        "price": 23
+      }
+    ]
+  },
+  {
     "id": "IM 002",
     "category": "RECTANGULAR SERIES",
     "price": 23,
