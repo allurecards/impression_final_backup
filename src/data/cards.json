@@ -13,7 +13,7 @@
     "applyWatermark": true,
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
-    "watermarkColor": "#ffd700",
+    "watermarkColor": "#625404",
     "images": [
       "src/assets/cards/display/postal-001-1.PNG"
     ],
@@ -26,7 +26,7 @@
     "variants": [
       {
         "name": "",
-        "size_id": 5,
+        "size_id": null,
         "material_id": 1,
         "size": "215 MM X 155 MM",
         "material": "260 GSM TEXTURED",
