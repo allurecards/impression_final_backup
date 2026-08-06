@@ -5416,7 +5416,7 @@
   {
     "id": "CRAFT 1002",
     "category": "CRAFT DIGITAL",
-    "price": 0,
+    "price": 28,
     "featured": false,
     "minOrder": 100,
     "size": "195 MMX 195 MM",
@@ -5440,11 +5440,11 @@
     "variants": [
       {
         "name": "MEDIUM",
-        "size_id": 11,
-        "material_id": 7,
+        "size_id": null,
+        "material_id": 2,
         "size": "195 MMX 195 MM",
         "material": "270 GSM VIRGIN CRAFT",
-        "price": 0
+        "price": 28
       }
     ]
   },
