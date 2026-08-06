@@ -2445,11 +2445,11 @@
   {
     "id": "TAG 022",
     "category": "TAG CARDS",
-    "price": 0,
+    "price": 22,
     "featured": false,
     "minOrder": 100,
-    "size": "",
-    "material": "",
+    "size": "15 CM X 21 CM",
+    "material": "230 GSM BLUE + 260 GSM OFF WHITE",
     "description": "DIGITALPRINTING",
     "instagram_url": "",
     "extraCharges": [],
@@ -2466,7 +2466,16 @@
     "imageWatermarks": [
       null
     ],
-    "variants": []
+    "variants": [
+      {
+        "name": "",
+        "size_id": 4,
+        "material_id": 4,
+        "size": "15 CM X 21 CM",
+        "material": "230 GSM BLUE + 260 GSM OFF WHITE",
+        "price": 22
+      }
+    ]
   },
   {
     "id": "TAG 021",
