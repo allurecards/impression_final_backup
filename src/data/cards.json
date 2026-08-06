@@ -5131,7 +5131,7 @@
   {
     "id": "CRAFT 1010",
     "category": "CRAFT DIGITAL",
-    "price": 0,
+    "price": 28,
     "featured": false,
     "minOrder": 100,
     "size": "195 MM X195 MM",
@@ -5155,11 +5155,11 @@
     "variants": [
       {
         "name": "",
-        "size_id": 6,
-        "material_id": 7,
+        "size_id": null,
+        "material_id": 2,
         "size": "195 MM X195 MM",
         "material": "270 GSM VIRGIN CRAFT",
-        "price": 0
+        "price": 28
       }
     ]
   },
