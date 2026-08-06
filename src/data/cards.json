@@ -6365,7 +6365,7 @@
     ]
   },
   {
-    "id": "im 103",
+    "id": "IM 103",
     "category": "TRADITIONAL",
     "price": 28,
     "featured": false,
@@ -6373,7 +6373,7 @@
     "size": "170 MM X 170 MM",
     "material": "260 GSM TEXTURED",
     "description": "DIGITAL PRINTING",
-    "instagram_url": "",
+    "instagram_url": "https://www.instagram.com/p/Dbr1zf-SffU/?hl=en",
     "extraCharges": [],
     "applyWatermark": true,
     "watermarkPos": "bottom-left",
@@ -6391,16 +6391,16 @@
     "variants": [
       {
         "name": "MEDIUM",
-        "size_id": 8,
-        "material_id": 4,
+        "size_id": 2,
+        "material_id": 1,
         "size": "170 MM X 170 MM",
         "material": "260 GSM TEXTURED",
         "price": 28
       },
       {
         "name": "SMALL",
-        "size_id": 8,
-        "material_id": 4,
+        "size_id": 2,
+        "material_id": 1,
         "size": "170 MM X 170 MM",
         "material": "260 GSM TEXTURED",
         "price": 24
