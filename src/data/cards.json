@@ -1,7 +1,7 @@
 [
   {
     "id": "POSTAL 007",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -36,7 +36,7 @@
   },
   {
     "id": "POSTAL 006",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -71,7 +71,7 @@
   },
   {
     "id": "POSTAL 005",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -106,7 +106,7 @@
   },
   {
     "id": "POSTAL 004",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -141,7 +141,7 @@
   },
   {
     "id": "POSTAL 003",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -176,7 +176,7 @@
   },
   {
     "id": "POSTAL 002",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -211,7 +211,7 @@
   },
   {
     "id": "POSTAL 001",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -246,7 +246,7 @@
   },
   {
     "id": "IM 016",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 23,
     "featured": false,
     "minOrder": 100,
@@ -281,7 +281,7 @@
   },
   {
     "id": "IM 015",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 23,
     "featured": false,
     "minOrder": 100,
@@ -316,7 +316,7 @@
   },
   {
     "id": "IM 014",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 23,
     "featured": false,
     "minOrder": 100,
@@ -351,7 +351,7 @@
   },
   {
     "id": "IM 013",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 23,
     "featured": false,
     "minOrder": 100,
@@ -386,7 +386,7 @@
   },
   {
     "id": "IM 012",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 14,
     "featured": false,
     "minOrder": 100,
@@ -421,7 +421,7 @@
   },
   {
     "id": "IM 011",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 23,
     "featured": false,
     "minOrder": 100,
@@ -456,7 +456,7 @@
   },
   {
     "id": "IM 010",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 23,
     "featured": false,
     "minOrder": 100,
@@ -491,7 +491,7 @@
   },
   {
     "id": "IM 009",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 23,
     "featured": false,
     "minOrder": 100,
@@ -526,7 +526,7 @@
   },
   {
     "id": "IM 008",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 23,
     "featured": false,
     "minOrder": 100,
@@ -561,7 +561,7 @@
   },
   {
     "id": "IM 007",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 23,
     "featured": false,
     "minOrder": 100,
@@ -596,7 +596,7 @@
   },
   {
     "id": "IM 006",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 23,
     "featured": false,
     "minOrder": 100,
@@ -631,7 +631,7 @@
   },
   {
     "id": "IM 005",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 23,
     "featured": false,
     "minOrder": 100,
@@ -666,7 +666,7 @@
   },
   {
     "id": "IM 004",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 23,
     "featured": false,
     "minOrder": 100,
@@ -701,7 +701,7 @@
   },
   {
     "id": "IM 003",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 23,
     "featured": false,
     "minOrder": 100,
@@ -736,7 +736,7 @@
   },
   {
     "id": "IM 002",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 23,
     "featured": false,
     "minOrder": 100,
@@ -771,7 +771,7 @@
   },
   {
     "id": "IM 001",
-    "category": "RECTANGULAR SERIES",
+    "category": "RECTANGULAR FLORAL",
     "price": 23,
     "featured": false,
     "minOrder": 100,
@@ -841,7 +841,7 @@
   },
   {
     "id": "IM 182",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -884,7 +884,7 @@
   },
   {
     "id": "IM 181",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -1142,7 +1142,7 @@
   },
   {
     "id": "IM 175",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -1314,7 +1314,7 @@
   },
   {
     "id": "IM 171",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -1357,7 +1357,7 @@
   },
   {
     "id": "IM 170",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -1400,7 +1400,7 @@
   },
   {
     "id": "IM 169",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -1443,7 +1443,7 @@
   },
   {
     "id": "IM 168",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -1486,7 +1486,7 @@
   },
   {
     "id": "IM 167",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -1529,7 +1529,7 @@
   },
   {
     "id": "IM 166",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3205,7 +3205,7 @@
   },
   {
     "id": "IM 161",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3248,7 +3248,7 @@
   },
   {
     "id": "IM 160",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3294,7 +3294,7 @@
   },
   {
     "id": "IM 159",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3337,7 +3337,7 @@
   },
   {
     "id": "IM 1578",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3380,7 +3380,7 @@
   },
   {
     "id": "IM 157",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3423,7 +3423,7 @@
   },
   {
     "id": "IM 156",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3466,7 +3466,7 @@
   },
   {
     "id": "IM 155",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3509,7 +3509,7 @@
   },
   {
     "id": "IM 154",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3552,7 +3552,7 @@
   },
   {
     "id": "IM 153",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3595,7 +3595,7 @@
   },
   {
     "id": "IM 152",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3638,7 +3638,7 @@
   },
   {
     "id": "IM 151",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3681,7 +3681,7 @@
   },
   {
     "id": "IM 150",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3724,7 +3724,7 @@
   },
   {
     "id": "IM 149",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3767,7 +3767,7 @@
   },
   {
     "id": "IM 148",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3810,7 +3810,7 @@
   },
   {
     "id": "IM 147",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3853,7 +3853,7 @@
   },
   {
     "id": "IM 146",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3896,7 +3896,7 @@
   },
   {
     "id": "IM 145",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -3939,7 +3939,7 @@
   },
   {
     "id": "IM 144",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -4025,7 +4025,7 @@
   },
   {
     "id": "IM 140",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -4068,7 +4068,7 @@
   },
   {
     "id": "IM 142",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -4111,7 +4111,7 @@
   },
   {
     "id": "IM 141",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -4157,7 +4157,7 @@
   },
   {
     "id": "IM 139",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -4200,7 +4200,7 @@
   },
   {
     "id": "IM 138",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -4251,7 +4251,7 @@
   },
   {
     "id": "IM 137",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -4294,7 +4294,7 @@
   },
   {
     "id": "IM 136",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -4337,7 +4337,7 @@
   },
   {
     "id": "IM 135",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -4380,7 +4380,7 @@
   },
   {
     "id": "IM 134",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -4423,7 +4423,7 @@
   },
   {
     "id": "IM 133",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -4466,7 +4466,7 @@
   },
   {
     "id": "IM 132",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -4509,7 +4509,7 @@
   },
   {
     "id": "IM 131",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -4552,7 +4552,7 @@
   },
   {
     "id": "IM 130",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -4724,7 +4724,7 @@
   },
   {
     "id": "IM 126",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 32,
     "featured": false,
     "minOrder": 200,
@@ -5686,7 +5686,7 @@
   },
   {
     "id": "IM 119",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -5729,7 +5729,7 @@
   },
   {
     "id": "IM 118",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -5780,7 +5780,7 @@
   },
   {
     "id": "IM 117",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -5823,7 +5823,7 @@
   },
   {
     "id": "IM 116",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -5871,7 +5871,7 @@
   },
   {
     "id": "IM 115",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -5997,7 +5997,7 @@
   },
   {
     "id": "IM 112",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -6093,7 +6093,7 @@
   },
   {
     "id": "IM 110",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -6227,7 +6227,7 @@
   },
   {
     "id": "IM 107",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -6270,7 +6270,7 @@
   },
   {
     "id": "IM 106",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -6318,7 +6318,7 @@
   },
   {
     "id": "IM 105",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -6409,7 +6409,7 @@
   },
   {
     "id": "IM 102",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
@@ -6457,7 +6457,7 @@
   },
   {
     "id": "IM 101",
-    "category": "FLORAL",
+    "category": "SQUARE FLORAL",
     "price": 28,
     "featured": false,
     "minOrder": 100,
