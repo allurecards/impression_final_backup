@@ -248,7 +248,7 @@ function ShopPage() {
 
   useEffect(() => {
     if (active) {
-      setModalQuantity(active.category === "ODAMBADY" ? 2 : active.minOrder);
+      setModalQuantity(active.category === "ODAMBADY" ? 2 : 200);
       setSelectedVariantIdx(0);
     }
   }, [active?.id]);
