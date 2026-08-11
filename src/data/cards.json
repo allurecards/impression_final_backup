@@ -1,46 +1,5 @@
 [
   {
-    "id": "ANTIQUE 002",
-    "category": "SQUARE FLORAL",
-    "price": 0,
-    "featured": false,
-    "minOrder": 100,
-    "size": "15 CM X 21 CM",
-    "material": "230 GSM BLUE + 260 GSM OFF WHITE",
-    "description": "",
-    "instagram_url": "",
-    "extraCharges": [],
-    "applyWatermark": true,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "medium",
-    "watermarkColor": "#ffd700",
-    "images": [
-      "src/assets/cards/display/antique-002-1.PNG",
-      "src/assets/cards/display/antique-002-2.PNG",
-      "src/assets/cards/display/antique-002-3.PNG"
-    ],
-    "originals": [
-      "src/assets/cards/originals/antique-002-1.PNG",
-      "src/assets/cards/originals/antique-002-2.PNG",
-      "src/assets/cards/originals/antique-002-3.PNG"
-    ],
-    "imageWatermarks": [
-      null,
-      null,
-      null
-    ],
-    "variants": [
-      {
-        "name": "",
-        "size_id": 4,
-        "material_id": 4,
-        "size": "15 CM X 21 CM",
-        "material": "230 GSM BLUE + 260 GSM OFF WHITE",
-        "price": 0
-      }
-    ]
-  },
-  {
     "id": "ANTIQUE 001",
     "category": "SQUARE FLORAL",
     "price": 0,
