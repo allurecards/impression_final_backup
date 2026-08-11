@@ -15,12 +15,12 @@
     "watermarkSize": "medium",
     "watermarkColor": "#928c68",
     "images": [
-      "src/assets/cards/display/vitage-001-1.PNG",
+      "src/assets/cards/display/vitage-001-1.png",
       "src/assets/cards/display/vitage-001-2.PNG",
       "src/assets/cards/display/vitage-001-3.PNG"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-001-1.PNG",
+      "src/assets/cards/originals/vitage-001-1.png",
       "src/assets/cards/originals/vitage-001-2.PNG",
       "src/assets/cards/originals/vitage-001-3.PNG"
     ],
@@ -43,7 +43,7 @@
       {
         "name": "MEDIUM",
         "size_id": 1,
-        "material_id": 5,
+        "material_id": null,
         "size": "195 MM X 195 MM",
         "material": "260 GSM FABRIANO CLASSIC TEXTURED",
         "price": 30
