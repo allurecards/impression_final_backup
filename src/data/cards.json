@@ -16,26 +16,31 @@
     "watermarkColor": "#928c68",
     "images": [
       "src/assets/cards/display/vitage-001-1.png",
-      "src/assets/cards/display/vitage-001-2.PNG",
-      "src/assets/cards/display/vitage-001-3.PNG"
+      "src/assets/cards/display/vitage-001-2.png",
+      "src/assets/cards/display/vitage-001-3.png"
     ],
     "originals": [
       "src/assets/cards/originals/vitage-001-1.png",
-      "src/assets/cards/originals/vitage-001-2.PNG",
-      "src/assets/cards/originals/vitage-001-3.PNG"
+      "src/assets/cards/originals/vitage-001-2.png",
+      "src/assets/cards/originals/vitage-001-3.png"
     ],
     "imageWatermarks": [
-      null,
       {
         "apply": true,
         "pos": "bottom-right",
-        "size": "medium",
+        "size": "small",
+        "color": "#9a850e"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-right",
+        "size": "small",
         "color": "#d9bb12"
       },
       {
         "apply": true,
         "pos": "top-left",
-        "size": "medium",
+        "size": "small",
         "color": "#a19c82"
       }
     ],
