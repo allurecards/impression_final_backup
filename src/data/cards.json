@@ -1,5 +1,46 @@
 [
   {
+    "id": "VITAGE 016",
+    "category": "VITAGE SERIES",
+    "price": 30,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195 MM X 195 MM",
+    "material": "260 GSM FABRIANO CLASSIC TEXTURED",
+    "description": "PREMIUM DIGITAL PRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#504402",
+    "images": [
+      "src/assets/cards/display/vitage-016-1.png",
+      "src/assets/cards/display/vitage-016-2.png",
+      "src/assets/cards/display/vitage-016-3.png"
+    ],
+    "originals": [
+      "src/assets/cards/originals/vitage-016-1.png",
+      "src/assets/cards/originals/vitage-016-2.png",
+      "src/assets/cards/originals/vitage-016-3.png"
+    ],
+    "imageWatermarks": [
+      null,
+      null,
+      null
+    ],
+    "variants": [
+      {
+        "name": "MEDIUM",
+        "size_id": 1,
+        "material_id": 5,
+        "size": "195 MM X 195 MM",
+        "material": "260 GSM FABRIANO CLASSIC TEXTURED",
+        "price": 30
+      }
+    ]
+  },
+  {
     "id": "VITAGE 015",
     "category": "VITAGE SERIES",
     "price": 30,
