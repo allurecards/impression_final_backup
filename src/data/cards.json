@@ -33,7 +33,7 @@
       {
         "name": "MEDIUM",
         "size_id": 1,
-        "material_id": 5,
+        "material_id": null,
         "size": "195 MM X 195 MM",
         "material": "260 GSM FABRIANO CLASSIC TEXTURED",
         "price": 30
