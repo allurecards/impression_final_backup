@@ -76,7 +76,7 @@
     ]
   },
   {
-    "id": "VITAGE 016",
+    "id": "VINTAGE 016",
     "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
@@ -91,14 +91,14 @@
     "watermarkSize": "medium",
     "watermarkColor": "#504402",
     "images": [
-      "src/assets/cards/display/vitage-016-1.png",
-      "src/assets/cards/display/vitage-016-2.png",
-      "src/assets/cards/display/vitage-016-3.png"
+      "src/assets/cards/display/VINTAGE-016-1.png",
+      "src/assets/cards/display/VINTAGE-016-2.png",
+      "src/assets/cards/display/VINTAGE-016-3.png"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-016-1.png",
-      "src/assets/cards/originals/vitage-016-2.png",
-      "src/assets/cards/originals/vitage-016-3.png"
+      "src/assets/cards/originals/VINTAGE-016-1.png",
+      "src/assets/cards/originals/VINTAGE-016-2.png",
+      "src/assets/cards/originals/VINTAGE-016-3.png"
     ],
     "imageWatermarks": [
       null,
@@ -117,7 +117,7 @@
     ]
   },
   {
-    "id": "VITAGE 015",
+    "id": "VINTAGE 015",
     "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
@@ -132,14 +132,14 @@
     "watermarkSize": "medium",
     "watermarkColor": "#9706e5",
     "images": [
-      "src/assets/cards/display/vitage-015-1.png",
-      "src/assets/cards/display/vitage-015-2.png",
-      "src/assets/cards/display/vitage-015-3.png"
+      "src/assets/cards/display/VINTAGE-015-1.png",
+      "src/assets/cards/display/VINTAGE-015-2.png",
+      "src/assets/cards/display/VINTAGE-015-3.png"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-015-1.png",
-      "src/assets/cards/originals/vitage-015-2.png",
-      "src/assets/cards/originals/vitage-015-3.png"
+      "src/assets/cards/originals/VINTAGE-015-1.png",
+      "src/assets/cards/originals/VINTAGE-015-2.png",
+      "src/assets/cards/originals/VINTAGE-015-3.png"
     ],
     "imageWatermarks": [
       null,
@@ -158,8 +158,8 @@
     ]
   },
   {
-    "id": "VITAGE 014",
-    "category": "VITAGE SERIES",
+    "id": "VINTAGE 014",
+    "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
     "minOrder": 100,
@@ -173,14 +173,14 @@
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
     "images": [
-      "src/assets/cards/display/vitage-014-1.png",
-      "src/assets/cards/display/vitage-014-2.png",
-      "src/assets/cards/display/vitage-014-3.png"
+      "src/assets/cards/display/VINTAGE-014-1.png",
+      "src/assets/cards/display/VINTAGE-014-2.png",
+      "src/assets/cards/display/VINTAGE-014-3.png"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-014-1.png",
-      "src/assets/cards/originals/vitage-014-2.png",
-      "src/assets/cards/originals/vitage-014-3.png"
+      "src/assets/cards/originals/VINTAGE-014-1.png",
+      "src/assets/cards/originals/VINTAGE-014-2.png",
+      "src/assets/cards/originals/VINTAGE-014-3.png"
     ],
     "imageWatermarks": [
       null,
@@ -199,8 +199,8 @@
     ]
   },
   {
-    "id": "VITAGE 013",
-    "category": "VITAGE SERIES",
+    "id": "VINTAGE 013",
+    "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
     "minOrder": 100,
@@ -214,14 +214,14 @@
     "watermarkSize": "medium",
     "watermarkColor": "#8a7605",
     "images": [
-      "src/assets/cards/display/vitage-013-1.PNG",
-      "src/assets/cards/display/vitage-013-2.PNG",
-      "src/assets/cards/display/vitage-013-3.PNG"
+      "src/assets/cards/display/VINTAGE-013-1.PNG",
+      "src/assets/cards/display/VINTAGE-013-2.PNG",
+      "src/assets/cards/display/VINTAGE-013-3.PNG"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-013-1.PNG",
-      "src/assets/cards/originals/vitage-013-2.PNG",
-      "src/assets/cards/originals/vitage-013-3.PNG"
+      "src/assets/cards/originals/VINTAGE-013-1.PNG",
+      "src/assets/cards/originals/VINTAGE-013-2.PNG",
+      "src/assets/cards/originals/VINTAGE-013-3.PNG"
     ],
     "imageWatermarks": [
       null,
@@ -240,8 +240,8 @@
     ]
   },
   {
-    "id": "VITAGE 012",
-    "category": "VITAGE SERIES",
+    "id": "VINTAGE 012",
+    "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
     "minOrder": 100,
@@ -255,14 +255,14 @@
     "watermarkSize": "medium",
     "watermarkColor": "#5c4f05",
     "images": [
-      "src/assets/cards/display/vitage-012-1.png",
-      "src/assets/cards/display/vitage-012-2.png",
-      "src/assets/cards/display/vitage-012-3.png"
+      "src/assets/cards/display/VINTAGE-012-1.png",
+      "src/assets/cards/display/VINTAGE-012-2.png",
+      "src/assets/cards/display/VINTAGE-012-3.png"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-012-1.png",
-      "src/assets/cards/originals/vitage-012-2.png",
-      "src/assets/cards/originals/vitage-012-3.png"
+      "src/assets/cards/originals/VINTAGE-012-1.png",
+      "src/assets/cards/originals/VINTAGE-012-2.png",
+      "src/assets/cards/originals/VINTAGE-012-3.png"
     ],
     "imageWatermarks": [
       null,
@@ -281,8 +281,8 @@
     ]
   },
   {
-    "id": "VITAGE 011",
-    "category": "VITAGE SERIES",
+    "id": "VINTAGE 011",
+    "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
     "minOrder": 100,
@@ -296,14 +296,14 @@
     "watermarkSize": "medium",
     "watermarkColor": "#504f49",
     "images": [
-      "src/assets/cards/display/vitage-011-1.png",
-      "src/assets/cards/display/vitage-011-2.PNG",
-      "src/assets/cards/display/vitage-011-3.PNG"
+      "src/assets/cards/display/VINTAGE-011-1.png",
+      "src/assets/cards/display/VINTAGE-011-2.PNG",
+      "src/assets/cards/display/VINTAGE-011-3.PNG"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-011-1.png",
-      "src/assets/cards/originals/vitage-011-2.PNG",
-      "src/assets/cards/originals/vitage-011-3.PNG"
+      "src/assets/cards/originals/VINTAGE-011-1.png",
+      "src/assets/cards/originals/VINTAGE-011-2.PNG",
+      "src/assets/cards/originals/VINTAGE-011-3.PNG"
     ],
     "imageWatermarks": [
       null,
@@ -322,8 +322,8 @@
     ]
   },
   {
-    "id": "VITAGE 010",
-    "category": "VITAGE SERIES",
+    "id": "VINTAGE 010",
+    "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
     "minOrder": 100,
@@ -337,14 +337,14 @@
     "watermarkSize": "medium",
     "watermarkColor": "#564a06",
     "images": [
-      "src/assets/cards/display/vitage-010-1.PNG",
-      "src/assets/cards/display/vitage-010-2.PNG",
-      "src/assets/cards/display/vitage-010-3.PNG"
+      "src/assets/cards/display/VINTAGE-010-1.PNG",
+      "src/assets/cards/display/VINTAGE-010-2.PNG",
+      "src/assets/cards/display/VINTAGE-010-3.PNG"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-010-1.PNG",
-      "src/assets/cards/originals/vitage-010-2.PNG",
-      "src/assets/cards/originals/vitage-010-3.PNG"
+      "src/assets/cards/originals/VINTAGE-010-1.PNG",
+      "src/assets/cards/originals/VINTAGE-010-2.PNG",
+      "src/assets/cards/originals/VINTAGE-010-3.PNG"
     ],
     "imageWatermarks": [
       null,
@@ -363,8 +363,8 @@
     ]
   },
   {
-    "id": "VITAGE 009",
-    "category": "VITAGE SERIES",
+    "id": "VINTAGE 009",
+    "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
     "minOrder": 100,
@@ -378,14 +378,14 @@
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
     "images": [
-      "src/assets/cards/display/vitage-009-1.PNG",
-      "src/assets/cards/display/vitage-009-2.PNG",
-      "src/assets/cards/display/vitage-009-3.PNG"
+      "src/assets/cards/display/VINTAGE-009-1.PNG",
+      "src/assets/cards/display/VINTAGE-009-2.PNG",
+      "src/assets/cards/display/VINTAGE-009-3.PNG"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-009-1.PNG",
-      "src/assets/cards/originals/vitage-009-2.PNG",
-      "src/assets/cards/originals/vitage-009-3.PNG"
+      "src/assets/cards/originals/VINTAGE-009-1.PNG",
+      "src/assets/cards/originals/VINTAGE-009-2.PNG",
+      "src/assets/cards/originals/VINTAGE-009-3.PNG"
     ],
     "imageWatermarks": [
       null,
@@ -404,8 +404,8 @@
     ]
   },
   {
-    "id": "VITAGE 008",
-    "category": "VITAGE SERIES",
+    "id": "VINTAGE 008",
+    "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
     "minOrder": 100,
@@ -419,14 +419,14 @@
     "watermarkSize": "medium",
     "watermarkColor": "#4e4304",
     "images": [
-      "src/assets/cards/display/vitage-008-1.png",
-      "src/assets/cards/display/vitage-008-2.png",
-      "src/assets/cards/display/vitage-008-3.png"
+      "src/assets/cards/display/VINTAGE-008-1.png",
+      "src/assets/cards/display/VINTAGE-008-2.png",
+      "src/assets/cards/display/VINTAGE-008-3.png"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-008-1.png",
-      "src/assets/cards/originals/vitage-008-2.png",
-      "src/assets/cards/originals/vitage-008-3.png"
+      "src/assets/cards/originals/VINTAGE-008-1.png",
+      "src/assets/cards/originals/VINTAGE-008-2.png",
+      "src/assets/cards/originals/VINTAGE-008-3.png"
     ],
     "imageWatermarks": [
       null,
@@ -445,8 +445,8 @@
     ]
   },
   {
-    "id": "VITAGE 007",
-    "category": "VITAGE SERIES",
+    "id": "VINTAGE 007",
+    "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
     "minOrder": 100,
@@ -460,14 +460,14 @@
     "watermarkSize": "medium",
     "watermarkColor": "#4b4101",
     "images": [
-      "src/assets/cards/display/vitage-007-1.png",
-      "src/assets/cards/display/vitage-007-2.png",
-      "src/assets/cards/display/vitage-007-3.png"
+      "src/assets/cards/display/VINTAGE-007-1.png",
+      "src/assets/cards/display/VINTAGE-007-2.png",
+      "src/assets/cards/display/VINTAGE-007-3.png"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-007-1.png",
-      "src/assets/cards/originals/vitage-007-2.png",
-      "src/assets/cards/originals/vitage-007-3.png"
+      "src/assets/cards/originals/VINTAGE-007-1.png",
+      "src/assets/cards/originals/VINTAGE-007-2.png",
+      "src/assets/cards/originals/VINTAGE-007-3.png"
     ],
     "imageWatermarks": [
       null,
@@ -486,8 +486,8 @@
     ]
   },
   {
-    "id": "VITAGE 006",
-    "category": "VITAGE SERIES",
+    "id": "VINTAGE 006",
+    "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
     "minOrder": 100,
@@ -501,14 +501,14 @@
     "watermarkSize": "small",
     "watermarkColor": "#8806b7",
     "images": [
-      "src/assets/cards/display/vitage-006-1.png",
-      "src/assets/cards/display/vitage-006-2.png",
-      "src/assets/cards/display/vitage-006-3.png"
+      "src/assets/cards/display/VINTAGE-006-1.png",
+      "src/assets/cards/display/VINTAGE-006-2.png",
+      "src/assets/cards/display/VINTAGE-006-3.png"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-006-1.png",
-      "src/assets/cards/originals/vitage-006-2.png",
-      "src/assets/cards/originals/vitage-006-3.png"
+      "src/assets/cards/originals/VINTAGE-006-1.png",
+      "src/assets/cards/originals/VINTAGE-006-2.png",
+      "src/assets/cards/originals/VINTAGE-006-3.png"
     ],
     "imageWatermarks": [
       null,
@@ -527,8 +527,8 @@
     ]
   },
   {
-    "id": "VITAGE 005",
-    "category": "VITAGE SERIES",
+    "id": "VINTAGE 005",
+    "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
     "minOrder": 100,
@@ -542,14 +542,14 @@
     "watermarkSize": "medium",
     "watermarkColor": "#b39905",
     "images": [
-      "src/assets/cards/display/vitage-005-1.png",
-      "src/assets/cards/display/vitage-005-2.png",
-      "src/assets/cards/display/vitage-005-3.png"
+      "src/assets/cards/display/VINTAGE-005-1.png",
+      "src/assets/cards/display/VINTAGE-005-2.png",
+      "src/assets/cards/display/VINTAGE-005-3.png"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-005-1.png",
-      "src/assets/cards/originals/vitage-005-2.png",
-      "src/assets/cards/originals/vitage-005-3.png"
+      "src/assets/cards/originals/VINTAGE-005-1.png",
+      "src/assets/cards/originals/VINTAGE-005-2.png",
+      "src/assets/cards/originals/VINTAGE-005-3.png"
     ],
     "imageWatermarks": [
       null,
@@ -568,8 +568,8 @@
     ]
   },
   {
-    "id": "VITAGE 004",
-    "category": "VITAGE SERIES",
+    "id": "VINTAGE 004",
+    "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
     "minOrder": 100,
@@ -583,14 +583,14 @@
     "watermarkSize": "medium",
     "watermarkColor": "#d7d23c",
     "images": [
-      "src/assets/cards/display/vitage-004-1.png",
-      "src/assets/cards/display/vitage-004-2.png",
-      "src/assets/cards/display/vitage-004-3.png"
+      "src/assets/cards/display/VINTAGE-004-1.png",
+      "src/assets/cards/display/VINTAGE-004-2.png",
+      "src/assets/cards/display/VINTAGE-004-3.png"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-004-1.png",
-      "src/assets/cards/originals/vitage-004-2.png",
-      "src/assets/cards/originals/vitage-004-3.png"
+      "src/assets/cards/originals/VINTAGE-004-1.png",
+      "src/assets/cards/originals/VINTAGE-004-2.png",
+      "src/assets/cards/originals/VINTAGE-004-3.png"
     ],
     "imageWatermarks": [
       null,
@@ -609,8 +609,8 @@
     ]
   },
   {
-    "id": "VITAGE 003",
-    "category": "VITAGE SERIES",
+    "id": "VINTAGE 003",
+    "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
     "minOrder": 100,
@@ -624,14 +624,14 @@
     "watermarkSize": "medium",
     "watermarkColor": "#ffd700",
     "images": [
-      "src/assets/cards/display/vitage-003-1.png",
-      "src/assets/cards/display/vitage-003-2.png",
-      "src/assets/cards/display/vitage-003-3.png"
+      "src/assets/cards/display/VINTAGE-003-1.png",
+      "src/assets/cards/display/VINTAGE-003-2.png",
+      "src/assets/cards/display/VINTAGE-003-3.png"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-003-1.png",
-      "src/assets/cards/originals/vitage-003-2.png",
-      "src/assets/cards/originals/vitage-003-3.png"
+      "src/assets/cards/originals/VINTAGE-003-1.png",
+      "src/assets/cards/originals/VINTAGE-003-2.png",
+      "src/assets/cards/originals/VINTAGE-003-3.png"
     ],
     "imageWatermarks": [
       {
@@ -665,8 +665,8 @@
     ]
   },
   {
-    "id": "VITAGE 002",
-    "category": "VITAGE SERIES",
+    "id": "VINTAGE 002",
+    "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
     "minOrder": 100,
@@ -680,14 +680,14 @@
     "watermarkSize": "medium",
     "watermarkColor": "#d4b508",
     "images": [
-      "src/assets/cards/display/vitage-002-1.png",
-      "src/assets/cards/display/vitage-002-2.png",
-      "src/assets/cards/display/vitage-002-3.png"
+      "src/assets/cards/display/VINTAGE-002-1.png",
+      "src/assets/cards/display/VINTAGE-002-2.png",
+      "src/assets/cards/display/VINTAGE-002-3.png"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-002-1.png",
-      "src/assets/cards/originals/vitage-002-2.png",
-      "src/assets/cards/originals/vitage-002-3.png"
+      "src/assets/cards/originals/VINTAGE-002-1.png",
+      "src/assets/cards/originals/VINTAGE-002-2.png",
+      "src/assets/cards/originals/VINTAGE-002-3.png"
     ],
     "imageWatermarks": [
       null,
@@ -706,8 +706,8 @@
     ]
   },
   {
-    "id": "VITAGE 001",
-    "category": "VITAGE SERIES",
+    "id": "VINTAGE 001",
+    "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
     "minOrder": 100,
@@ -721,14 +721,14 @@
     "watermarkSize": "medium",
     "watermarkColor": "#928c68",
     "images": [
-      "src/assets/cards/display/vitage-001-1.png",
-      "src/assets/cards/display/vitage-001-2.png",
-      "src/assets/cards/display/vitage-001-3.png"
+      "src/assets/cards/display/VINTAGE-001-1.png",
+      "src/assets/cards/display/VINTAGE-001-2.png",
+      "src/assets/cards/display/VINTAGE-001-3.png"
     ],
     "originals": [
-      "src/assets/cards/originals/vitage-001-1.png",
-      "src/assets/cards/originals/vitage-001-2.png",
-      "src/assets/cards/originals/vitage-001-3.png"
+      "src/assets/cards/originals/VINTAGE-001-1.png",
+      "src/assets/cards/originals/VINTAGE-001-2.png",
+      "src/assets/cards/originals/VINTAGE-001-3.png"
     ],
     "imageWatermarks": [
       {
