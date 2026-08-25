@@ -288,7 +288,7 @@ function Landing() {
           <Door
             door="shop"
             to="/shop"
-            label="Shop"
+            label="Shop Impressions"
             eyebrow="Door I"
             badge="Browse Ready‑to‑Send"
             copy="Step into the gallery. Ready-made invitations, ready to send."
@@ -306,7 +306,7 @@ function Landing() {
           <Door
           door="custom"
           to="/customize"   // still a placeholder; onClick will prevent navigation and go external
-          label="Allure"
+          label="Shop Allure"
           eyebrow="Door II"
           badge="Bespoke Gold Foil"
           copy="Limited edition. Gold foil, letterpress, and hand‑finished details."
