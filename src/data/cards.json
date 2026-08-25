@@ -290,10 +290,10 @@
     "id": "VINTAGE 011",
     "category": "VINTAGE SERIES",
     "price": 30,
-    "featured": false,
+    "featured": true,
     "minOrder": 100,
     "size": "195 MM X 195 MM",
-    "material": "PREMIUM 350 GSM MILL TEXTURED",
+    "material": "260 GSM FABRIANO CLASSIC TEXTURED",
     "description": "PREMIUM DIGITAL PRINTING",
     "instagram_url": "https://www.instagram.com/p/Db91M1iytfS/?hl=en",
     "extraCharges": [],
@@ -322,7 +322,7 @@
         "size_id": 4,
         "material_id": 4,
         "size": "195 MM X 195 MM",
-        "material": "PREMIUM 350 GSM MILL TEXTURED",
+        "material": "260 GSM FABRIANO CLASSIC TEXTURED",
         "price": 30
       }
     ]
