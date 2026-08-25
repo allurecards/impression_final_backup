@@ -3,7 +3,7 @@
     "id": "VINTAGE 018",
     "category": "VINTAGE SERIES",
     "price": 30,
-    "featured": false,
+    "featured": true,
     "minOrder": 100,
     "size": "195 MM X 195 MM",
     "material": "260 GSM FABRIANO CLASSIC TEXTURED",
