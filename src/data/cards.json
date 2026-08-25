@@ -118,7 +118,7 @@
   },
   {
     "id": "VITAGE 015",
-    "category": "VITAGE SERIES",
+    "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
     "minOrder": 100,
@@ -149,8 +149,8 @@
     "variants": [
       {
         "name": "MEDIUM",
-        "size_id": 1,
-        "material_id": 5,
+        "size_id": 4,
+        "material_id": 4,
         "size": "195 MM X 195 MM",
         "material": "260 GSM FABRIANO CLASSIC TEXTURED",
         "price": 30
