@@ -445,7 +445,7 @@ function Door({
   const tiltY = (local.x - 0.5) * 8;
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex w-full flex-col items-center">
       {aboveText && (
         <span className="mb-3 text-[11px] uppercase tracking-[0.4em] text-[#f5f0e6]/70">
           {aboveText}
@@ -461,7 +461,7 @@ function Door({
           setLocal({ x: 0.5, y: 0.5 });
         }}
         onMouseMove={onMove}
-        className="group relative block aspect-[3/4] overflow-hidden rounded-[4px] border border-[#f5f0e6]/15 will-change-transform"
+        className="group relative block aspect-[3/4] w-full overflow-hidden rounded-[4px] border border-[#f5f0e6]/15 will-change-transform"
         style={{
           transform: `perspective(1200px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(${
             hovered ? 1.02 : otherHovered ? 0.97 : 1
@@ -602,7 +602,7 @@ function Door({
             e.preventDefault();
             onClick(door, to, e as unknown as React.MouseEvent);
           }}
-          className="mt-4 rounded-full border border-[#f5f0e6]/30 px-6 py-2 text-[11px] uppercase tracking-[0.3em] text-[#f5f0e6] transition-colors hover:bg-[#f5f0e6] hover:text-[#1a1a1a]"
+          className="mt-4 w-full rounded-full border border-[#f5f0e6]/30 px-6 py-2 text-[11px] uppercase tracking-[0.3em] text-[#f5f0e6] transition-colors hover:bg-[#f5f0e6] hover:text-[#1a1a1a] sm:w-auto"
         >
           {belowButtonText}
         </button>
