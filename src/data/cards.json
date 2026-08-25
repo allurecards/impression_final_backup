@@ -77,12 +77,12 @@
   },
   {
     "id": "VITAGE 016",
-    "category": "VITAGE SERIES",
+    "category": "VINTAGE SERIES",
     "price": 30,
     "featured": false,
     "minOrder": 100,
-    "size": "195 MM X 195 MM",
-    "material": "260 GSM FABRIANO CLASSIC TEXTURED",
+    "size": "5\" x 7\"",
+    "material": "Premium 350 gsm",
     "description": "PREMIUM DIGITAL PRINTING",
     "instagram_url": "",
     "extraCharges": [],
@@ -109,9 +109,9 @@
       {
         "name": "MEDIUM",
         "size_id": 1,
-        "material_id": 5,
-        "size": "195 MM X 195 MM",
-        "material": "260 GSM FABRIANO CLASSIC TEXTURED",
+        "material_id": 1,
+        "size": "5\" x 7\"",
+        "material": "Premium 350 gsm",
         "price": 30
       }
     ]
