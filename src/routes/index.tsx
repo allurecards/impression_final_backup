@@ -88,9 +88,10 @@ function Landing() {
   };
 
   // Custom door click
+// Custom door click – now external link to Allure
   const onCustomClick = (door: "shop" | "custom", to: string, e: React.MouseEvent) => {
-    e.preventDefault();
-    handleDoorClick(door, to);
+  e.preventDefault();
+  handleDoorClick("custom", "https://www.allurecards.in", true); // isExternal = true
   };
 
   return (
@@ -303,22 +304,22 @@ function Landing() {
             transitionActive={transitionDoor === "shop"}
           />
           <Door
-            door="custom"
-            to="/customize"
-            label="Customise"
-            eyebrow="Door II"
-            badge="Create From Scratch"
-            copy="Start with a blank page. Shape every word, every stroke, your own."
-            image={registry}
-            hovered={hovered === "custom"}
-            otherHovered={hovered === "shop"}
-            onEnter={() => setHovered("custom")}
-            onLeave={() => setHovered(null)}
-            tint="#e6d4f0"
-            px={px}
-            py={py}
-            onClick={onCustomClick}
-            transitionActive={transitionDoor === "custom"}
+          door="custom"
+          to="/customize"   // still a placeholder; onClick will prevent navigation and go external
+          label="Allure"
+          eyebrow="Door II"
+          badge="Bespoke Gold Foil"
+          copy="Limited edition. Gold foil, letterpress, and hand‑finished details."
+          image={luxuryImage}
+          hovered={hovered === "custom"}
+          otherHovered={hovered === "shop"}
+          onEnter={() => setHovered("custom")}
+          onLeave={() => setHovered(null)}
+          tint="#c8a45c"
+          px={px}
+          py={py}
+          onClick={onCustomClick}
+          transitionActive={transitionDoor === "custom"}
           />
         </div>
       </section>
