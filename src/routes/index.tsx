@@ -81,16 +81,16 @@ function Landing() {
     [navigate],
   );
 
-  // When Shop is clicked, directly navigate to /shop with transition
+  // Shop door click
   const onShopClick = (e: React.MouseEvent) => {
     e.preventDefault();
     handleDoorClick("shop", "/shop");
   };
 
-  // Custom door click – now external link to Allure
+  // Allure (custom) door click – external
   const onCustomClick = (door: "shop" | "custom", to: string, e: React.MouseEvent) => {
     e.preventDefault();
-    handleDoorClick("custom", "https://www.allurecards.in", true); // isExternal = true
+    handleDoorClick("custom", "https://www.allurecards.in", true);
   };
 
   return (
@@ -99,10 +99,9 @@ function Landing() {
       className="relative min-h-[180vh] overflow-hidden"
       style={{ backgroundColor: "#0f0b0a", color: "#f5f0e6" }}
     >
-      {/* ========== STATIC NAVBAR (non‑sticky, only on homepage) ========== */}
+      {/* ========== STATIC NAVBAR ========== */}
       <header className="relative z-30 w-full bg-transparent">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-12">
-          {/* Logo */}
           <a href="#">
             <img
               src={logo}
@@ -110,8 +109,6 @@ function Landing() {
               className="h-10 w-auto -translate-x-2 translate-y-5 scale-[1.8] origin-left"
             />
           </a>
-
-          {/* Links */}
           <nav className="hidden items-center gap-8 lg:flex">
             <Link
               to="/shop"
@@ -131,9 +128,7 @@ function Landing() {
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-1.5 rounded-full border border-[#d9a87c]/30 px-4 py-1.5 text-sm font-medium text-[#d9a87c] transition-all duration-200 ease-out hover:bg-[#d9a87c] hover:text-[#1a1a1a] active:scale-[0.97]"
             >
-              <span className="text-xs transition-transform duration-200 ease-out group-hover:scale-110">
-                ✦
-              </span>
+              <span className="text-xs transition-transform duration-200 ease-out group-hover:scale-110">✦</span>
               <span className="tracking-[0.08em]">Allure</span>
             </a>
             <a
@@ -143,8 +138,6 @@ function Landing() {
               Contact
             </a>
           </nav>
-
-          {/* CTA button */}
           <Link
             to="/customize"
             className="rounded-full bg-[#f5f0e6] px-5 py-2.5 text-sm font-semibold text-[#1a1a1a] transition-colors hover:bg-white"
@@ -284,12 +277,12 @@ function Landing() {
             transition: "transform 400ms linear",
           }}
         >
-          {/* Impressions (Shop) Door */}
+          {/* Impressions Door */}
           <Door
             door="shop"
             to="/shop"
             label="Impressions"
-            eyebrow="Door I"
+            eyebrow="Shop"
             badge="Browse Ready‑to‑Send"
             copy="Step into the gallery. Ready-made invitations, ready to send."
             image={registry}
@@ -302,16 +295,14 @@ function Landing() {
             py={py}
             onClick={(door, to, e) => onShopClick(e)}
             transitionActive={transitionDoor === "shop"}
-            aboveText="Impressions"
-            belowButtonText="Shop Now"
           />
 
-          {/* Allure (Luxury) Door */}
+          {/* Allure Door */}
           <Door
             door="custom"
-            to="/customize"   // placeholder; onClick will prevent navigation and go external
+            to="/customize"
             label="Allure"
-            eyebrow="Door II"
+            eyebrow="Shop"
             badge="Bespoke Gold Foil"
             copy="Limited edition. Gold foil, letterpress, and hand‑finished details."
             image={invitations}
@@ -324,9 +315,7 @@ function Landing() {
             py={py}
             onClick={onCustomClick}
             transitionActive={transitionDoor === "custom"}
-            aboveText="Allure"
-            belowButtonText="Shop Luxury"
-            titleColor="#c8a45c"   // golden title color
+            titleColor="#c8a45c"
           />
         </div>
       </section>
@@ -408,8 +397,6 @@ function Door({
   py,
   onClick,
   transitionActive,
-  aboveText,
-  belowButtonText,
   titleColor,
 }: {
   door: "shop" | "custom";
@@ -428,8 +415,6 @@ function Door({
   py: number;
   onClick: (door: "shop" | "custom", to: string, e: React.MouseEvent) => void;
   transitionActive: boolean;
-  aboveText?: string;
-  belowButtonText?: string;
   titleColor?: string;
 }) {
   const ref = useRef<HTMLAnchorElement>(null);
@@ -445,168 +430,150 @@ function Door({
   const tiltY = (local.x - 0.5) * 8;
 
   return (
-    <div className="flex w-full flex-col items-center">
-      {aboveText && (
-        <span className="mb-3 text-[11px] uppercase tracking-[0.4em] text-[#f5f0e6]/70">
-          {aboveText}
-        </span>
-      )}
-      <Link
-        ref={ref}
-        to={to}
-        onClick={(e) => onClick(door, to, e)}
-        onMouseEnter={onEnter}
-        onMouseLeave={() => {
-          onLeave();
-          setLocal({ x: 0.5, y: 0.5 });
-        }}
-        onMouseMove={onMove}
-        className="group relative block aspect-[3/4] w-full overflow-hidden rounded-[4px] border border-[#f5f0e6]/15 will-change-transform"
+    <Link
+      ref={ref}
+      to={to}
+      onClick={(e) => onClick(door, to, e)}
+      onMouseEnter={onEnter}
+      onMouseLeave={() => {
+        onLeave();
+        setLocal({ x: 0.5, y: 0.5 });
+      }}
+      onMouseMove={onMove}
+      className="group relative block aspect-[3/4] w-full overflow-hidden rounded-[4px] border border-[#f5f0e6]/15 will-change-transform"
+      style={{
+        transform: `perspective(1200px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(${
+          hovered ? 1.02 : otherHovered ? 0.97 : 1
+        })`,
+        opacity: otherHovered ? 0.55 : transitionActive ? 0 : 1,
+        transition: "transform 500ms cubic-bezier(0.2,0.8,0.2,1), opacity 500ms",
+        pointerEvents: transitionActive ? "none" : "auto",
+      }}
+    >
+      <img
+        src={image}
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover"
         style={{
-          transform: `perspective(1200px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(${
-            hovered ? 1.02 : otherHovered ? 0.97 : 1
-          })`,
-          opacity: otherHovered ? 0.55 : transitionActive ? 0 : 1,
-          transition: "transform 500ms cubic-bezier(0.2,0.8,0.2,1), opacity 500ms",
-          pointerEvents: transitionActive ? "none" : "auto",
+          transform: `scale(${hovered ? 1.12 : 1.04}) translate3d(${-px * 12}px, ${-py * 12}px, 0)`,
+          filter: `brightness(${hovered ? 0.75 : 0.5}) saturate(1.05)`,
+          transition: "transform 900ms cubic-bezier(0.2,0.8,0.2,1), filter 600ms",
         }}
-      >
-        <img
-          src={image}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{
-            transform: `scale(${hovered ? 1.12 : 1.04}) translate3d(${-px * 12}px, ${-py * 12}px, 0)`,
-            filter: `brightness(${hovered ? 0.75 : 0.5}) saturate(1.05)`,
-            transition: "transform 900ms cubic-bezier(0.2,0.8,0.2,1), filter 600ms",
-          }}
-        />
+      />
 
-        {/* Door split (hover) */}
-        <div
-          className="pointer-events-none absolute inset-y-0 left-0 w-1/2 bg-[#0f0b0a]/40 backdrop-blur-[2px]"
-          style={{
-            transform: hovered ? "translateX(-100%)" : "translateX(0)",
-            transition: "transform 900ms cubic-bezier(0.77,0,0.175,1)",
-          }}
-        />
-        <div
-          className="pointer-events-none absolute inset-y-0 right-0 w-1/2 bg-[#0f0b0a]/40 backdrop-blur-[2px]"
-          style={{
-            transform: hovered ? "translateX(100%)" : "translateX(0)",
-            transition: "transform 900ms cubic-bezier(0.77,0,0.175,1)",
-          }}
-        />
+      {/* Door split (hover) */}
+      <div
+        className="pointer-events-none absolute inset-y-0 left-0 w-1/2 bg-[#0f0b0a]/40 backdrop-blur-[2px]"
+        style={{
+          transform: hovered ? "translateX(-100%)" : "translateX(0)",
+          transition: "transform 900ms cubic-bezier(0.77,0,0.175,1)",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 w-1/2 bg-[#0f0b0a]/40 backdrop-blur-[2px]"
+        style={{
+          transform: hovered ? "translateX(100%)" : "translateX(0)",
+          transition: "transform 900ms cubic-bezier(0.77,0,0.175,1)",
+        }}
+      />
 
-        {/* Seam + knock dot */}
-        <div className="pointer-events-none absolute inset-y-0 left-1/2 w-px">
-          <div
-            className="h-full w-full"
+      {/* Seam + knock dot */}
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 w-px">
+        <div
+          className="h-full w-full"
+          style={{
+            background: `linear-gradient(to bottom, transparent, ${tint}, transparent)`,
+            opacity: hovered ? 0 : 0.9,
+            transition: "opacity 500ms",
+          }}
+        />
+        <div
+          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-2 h-2 rounded-full"
+          style={{
+            backgroundColor: tint,
+            boxShadow: `0 0 6px ${tint}, 0 0 12px ${tint}`,
+            opacity: hovered ? 0 : 0.6,
+            animation: "knock 2s ease-in-out infinite",
+          }}
+        />
+      </div>
+
+      {/* Cursor glow */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: `radial-gradient(220px circle at ${local.x * 100}% ${local.y * 100}%, ${tint}33, transparent 70%)`,
+          opacity: hovered ? 1 : 0,
+          transition: "opacity 400ms",
+        }}
+      />
+
+      {/* Content */}
+      <div className="absolute inset-0 flex flex-col justify-between p-8">
+        <div className="flex items-center justify-between">
+          <span className="text-[10px] uppercase tracking-[0.4em] text-[#f5f0e6]/70">
+            {eyebrow}
+          </span>
+          <span
+            className="h-px bg-[#f5f0e6]/50"
             style={{
-              background: `linear-gradient(to bottom, transparent, ${tint}, transparent)`,
-              opacity: hovered ? 0 : 0.9,
+              width: hovered ? "80px" : "24px",
+              transition: "width 600ms cubic-bezier(0.2,0.8,0.2,1)",
+            }}
+          />
+        </div>
+
+        <div>
+          <h2
+            className="font-serif text-6xl leading-none tracking-tight md:text-7xl"
+            style={{
+              color: titleColor || undefined,
+              transform: hovered ? "translateY(-6px)" : "translateY(0)",
+              transition: "transform 600ms cubic-bezier(0.2,0.8,0.2,1)",
+            }}
+          >
+            {label}
+          </h2>
+
+          <span
+            className="mt-1 inline-block rounded-full border px-3 py-0.5 text-[10px] uppercase tracking-[0.25em]"
+            style={{
+              color: tint,
+              borderColor: tint,
+              opacity: hovered ? 1 : 0.7,
               transition: "opacity 500ms",
             }}
-          />
-          <div
-            className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-2 h-2 rounded-full"
+          >
+            {badge}
+          </span>
+
+          <p
+            className="mt-4 max-w-xs text-sm text-[#f5f0e6]/80"
             style={{
-              backgroundColor: tint,
-              boxShadow: `0 0 6px ${tint}, 0 0 12px ${tint}`,
-              opacity: hovered ? 0 : 0.6,
-              animation: "knock 2s ease-in-out infinite",
+              opacity: hovered ? 1 : 0.7,
+              transform: hovered ? "translateY(0)" : "translateY(6px)",
+              transition: "all 500ms",
             }}
-          />
-        </div>
-
-        {/* Cursor glow */}
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background: `radial-gradient(220px circle at ${local.x * 100}% ${local.y * 100}%, ${tint}33, transparent 70%)`,
-            opacity: hovered ? 1 : 0,
-            transition: "opacity 400ms",
-          }}
-        />
-
-        {/* Content */}
-        <div className="absolute inset-0 flex flex-col justify-between p-8">
-          <div className="flex items-center justify-between">
-            <span className="text-[10px] uppercase tracking-[0.4em] text-[#f5f0e6]/70">
-              {eyebrow}
-            </span>
+          >
+            {copy}
+          </p>
+          <div
+            className="mt-6 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.4em]"
+            style={{ color: tint }}
+          >
+            <span>{hovered ? "Push to enter" : "Enter"}</span>
             <span
-              className="h-px bg-[#f5f0e6]/50"
+              className="inline-block"
               style={{
-                width: hovered ? "80px" : "24px",
-                transition: "width 600ms cubic-bezier(0.2,0.8,0.2,1)",
-              }}
-            />
-          </div>
-
-          <div>
-            <h2
-              className="font-serif text-6xl leading-none tracking-tight md:text-7xl"
-              style={{
-                color: titleColor || undefined, // golden for Allure, default white
-                transform: hovered ? "translateY(-6px)" : "translateY(0)",
-                transition: "transform 600ms cubic-bezier(0.2,0.8,0.2,1)",
+                transform: hovered ? "translateX(8px)" : "translateX(0)",
+                transition: "transform 500ms cubic-bezier(0.2,0.8,0.2,1)",
               }}
             >
-              {label}
-            </h2>
-
-            <span
-              className="mt-1 inline-block rounded-full border px-3 py-0.5 text-[10px] uppercase tracking-[0.25em]"
-              style={{
-                color: tint,
-                borderColor: tint,
-                opacity: hovered ? 1 : 0.7,
-                transition: "opacity 500ms",
-              }}
-            >
-              {badge}
+              →
             </span>
-
-            <p
-              className="mt-4 max-w-xs text-sm text-[#f5f0e6]/80"
-              style={{
-                opacity: hovered ? 1 : 0.7,
-                transform: hovered ? "translateY(0)" : "translateY(6px)",
-                transition: "all 500ms",
-              }}
-            >
-              {copy}
-            </p>
-            <div
-              className="mt-6 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.4em]"
-              style={{ color: tint }}
-            >
-              <span>{hovered ? "Push to enter" : "Enter"}</span>
-              <span
-                className="inline-block"
-                style={{
-                  transform: hovered ? "translateX(8px)" : "translateX(0)",
-                  transition: "transform 500ms cubic-bezier(0.2,0.8,0.2,1)",
-                }}
-              >
-                →
-              </span>
-            </div>
           </div>
         </div>
-      </Link>
-      {belowButtonText && (
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            onClick(door, to, e as unknown as React.MouseEvent);
-          }}
-          className="mt-4 w-full rounded-full border border-[#f5f0e6]/30 px-6 py-2 text-[11px] uppercase tracking-[0.3em] text-[#f5f0e6] transition-colors hover:bg-[#f5f0e6] hover:text-[#1a1a1a] sm:w-auto"
-        >
-          {belowButtonText}
-        </button>
-      )}
-    </div>
+      </div>
+    </Link>
   );
 }
