@@ -509,27 +509,19 @@ function Door({
       />
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col justify-between p-8">
-        <div className="flex items-center justify-between">
-          <span className="text-[10px] uppercase tracking-[0.4em] text-[#f5f0e6]/70">
+      <div className="absolute inset-0 flex flex-col justify-end p-8">
+        <div>
+          {/* "Shop" label directly above the big title */}
+          <span className="text-[10px] uppercase tracking-[0.4em]" style={{ color: tint }}>
             {eyebrow}
           </span>
-          <span
-            className="h-px bg-[#f5f0e6]/50"
-            style={{
-              width: hovered ? "80px" : "24px",
-              transition: "width 600ms cubic-bezier(0.2,0.8,0.2,1)",
-            }}
-          />
-        </div>
-
-        <div>
           <h2
             className="font-serif text-6xl leading-none tracking-tight md:text-7xl"
             style={{
               color: titleColor || undefined,
               transform: hovered ? "translateY(-6px)" : "translateY(0)",
               transition: "transform 600ms cubic-bezier(0.2,0.8,0.2,1)",
+              marginTop: "4px",
             }}
           >
             {label}
