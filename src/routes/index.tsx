@@ -292,7 +292,7 @@ function Landing() {
             eyebrow="Door I"
             badge="Browse Ready‑to‑Send"
             copy="Step into the gallery. Ready-made invitations, ready to send."
-            image={invitations}
+            image={registry}
             hovered={hovered === "shop"}
             otherHovered={hovered === "custom"}
             onEnter={() => setHovered("shop")}
@@ -310,7 +310,7 @@ function Landing() {
           eyebrow="Door II"
           badge="Bespoke Gold Foil"
           copy="Limited edition. Gold foil, letterpress, and hand‑finished details."
-          image={luxuryImage}
+          image={invitations}
           hovered={hovered === "custom"}
           otherHovered={hovered === "shop"}
           onEnter={() => setHovered("custom")}
