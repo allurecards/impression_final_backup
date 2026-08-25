@@ -16,13 +16,16 @@
     "watermarkColor": "#290769",
     "images": [
       "src/assets/cards/display/vintage-017-4.png",
-      "src/assets/cards/display/vintage-017-5.png"
+      "src/assets/cards/display/vintage-017-5.png",
+      "src/assets/cards/display/vintage-017-3.png"
     ],
     "originals": [
       "src/assets/cards/originals/vintage-017-4.png",
-      "src/assets/cards/originals/vintage-017-5.png"
+      "src/assets/cards/originals/vintage-017-5.png",
+      "src/assets/cards/originals/vintage-017-3.png"
     ],
     "imageWatermarks": [
+      null,
       null,
       null
     ],
