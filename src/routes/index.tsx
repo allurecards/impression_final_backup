@@ -33,10 +33,7 @@ function Landing() {
   const [mouse, setMouse] = useState({ x: 0.5, y: 0.5 });
   const [scrollY, setScrollY] = useState(0);
   const [hovered, setHovered] = useState<"shop" | "custom" | null>(null);
-  const [transitionDoor, setTransitionDoor] = useState<
-    "shop" | "custom" | "standard" | "luxury" | null
-  >(null);
-  const [tierChoice, setTierChoice] = useState(false);
+  const [transitionDoor, setTransitionDoor] = useState<"shop" | "custom" | null>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
@@ -71,7 +68,7 @@ function Landing() {
 
   // Door transition handler
   const handleDoorClick = useCallback(
-    (door: "shop" | "custom" | "standard" | "luxury", target: string, isExternal = false) => {
+    (door: "shop" | "custom", target: string, isExternal = false) => {
       setTransitionDoor(door);
       setTimeout(() => {
         if (isExternal) {
@@ -84,10 +81,10 @@ function Landing() {
     [navigate],
   );
 
-  // When Shop is clicked, show tier choice
+  // When Shop is clicked, directly navigate to /shop with transition
   const onShopClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    setTierChoice(true);
+    handleDoorClick("shop", "/shop");
   };
 
   // Custom door click
@@ -303,11 +300,7 @@ function Landing() {
             px={px}
             py={py}
             onClick={(door, to, e) => onShopClick(e)}
-            transitionActive={
-              transitionDoor === "shop" ||
-              transitionDoor === "standard" ||
-              transitionDoor === "luxury"
-            }
+            transitionActive={transitionDoor === "shop"}
           />
           <Door
             door="custom"
@@ -357,36 +350,13 @@ function Landing() {
             className="absolute inset-0"
             style={{
               background: `radial-gradient(circle at center, ${
-                transitionDoor === "shop" || transitionDoor === "standard"
-                  ? "#d9a87c"
-                  : transitionDoor === "luxury"
-                    ? "#b48b5a"
-                    : "#e6d4f0"
+                transitionDoor === "shop" ? "#d9a87c" : "#e6d4f0"
               } 0%, transparent 70%)`,
               opacity: 0,
               animation: "lightBurst 800ms ease-out forwards",
             }}
           />
         </div>
-      )}
-
-      {/* ========== TIER CHOICE OVERLAY (Standard vs. Luxury) ========== */}
-      {tierChoice && (
-        <TierChoiceOverlay
-          onStandard={() => {
-            setTierChoice(false);
-            handleDoorClick("standard", "/shop");
-          }}
-          onLuxury={() => {
-            setTierChoice(false);
-            handleDoorClick("luxury", "https://www.allurecards.in", true);
-          }}
-          onClose={() => setTierChoice(false)}
-          tintStandard="#d9a87c"
-          tintLuxury="#b48b5a"
-          imageStandard={invitations}
-          imageLuxury={luxuryImage}
-        />
       )}
 
       <style>{`
@@ -605,392 +575,5 @@ function Door({
         </div>
       </div>
     </Link>
-  );
-}
-
-function TierChoiceOverlay({
-  onStandard,
-  onLuxury,
-  onClose,
-  tintStandard = "#d9a87c",
-  tintLuxury = "#c8a45c",
-  imageStandard,
-  imageLuxury,
-}: {
-  onStandard: () => void;
-  onLuxury: () => void;
-  onClose: () => void;
-  tintStandard?: string;
-  tintLuxury?: string;
-  imageStandard: string;
-  imageLuxury: string;
-}) {
-  // Sequence stages: 0 = big door closed (waiting), 1 = big door splitting,
-  // 2 = small doors revealed and interactive
-  const [seqStage, setSeqStage] = useState<0 | 1 | 2>(0);
-  const [hoveredSmall, setHoveredSmall] = useState<"standard" | "luxury" | null>(null);
-
-  // Auto-advance: knock briefly, then split, then reveal
-  useEffect(() => {
-    const splitTimer = setTimeout(() => setSeqStage(1), 750);
-    const revealTimer = setTimeout(() => setSeqStage(2), 750 + 900);
-    return () => {
-      clearTimeout(splitTimer);
-      clearTimeout(revealTimer);
-    };
-  }, []);
-
-  const triggerOpen = () => {
-    if (seqStage === 0) setSeqStage(1);
-  };
-
-  return (
-    <div className="fixed inset-0 z-50 bg-[#0f0b0a]/90 backdrop-blur-md flex items-center justify-center">
-      {/* Close */}
-      <button
-        onClick={onClose}
-        className="absolute top-6 right-6 z-20 text-[#f5f0e6]/60 hover:text-[#f5f0e6] text-[10px] uppercase tracking-[0.4em]"
-      >
-        ← Return
-      </button>
-
-      <div className="relative w-full max-w-2xl aspect-[3/4] flex items-center justify-center">
-        {/* ====== TWO SMALL DOORS (sit behind the big door, revealed through the gap) ====== */}
-        <div
-          className="absolute inset-0 flex items-center justify-center gap-6 px-6"
-          style={{
-            opacity: seqStage >= 1 ? 1 : 0,
-            transition: "opacity 300ms ease-out",
-          }}
-        >
-          {/* Standard small door */}
-          <button
-            onClick={onStandard}
-            onMouseEnter={() => setHoveredSmall("standard")}
-            onMouseLeave={() => setHoveredSmall(null)}
-            disabled={seqStage < 2}
-            className="group relative flex-1 aspect-[3/4] max-w-[42%] overflow-hidden rounded-[4px] border border-[#f5f0e6]/15 focus:outline-none"
-            style={{
-              backgroundColor: "#0f0b0a",
-              transform: seqStage >= 2 ? "translateY(0) scale(1)" : "translateY(18px) scale(0.86)",
-              opacity: seqStage >= 2 ? 1 : 0,
-              transition:
-                "transform 700ms cubic-bezier(0.16,1,0.3,1) 80ms, opacity 600ms ease-out 80ms",
-              pointerEvents: seqStage >= 2 ? "auto" : "none",
-            }}
-          >
-            <img
-              src={imageStandard}
-              alt="Standard Cards"
-              className="absolute inset-0 h-full w-full object-cover"
-              style={{
-                filter: `brightness(${hoveredSmall === "standard" ? 0.75 : 0.5})`,
-                transform: `scale(${hoveredSmall === "standard" ? 1.1 : 1})`,
-                transition: "transform 900ms cubic-bezier(0.2,0.8,0.2,1), filter 600ms",
-              }}
-            />
-            <div
-              className="absolute inset-y-0 left-0 w-1/2 bg-[#0f0b0a]/40 backdrop-blur-[2px]"
-              style={{
-                transform: hoveredSmall === "standard" ? "translateX(-100%)" : "translateX(0)",
-                transition: "transform 900ms cubic-bezier(0.77,0,0.175,1)",
-              }}
-            />
-            <div
-              className="absolute inset-y-0 right-0 w-1/2 bg-[#0f0b0a]/40 backdrop-blur-[2px]"
-              style={{
-                transform: hoveredSmall === "standard" ? "translateX(100%)" : "translateX(0)",
-                transition: "transform 900ms cubic-bezier(0.77,0,0.175,1)",
-              }}
-            />
-            {/* Seam + knock dot, matching the main Door component's language */}
-            <div className="pointer-events-none absolute inset-y-0 left-1/2 w-px">
-              <div
-                className="h-full w-full"
-                style={{
-                  background: `linear-gradient(to bottom, transparent, ${tintStandard}, transparent)`,
-                  opacity: hoveredSmall === "standard" ? 0 : 0.9,
-                  transition: "opacity 500ms",
-                }}
-              />
-              <div
-                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-2 h-2 rounded-full"
-                style={{
-                  backgroundColor: tintStandard,
-                  boxShadow: `0 0 6px ${tintStandard}, 0 0 12px ${tintStandard}`,
-                  opacity: hoveredSmall === "standard" ? 0 : 0.6,
-                  animation: "knock 2s ease-in-out infinite",
-                }}
-              />
-            </div>
-            <div className="absolute inset-0 flex flex-col justify-end p-4 text-left">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-[#f5f0e6]/70">
-                Standard
-              </span>
-              <h3 className="font-serif text-3xl leading-none mt-1">Shop</h3>
-              <p className="text-xs text-[#f5f0e6]/70 mt-1">Curated collection.</p>
-              <div
-                className="mt-3 flex items-center gap-2 text-[10px] uppercase tracking-[0.3em]"
-                style={{ color: tintStandard }}
-              >
-                Enter
-                <span className="transition-transform duration-500 group-hover:translate-x-1.5">
-                  →
-                </span>
-              </div>
-            </div>
-          </button>
-
-          {/* ===== ALLURE DOOR – staged half a beat later, more ornamented ===== */}
-          <button
-            onClick={onLuxury}
-            onMouseEnter={() => setHoveredSmall("luxury")}
-            onMouseLeave={() => setHoveredSmall(null)}
-            disabled={seqStage < 2}
-            className="group relative flex-1 aspect-[3/4] max-w-[42%] overflow-hidden rounded-[4px] border-2 focus:outline-none"
-            style={{
-              borderColor: `${tintLuxury}cc`,
-              boxShadow:
-                seqStage >= 2 ? `0 0 25px ${tintLuxury}60, 0 0 50px ${tintLuxury}30` : "none",
-              backgroundColor: "#0f0b0a",
-              transform: seqStage >= 2 ? "translateY(0) scale(1)" : "translateY(18px) scale(0.86)",
-              opacity: seqStage >= 2 ? 1 : 0,
-              transition:
-                "transform 700ms cubic-bezier(0.16,1,0.3,1) 260ms, opacity 600ms ease-out 260ms, box-shadow 900ms ease-out 900ms",
-              animation:
-                seqStage >= 2 ? "pulseGlow 2.8s ease-in-out infinite alternate 900ms" : "none",
-              pointerEvents: seqStage >= 2 ? "auto" : "none",
-            }}
-          >
-            {/* Golden shine sweep (diagonal) – only on hover */}
-            <div
-              className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-40 transition-opacity duration-700"
-              style={{
-                background: `linear-gradient(135deg, transparent 0%, ${tintLuxury}80 45%, ${tintLuxury}40 55%, transparent 100%)`,
-                backgroundSize: "200% 200%",
-                animation: "shineSweep 1.8s ease-in-out infinite",
-              }}
-            />
-
-            {/* Pulsing inner glow */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                boxShadow: `inset 0 0 40px ${tintLuxury}50`,
-                opacity: seqStage >= 2 ? 0.7 : 0,
-                transition: "opacity 700ms ease-out 900ms",
-                animation:
-                  seqStage >= 2 ? "pulseInner 2.2s ease-in-out infinite alternate 900ms" : "none",
-              }}
-            />
-
-            {/* Background image */}
-            <img
-              src={imageLuxury}
-              alt="Luxury Allure"
-              className="absolute inset-0 h-full w-full object-cover"
-              style={{
-                filter: `brightness(${hoveredSmall === "luxury" ? 0.8 : 0.5}) saturate(1.2)`,
-                transform: `scale(${hoveredSmall === "luxury" ? 1.1 : 1})`,
-                transition: "transform 900ms cubic-bezier(0.2,0.8,0.2,1), filter 600ms",
-              }}
-            />
-
-            {/* Animated diamond icon */}
-            <svg
-              viewBox="0 0 24 24"
-              className="absolute top-3 right-3 w-7 h-7 text-[#c8a45c] drop-shadow-[0_0_6px_rgba(200,164,92,0.9)] transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110"
-              fill="currentColor"
-              style={{
-                opacity: seqStage >= 2 ? 1 : 0,
-                transform: seqStage >= 2 ? "scale(1) rotate(0deg)" : "scale(0.4) rotate(-30deg)",
-                transition:
-                  "opacity 500ms ease-out 1000ms, transform 600ms cubic-bezier(0.34,1.56,0.64,1) 1000ms",
-              }}
-            >
-              <path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z" />
-            </svg>
-
-            {/* Split overlay panels */}
-            <div
-              className="absolute inset-y-0 left-0 w-1/2 bg-[#0f0b0a]/40 backdrop-blur-[2px]"
-              style={{
-                transform: hoveredSmall === "luxury" ? "translateX(-100%)" : "translateX(0)",
-                transition: "transform 900ms cubic-bezier(0.77,0,0.175,1)",
-              }}
-            />
-            <div
-              className="absolute inset-y-0 right-0 w-1/2 bg-[#0f0b0a]/40 backdrop-blur-[2px]"
-              style={{
-                transform: hoveredSmall === "luxury" ? "translateX(100%)" : "translateX(0)",
-                transition: "transform 900ms cubic-bezier(0.77,0,0.175,1)",
-              }}
-            />
-
-            {/* Elegant knock-dot (only Allure) – visible until hover */}
-            <div className="absolute inset-y-0 left-1/2 w-px">
-              <div
-                className="h-full w-full"
-                style={{
-                  background: `linear-gradient(to bottom, transparent, ${tintLuxury}, transparent)`,
-                  opacity: hoveredSmall === "luxury" ? 0 : 0.9,
-                  transition: "opacity 500ms",
-                }}
-              />
-              <div
-                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full"
-                style={{
-                  backgroundColor: tintLuxury,
-                  boxShadow: `0 0 10px ${tintLuxury}, 0 0 20px ${tintLuxury}`,
-                  opacity: hoveredSmall === "luxury" ? 0 : 0.9,
-                  animation: "knockAllure 1.8s ease-in-out infinite",
-                }}
-              />
-            </div>
-
-            {/* Content */}
-            <div className="absolute inset-0 flex flex-col justify-end p-4 text-left">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-[#f5f0e6]/70">
-                Luxury
-              </span>
-              <h3 className="font-serif text-3xl leading-none mt-1" style={{ color: tintLuxury }}>
-                Allure
-              </h3>
-              {/* Badge with sparkle */}
-              <span
-                className="mt-1 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[9px] uppercase tracking-[0.25em]"
-                style={{ color: tintLuxury, borderColor: tintLuxury }}
-              >
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
-                Limited
-              </span>
-              <p className="text-xs text-[#f5f0e6]/70 mt-1">Bespoke gold foil.</p>
-              <div
-                className="mt-3 flex items-center gap-2 text-[10px] uppercase tracking-[0.3em]"
-                style={{ color: tintLuxury }}
-              >
-                Enter
-                <span className="transition-transform duration-500 group-hover:translate-x-1.5">
-                  →
-                </span>
-              </div>
-            </div>
-          </button>
-        </div>
-
-        {/* ====== BIG DOOR (phase 0) — sits on top, closed, waiting for a knock ====== */}
-        {seqStage === 0 && (
-          <div
-            className="absolute inset-0 rounded-[4px] border border-[#f5f0e6]/15 cursor-pointer overflow-hidden z-10"
-            onClick={triggerOpen}
-          >
-            <img
-              src={imageStandard}
-              alt=""
-              className="absolute inset-0 h-full w-full object-cover"
-              style={{ filter: "brightness(0.55) saturate(1.05)", transform: "scale(1.04)" }}
-            />
-            <div className="absolute inset-y-0 left-0 w-1/2 bg-[#0f0b0a]/60 backdrop-blur-[2px]" />
-            <div className="absolute inset-y-0 right-0 w-1/2 bg-[#0f0b0a]/60 backdrop-blur-[2px]" />
-            <div className="absolute inset-y-0 left-1/2 w-px">
-              <div
-                className="h-full w-full"
-                style={{
-                  background: `linear-gradient(to bottom, transparent, ${tintStandard}, transparent)`,
-                  opacity: 0.9,
-                }}
-              />
-              <div
-                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3 h-3 rounded-full"
-                style={{
-                  backgroundColor: tintStandard,
-                  boxShadow: `0 0 8px ${tintStandard}, 0 0 16px ${tintStandard}`,
-                  animation: "knock 2s ease-in-out infinite",
-                }}
-              />
-            </div>
-            <div className="absolute inset-x-0 bottom-8 text-center">
-              <span className="text-[11px] uppercase tracking-[0.4em] text-[#f5f0e6]/70">
-                Choose your path
-              </span>
-            </div>
-          </div>
-        )}
-
-        {/* ====== BIG DOOR SPLIT ANIMATION (phase 1→2) — halves slide off to reveal the small doors underneath ====== */}
-        {seqStage >= 1 && (
-          <>
-            <div
-              className="absolute inset-y-0 left-0 w-1/2 rounded-l-[4px] overflow-hidden z-10 pointer-events-none"
-              style={{ animation: "bigDoorLeft 900ms cubic-bezier(0.77,0,0.175,1) forwards" }}
-            >
-              <img
-                src={imageStandard}
-                alt=""
-                className="absolute inset-0 h-full object-cover"
-                style={{ width: "200%", filter: "brightness(0.55) saturate(1.05)" }}
-              />
-              <div className="absolute inset-0 bg-[#0f0b0a]/60" />
-            </div>
-            <div
-              className="absolute inset-y-0 right-0 w-1/2 rounded-r-[4px] overflow-hidden z-10 pointer-events-none"
-              style={{ animation: "bigDoorRight 900ms cubic-bezier(0.77,0,0.175,1) forwards" }}
-            >
-              <img
-                src={imageStandard}
-                alt=""
-                className="absolute inset-0 right-0 h-full object-cover"
-                style={{ width: "200%", filter: "brightness(0.55) saturate(1.05)" }}
-              />
-              <div className="absolute inset-0 bg-[#0f0b0a]/60" />
-            </div>
-            <div
-              className="absolute inset-0 pointer-events-none z-20"
-              style={{
-                background: `radial-gradient(circle at center, ${tintStandard} 0%, transparent 70%)`,
-                opacity: 0,
-                animation: "lightBurst 900ms ease-out forwards",
-              }}
-            />
-          </>
-        )}
-      </div>
-
-      <style>{`
-        @keyframes bigDoorLeft {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-100%); }
-        }
-        @keyframes bigDoorRight {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(100%); }
-        }
-        @keyframes lightBurst {
-          0% { opacity: 0; transform: scale(0.8); }
-          50% { opacity: 0.9; transform: scale(1.2); }
-          100% { opacity: 0; transform: scale(1.5); }
-        }
-        @keyframes knock {
-          0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
-          50% { opacity: 1; transform: translate(-50%, -50%) scale(1.3); }
-        }
-        @keyframes knockAllure {
-          0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 10px ${tintLuxury}, 0 0 20px ${tintLuxury}; }
-          50% { opacity: 1; transform: translate(-50%, -50%) scale(1.4); box-shadow: 0 0 18px ${tintLuxury}, 0 0 35px ${tintLuxury}; }
-        }
-        @keyframes pulseGlow {
-          0% { box-shadow: 0 0 20px ${tintLuxury}50, 0 0 40px ${tintLuxury}20; }
-          100% { box-shadow: 0 0 35px ${tintLuxury}80, 0 0 70px ${tintLuxury}35; }
-        }
-        @keyframes pulseInner {
-          0% { opacity: 0.4; }
-          100% { opacity: 0.9; }
-        }
-        @keyframes shineSweep {
-          0% { background-position: 0% 0%; }
-          100% { background-position: 200% 200%; }
-        }
-      `}</style>
-    </div>
   );
 }
