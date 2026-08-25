@@ -512,7 +512,7 @@ function Door({
       <div className="absolute inset-0 flex flex-col justify-end p-8">
         <div>
           {/* "Shop" label directly above the big title */}
-          <span className="text-[10px] uppercase tracking-[0.4em]" style={{ color: tint }}>
+          <span className="text-sm font-medium uppercase tracking-[0.4em]" style={{ color: tint }}>
             {eyebrow}
           </span>
           <h2
