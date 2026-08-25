@@ -81,8 +81,8 @@
     "price": 30,
     "featured": false,
     "minOrder": 100,
-    "size": "5\" x 7\"",
-    "material": "Premium 350 gsm",
+    "size": "195 MM X 195 MM",
+    "material": "260 GSM FABRIANO CLASSIC TEXTURED",
     "description": "PREMIUM DIGITAL PRINTING",
     "instagram_url": "",
     "extraCharges": [],
@@ -108,10 +108,10 @@
     "variants": [
       {
         "name": "MEDIUM",
-        "size_id": 1,
-        "material_id": 1,
-        "size": "5\" x 7\"",
-        "material": "Premium 350 gsm",
+        "size_id": 4,
+        "material_id": 4,
+        "size": "195 MM X 195 MM",
+        "material": "260 GSM FABRIANO CLASSIC TEXTURED",
         "price": 30
       }
     ]
