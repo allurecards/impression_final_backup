@@ -87,11 +87,10 @@ function Landing() {
     handleDoorClick("shop", "/shop");
   };
 
-  // Custom door click
-// Custom door click – now external link to Allure
+  // Custom door click – now external link to Allure
   const onCustomClick = (door: "shop" | "custom", to: string, e: React.MouseEvent) => {
-  e.preventDefault();
-  handleDoorClick("custom", "https://www.allurecards.in", true); // isExternal = true
+    e.preventDefault();
+    handleDoorClick("custom", "https://www.allurecards.in", true); // isExternal = true
   };
 
   return (
@@ -285,10 +284,11 @@ function Landing() {
             transition: "transform 400ms linear",
           }}
         >
+          {/* Impressions (Shop) Door */}
           <Door
             door="shop"
             to="/shop"
-            label="Shop Impressions"
+            label="Impressions"
             eyebrow="Door I"
             badge="Browse Ready‑to‑Send"
             copy="Step into the gallery. Ready-made invitations, ready to send."
@@ -302,24 +302,31 @@ function Landing() {
             py={py}
             onClick={(door, to, e) => onShopClick(e)}
             transitionActive={transitionDoor === "shop"}
+            aboveText="Impressions"
+            belowButtonText="Shop Now"
           />
+
+          {/* Allure (Luxury) Door */}
           <Door
-          door="custom"
-          to="/customize"   // still a placeholder; onClick will prevent navigation and go external
-          label="Shop Allure"
-          eyebrow="Door II"
-          badge="Bespoke Gold Foil"
-          copy="Limited edition. Gold foil, letterpress, and hand‑finished details."
-          image={invitations}
-          hovered={hovered === "custom"}
-          otherHovered={hovered === "shop"}
-          onEnter={() => setHovered("custom")}
-          onLeave={() => setHovered(null)}
-          tint="#c8a45c"
-          px={px}
-          py={py}
-          onClick={onCustomClick}
-          transitionActive={transitionDoor === "custom"}
+            door="custom"
+            to="/customize"   // placeholder; onClick will prevent navigation and go external
+            label="Allure"
+            eyebrow="Door II"
+            badge="Bespoke Gold Foil"
+            copy="Limited edition. Gold foil, letterpress, and hand‑finished details."
+            image={invitations}
+            hovered={hovered === "custom"}
+            otherHovered={hovered === "shop"}
+            onEnter={() => setHovered("custom")}
+            onLeave={() => setHovered(null)}
+            tint="#c8a45c"
+            px={px}
+            py={py}
+            onClick={onCustomClick}
+            transitionActive={transitionDoor === "custom"}
+            aboveText="Allure"
+            belowButtonText="Shop Luxury"
+            titleColor="#c8a45c"   // golden title color
           />
         </div>
       </section>
@@ -351,7 +358,7 @@ function Landing() {
             className="absolute inset-0"
             style={{
               background: `radial-gradient(circle at center, ${
-                transitionDoor === "shop" ? "#d9a87c" : "#e6d4f0"
+                transitionDoor === "shop" ? "#d9a87c" : "#c8a45c"
               } 0%, transparent 70%)`,
               opacity: 0,
               animation: "lightBurst 800ms ease-out forwards",
@@ -401,6 +408,9 @@ function Door({
   py,
   onClick,
   transitionActive,
+  aboveText,
+  belowButtonText,
+  titleColor,
 }: {
   door: "shop" | "custom";
   to: string;
@@ -418,6 +428,9 @@ function Door({
   py: number;
   onClick: (door: "shop" | "custom", to: string, e: React.MouseEvent) => void;
   transitionActive: boolean;
+  aboveText?: string;
+  belowButtonText?: string;
+  titleColor?: string;
 }) {
   const ref = useRef<HTMLAnchorElement>(null);
   const [local, setLocal] = useState({ x: 0.5, y: 0.5 });
@@ -432,149 +445,168 @@ function Door({
   const tiltY = (local.x - 0.5) * 8;
 
   return (
-    <Link
-      ref={ref}
-      to={to}
-      onClick={(e) => onClick(door, to, e)}
-      onMouseEnter={onEnter}
-      onMouseLeave={() => {
-        onLeave();
-        setLocal({ x: 0.5, y: 0.5 });
-      }}
-      onMouseMove={onMove}
-      className="group relative block aspect-[3/4] overflow-hidden rounded-[4px] border border-[#f5f0e6]/15 will-change-transform"
-      style={{
-        transform: `perspective(1200px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(${
-          hovered ? 1.02 : otherHovered ? 0.97 : 1
-        })`,
-        opacity: otherHovered ? 0.55 : transitionActive ? 0 : 1,
-        transition: "transform 500ms cubic-bezier(0.2,0.8,0.2,1), opacity 500ms",
-        pointerEvents: transitionActive ? "none" : "auto",
-      }}
-    >
-      <img
-        src={image}
-        alt=""
-        className="absolute inset-0 h-full w-full object-cover"
-        style={{
-          transform: `scale(${hovered ? 1.12 : 1.04}) translate3d(${-px * 12}px, ${-py * 12}px, 0)`,
-          filter: `brightness(${hovered ? 0.75 : 0.5}) saturate(1.05)`,
-          transition: "transform 900ms cubic-bezier(0.2,0.8,0.2,1), filter 600ms",
+    <div className="flex flex-col items-center">
+      {aboveText && (
+        <span className="mb-3 text-[11px] uppercase tracking-[0.4em] text-[#f5f0e6]/70">
+          {aboveText}
+        </span>
+      )}
+      <Link
+        ref={ref}
+        to={to}
+        onClick={(e) => onClick(door, to, e)}
+        onMouseEnter={onEnter}
+        onMouseLeave={() => {
+          onLeave();
+          setLocal({ x: 0.5, y: 0.5 });
         }}
-      />
-
-      {/* Door split (hover) */}
-      <div
-        className="pointer-events-none absolute inset-y-0 left-0 w-1/2 bg-[#0f0b0a]/40 backdrop-blur-[2px]"
+        onMouseMove={onMove}
+        className="group relative block aspect-[3/4] overflow-hidden rounded-[4px] border border-[#f5f0e6]/15 will-change-transform"
         style={{
-          transform: hovered ? "translateX(-100%)" : "translateX(0)",
-          transition: "transform 900ms cubic-bezier(0.77,0,0.175,1)",
+          transform: `perspective(1200px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(${
+            hovered ? 1.02 : otherHovered ? 0.97 : 1
+          })`,
+          opacity: otherHovered ? 0.55 : transitionActive ? 0 : 1,
+          transition: "transform 500ms cubic-bezier(0.2,0.8,0.2,1), opacity 500ms",
+          pointerEvents: transitionActive ? "none" : "auto",
         }}
-      />
-      <div
-        className="pointer-events-none absolute inset-y-0 right-0 w-1/2 bg-[#0f0b0a]/40 backdrop-blur-[2px]"
-        style={{
-          transform: hovered ? "translateX(100%)" : "translateX(0)",
-          transition: "transform 900ms cubic-bezier(0.77,0,0.175,1)",
-        }}
-      />
-
-      {/* Seam + knock dot */}
-      <div className="pointer-events-none absolute inset-y-0 left-1/2 w-px">
-        <div
-          className="h-full w-full"
+      >
+        <img
+          src={image}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
           style={{
-            background: `linear-gradient(to bottom, transparent, ${tint}, transparent)`,
-            opacity: hovered ? 0 : 0.9,
-            transition: "opacity 500ms",
+            transform: `scale(${hovered ? 1.12 : 1.04}) translate3d(${-px * 12}px, ${-py * 12}px, 0)`,
+            filter: `brightness(${hovered ? 0.75 : 0.5}) saturate(1.05)`,
+            transition: "transform 900ms cubic-bezier(0.2,0.8,0.2,1), filter 600ms",
+          }}
+        />
+
+        {/* Door split (hover) */}
+        <div
+          className="pointer-events-none absolute inset-y-0 left-0 w-1/2 bg-[#0f0b0a]/40 backdrop-blur-[2px]"
+          style={{
+            transform: hovered ? "translateX(-100%)" : "translateX(0)",
+            transition: "transform 900ms cubic-bezier(0.77,0,0.175,1)",
           }}
         />
         <div
-          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-2 h-2 rounded-full"
+          className="pointer-events-none absolute inset-y-0 right-0 w-1/2 bg-[#0f0b0a]/40 backdrop-blur-[2px]"
           style={{
-            backgroundColor: tint,
-            boxShadow: `0 0 6px ${tint}, 0 0 12px ${tint}`,
-            opacity: hovered ? 0 : 0.6,
-            animation: "knock 2s ease-in-out infinite",
+            transform: hovered ? "translateX(100%)" : "translateX(0)",
+            transition: "transform 900ms cubic-bezier(0.77,0,0.175,1)",
           }}
         />
-      </div>
 
-      {/* Cursor glow */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background: `radial-gradient(220px circle at ${local.x * 100}% ${local.y * 100}%, ${tint}33, transparent 70%)`,
-          opacity: hovered ? 1 : 0,
-          transition: "opacity 400ms",
-        }}
-      />
-
-      {/* Content */}
-      <div className="absolute inset-0 flex flex-col justify-between p-8">
-        <div className="flex items-center justify-between">
-          <span className="text-[10px] uppercase tracking-[0.4em] text-[#f5f0e6]/70">
-            {eyebrow}
-          </span>
-          <span
-            className="h-px bg-[#f5f0e6]/50"
+        {/* Seam + knock dot */}
+        <div className="pointer-events-none absolute inset-y-0 left-1/2 w-px">
+          <div
+            className="h-full w-full"
             style={{
-              width: hovered ? "80px" : "24px",
-              transition: "width 600ms cubic-bezier(0.2,0.8,0.2,1)",
+              background: `linear-gradient(to bottom, transparent, ${tint}, transparent)`,
+              opacity: hovered ? 0 : 0.9,
+              transition: "opacity 500ms",
+            }}
+          />
+          <div
+            className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-2 h-2 rounded-full"
+            style={{
+              backgroundColor: tint,
+              boxShadow: `0 0 6px ${tint}, 0 0 12px ${tint}`,
+              opacity: hovered ? 0 : 0.6,
+              animation: "knock 2s ease-in-out infinite",
             }}
           />
         </div>
 
-        <div>
-          <h2
-            className="font-serif text-6xl leading-none tracking-tight md:text-7xl"
-            style={{
-              transform: hovered ? "translateY(-6px)" : "translateY(0)",
-              transition: "transform 600ms cubic-bezier(0.2,0.8,0.2,1)",
-            }}
-          >
-            {label}
-          </h2>
+        {/* Cursor glow */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background: `radial-gradient(220px circle at ${local.x * 100}% ${local.y * 100}%, ${tint}33, transparent 70%)`,
+            opacity: hovered ? 1 : 0,
+            transition: "opacity 400ms",
+          }}
+        />
 
-          <span
-            className="mt-1 inline-block rounded-full border px-3 py-0.5 text-[10px] uppercase tracking-[0.25em]"
-            style={{
-              color: tint,
-              borderColor: tint,
-              opacity: hovered ? 1 : 0.7,
-              transition: "opacity 500ms",
-            }}
-          >
-            {badge}
-          </span>
-
-          <p
-            className="mt-4 max-w-xs text-sm text-[#f5f0e6]/80"
-            style={{
-              opacity: hovered ? 1 : 0.7,
-              transform: hovered ? "translateY(0)" : "translateY(6px)",
-              transition: "all 500ms",
-            }}
-          >
-            {copy}
-          </p>
-          <div
-            className="mt-6 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.4em]"
-            style={{ color: tint }}
-          >
-            <span>{hovered ? "Push to enter" : "Enter"}</span>
+        {/* Content */}
+        <div className="absolute inset-0 flex flex-col justify-between p-8">
+          <div className="flex items-center justify-between">
+            <span className="text-[10px] uppercase tracking-[0.4em] text-[#f5f0e6]/70">
+              {eyebrow}
+            </span>
             <span
-              className="inline-block"
+              className="h-px bg-[#f5f0e6]/50"
               style={{
-                transform: hovered ? "translateX(8px)" : "translateX(0)",
-                transition: "transform 500ms cubic-bezier(0.2,0.8,0.2,1)",
+                width: hovered ? "80px" : "24px",
+                transition: "width 600ms cubic-bezier(0.2,0.8,0.2,1)",
+              }}
+            />
+          </div>
+
+          <div>
+            <h2
+              className="font-serif text-6xl leading-none tracking-tight md:text-7xl"
+              style={{
+                color: titleColor || undefined, // golden for Allure, default white
+                transform: hovered ? "translateY(-6px)" : "translateY(0)",
+                transition: "transform 600ms cubic-bezier(0.2,0.8,0.2,1)",
               }}
             >
-              →
+              {label}
+            </h2>
+
+            <span
+              className="mt-1 inline-block rounded-full border px-3 py-0.5 text-[10px] uppercase tracking-[0.25em]"
+              style={{
+                color: tint,
+                borderColor: tint,
+                opacity: hovered ? 1 : 0.7,
+                transition: "opacity 500ms",
+              }}
+            >
+              {badge}
             </span>
+
+            <p
+              className="mt-4 max-w-xs text-sm text-[#f5f0e6]/80"
+              style={{
+                opacity: hovered ? 1 : 0.7,
+                transform: hovered ? "translateY(0)" : "translateY(6px)",
+                transition: "all 500ms",
+              }}
+            >
+              {copy}
+            </p>
+            <div
+              className="mt-6 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.4em]"
+              style={{ color: tint }}
+            >
+              <span>{hovered ? "Push to enter" : "Enter"}</span>
+              <span
+                className="inline-block"
+                style={{
+                  transform: hovered ? "translateX(8px)" : "translateX(0)",
+                  transition: "transform 500ms cubic-bezier(0.2,0.8,0.2,1)",
+                }}
+              >
+                →
+              </span>
+            </div>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+      {belowButtonText && (
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            onClick(door, to, e as unknown as React.MouseEvent);
+          }}
+          className="mt-4 rounded-full border border-[#f5f0e6]/30 px-6 py-2 text-[11px] uppercase tracking-[0.3em] text-[#f5f0e6] transition-colors hover:bg-[#f5f0e6] hover:text-[#1a1a1a]"
+        >
+          {belowButtonText}
+        </button>
+      )}
+    </div>
   );
 }
