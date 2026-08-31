@@ -1,5 +1,46 @@
 [
   {
+    "id": "IM 184",
+    "category": "SQUARE FLORAL",
+    "price": 31,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195 MM X 195 MM",
+    "material": "GERMAN -Made 350 Gsm Natural Hammered Texture",
+    "description": "DIGITAK PRINTING",
+    "instagram_url": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "top-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#a48c04",
+    "images": [
+      "src/assets/cards/display/im-184-1.PNG",
+      "src/assets/cards/display/im-184-2.PNG",
+      "src/assets/cards/display/im-184-3.PNG"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-184-1.PNG",
+      "src/assets/cards/originals/im-184-2.PNG",
+      "src/assets/cards/originals/im-184-3.PNG"
+    ],
+    "imageWatermarks": [
+      null,
+      null,
+      null
+    ],
+    "variants": [
+      {
+        "name": "MEDIUM",
+        "size_id": 4,
+        "material_id": 6,
+        "size": "195 MM X 195 MM",
+        "material": "GERMAN -Made 350 Gsm Natural Hammered Texture",
+        "price": 31
+      }
+    ]
+  },
+  {
     "id": "VINTAGE 018",
     "category": "VINTAGE SERIES",
     "price": 30,
