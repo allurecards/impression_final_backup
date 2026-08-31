@@ -6,7 +6,7 @@
     "featured": false,
     "minOrder": 100,
     "size": "195 MM X 195 MM",
-    "material": "GERMAN -Made 350 Gsm Natural Hammered Texture",
+    "material": "GERMAN -Made 350 Gsm Natural Hammered Textured",
     "description": "DIGITAK PRINTING",
     "instagram_url": "",
     "extraCharges": [],
@@ -33,9 +33,9 @@
       {
         "name": "MEDIUM",
         "size_id": 4,
-        "material_id": 6,
+        "material_id": 7,
         "size": "195 MM X 195 MM",
-        "material": "GERMAN -Made 350 Gsm Natural Hammered Texture",
+        "material": "GERMAN -Made 350 Gsm Natural Hammered Textured",
         "price": 31
       }
     ]
