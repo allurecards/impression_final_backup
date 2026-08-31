@@ -88,7 +88,7 @@
     "featured": true,
     "minOrder": 100,
     "size": "195 MM X 195 MM",
-    "material": "350 GSM NATURAL HAMMERED TEXTURE FROM GERMANY",
+    "material": "GERMAN -Made 350 Gsm Natural Hammered Texture",
     "description": "DIGITAL PRINTING",
     "instagram_url": "https://www.instagram.com/p/DcQIHTHSlJp/?hl=en",
     "extraCharges": [],
@@ -115,9 +115,9 @@
       {
         "name": "MEDIUM",
         "size_id": 4,
-        "material_id": 5,
+        "material_id": 6,
         "size": "195 MM X 195 MM",
-        "material": "350 GSM NATURAL HAMMERED TEXTURE FROM GERMANY",
+        "material": "GERMAN -Made 350 Gsm Natural Hammered Texture",
         "price": 31
       }
     ]
