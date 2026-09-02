@@ -2,11 +2,11 @@
   {
     "id": "IM 184",
     "category": "SQUARE FLORAL",
-    "price": 31,
+    "price": 32,
     "featured": false,
     "minOrder": 100,
     "size": "195 MM X 195 MM",
-    "material": "GERMAN -Made 350 Gsm Natural Hammered Textured",
+    "material": "260 GSM FABRIANO CLASSIC TEXTURED",
     "description": "DIGITAK PRINTING",
     "instagram_url": "",
     "extraCharges": [],
@@ -33,10 +33,10 @@
       {
         "name": "MEDIUM",
         "size_id": 4,
-        "material_id": 7,
+        "material_id": 4,
         "size": "195 MM X 195 MM",
-        "material": "GERMAN -Made 350 Gsm Natural Hammered Textured",
-        "price": 31
+        "material": "260 GSM FABRIANO CLASSIC TEXTURED",
+        "price": 32
       }
     ]
   },
