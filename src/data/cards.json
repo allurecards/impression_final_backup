@@ -152,16 +152,7 @@
       null,
       null
     ],
-    "variants": [
-      {
-        "name": "MEDIUM",
-        "size_id": 4,
-        "material_id": 8,
-        "size": "195 MM X 195 MM",
-        "material": "350 GSM ZANDERS (GERMAN) NATURAL HAMMER TEXTURE",
-        "price": 32
-      }
-    ]
+    "variants": []
   },
   {
     "id": "VINTAGE 016",
