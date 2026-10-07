@@ -289,11 +289,11 @@
   {
     "id": "VINTAGE 013",
     "category": "VINTAGE SERIES",
-    "price": 30,
+    "price": 33,
     "featured": false,
     "minOrder": 100,
     "size": "195 MM X 195 MM",
-    "material": "PREMIUM 350 GSM MILL TEXTURED",
+    "material": "195 MM X 195 MM · 350 GSM ZANDERS (GERMAN) NATURAL HAMMER TEXTURE",
     "description": "PREMIUM DIGITAL PRINTING",
     "instagram_url": "https://www.instagram.com/p/DcAGIaYSwbL/?hl=en",
     "extraCharges": [],
@@ -320,10 +320,10 @@
       {
         "name": "MEDIUM",
         "size_id": 4,
-        "material_id": 4,
+        "material_id": 9,
         "size": "195 MM X 195 MM",
-        "material": "PREMIUM 350 GSM MILL TEXTURED",
-        "price": 30
+        "material": "195 MM X 195 MM · 350 GSM ZANDERS (GERMAN) NATURAL HAMMER TEXTURE",
+        "price": 33
       }
     ]
   },
