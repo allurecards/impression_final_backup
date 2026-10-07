@@ -2,7 +2,7 @@
   {
     "id": "IM 184",
     "category": "SQUARE FLORAL",
-    "price": 32,
+    "price": 35,
     "featured": false,
     "minOrder": 100,
     "size": "195 MM X 195 MM",
@@ -36,7 +36,7 @@
         "material_id": 9,
         "size": "195 MM X 195 MM",
         "material": "195 MM X 195 MM · 350 GSM ZANDERS (GERMAN) NATURAL HAMMER TEXTURE",
-        "price": 32
+        "price": 35
       }
     ]
   },
