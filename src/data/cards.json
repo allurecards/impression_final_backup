@@ -4,9 +4,9 @@
     "category": "HERITAGE HUES",
     "price": 35,
     "featured": false,
-    "minOrder": 100,
+    "minOrder": 200,
     "size": "195 MM X 195 MM",
-    "material": "260 GSM FABRIANO CLASSIC TEXTURED",
+    "material": "195 MM X 195 MM · 350 GSM ZANDERS (GERMAN) NATURAL HAMMER TEXTURE",
     "description": "PREMIUM DIGITAL PRINTING",
     "instagram_url": "",
     "extraCharges": [],
@@ -16,13 +16,16 @@
     "watermarkColor": "#f0fff9",
     "images": [
       "src/assets/cards/display/im-185-1.jpeg",
-      "src/assets/cards/display/im-185-2.jpeg"
+      "src/assets/cards/display/im-185-2.jpeg",
+      "src/assets/cards/display/im-185-3.jpeg"
     ],
     "originals": [
       "src/assets/cards/originals/im-185-1.jpeg",
-      "src/assets/cards/originals/im-185-2.jpeg"
+      "src/assets/cards/originals/im-185-2.jpeg",
+      "src/assets/cards/originals/im-185-3.jpeg"
     ],
     "imageWatermarks": [
+      null,
       null,
       null
     ],
@@ -30,9 +33,9 @@
       {
         "name": "MEDIUM",
         "size_id": 4,
-        "material_id": 4,
+        "material_id": 9,
         "size": "195 MM X 195 MM",
-        "material": "260 GSM FABRIANO CLASSIC TEXTURED",
+        "material": "195 MM X 195 MM · 350 GSM ZANDERS (GERMAN) NATURAL HAMMER TEXTURE",
         "price": 35
       }
     ]
