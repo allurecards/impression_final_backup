@@ -6,7 +6,7 @@
     "featured": false,
     "minOrder": 100,
     "size": "195 MM X 195 MM",
-    "material": "195 MM X 195 MM · 350 GSM ZANDERS (GERMAN) NATURAL HAMMER TEXTURE",
+    "material": "260 GSM FABRIANO CLASSIC TEXTURED",
     "description": "PREMIUM DIGITAL PRINTING",
     "instagram_url": "",
     "extraCharges": [],
@@ -30,9 +30,9 @@
       {
         "name": "MEDIUM",
         "size_id": 4,
-        "material_id": 9,
+        "material_id": 4,
         "size": "195 MM X 195 MM",
-        "material": "195 MM X 195 MM · 350 GSM ZANDERS (GERMAN) NATURAL HAMMER TEXTURE",
+        "material": "260 GSM FABRIANO CLASSIC TEXTURED",
         "price": 35
       }
     ]
