@@ -15,15 +15,12 @@
     "watermarkSize": "small",
     "watermarkColor": "#f0fff9",
     "images": [
-      "src/assets/cards/display/im-185-3.jpeg",
       "src/assets/cards/display/im-185-4.jpeg"
     ],
     "originals": [
-      "src/assets/cards/originals/im-185-3.jpeg",
       "src/assets/cards/originals/im-185-4.jpeg"
     ],
     "imageWatermarks": [
-      null,
       null
     ],
     "variants": [
