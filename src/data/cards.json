@@ -1,5 +1,46 @@
 [
   {
+    "id": "IM 189",
+    "category": "HERITAGE HUES",
+    "price": 35,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195 MM X 195 MM",
+    "material": "260 GSM FABRIANO CLASSIC TEXTURED",
+    "description": "PREMIUM DIGITAL PRINTING",
+    "instagram_url": "https://www.instagram.com/p/De56CL2y6G6/?hl=en",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "middle-left",
+    "watermarkSize": "medium",
+    "watermarkColor": "#6d5d03",
+    "images": [
+      "src/assets/cards/display/im-189-1.jpeg",
+      "src/assets/cards/display/im-189-2.jpeg",
+      "src/assets/cards/display/im-189-3.jpeg"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-189-1.jpeg",
+      "src/assets/cards/originals/im-189-2.jpeg",
+      "src/assets/cards/originals/im-189-3.jpeg"
+    ],
+    "imageWatermarks": [
+      null,
+      null,
+      null
+    ],
+    "variants": [
+      {
+        "name": "MEDIUM",
+        "size_id": 4,
+        "material_id": 4,
+        "size": "195 MM X 195 MM",
+        "material": "260 GSM FABRIANO CLASSIC TEXTURED",
+        "price": 35
+      }
+    ]
+  },
+  {
     "id": "IM 188",
     "category": "HERITAGE HUES",
     "price": 35,
