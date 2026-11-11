@@ -1500,11 +1500,11 @@
   {
     "id": "IM 013",
     "category": "RECTANGULAR FLORAL",
-    "price": 23,
+    "price": 24,
     "featured": false,
     "minOrder": 100,
-    "size": "140 MM X 140 MM",
-    "material": "260 GSM TEXTURED",
+    "size": "195 MM X 195 MM",
+    "material": "195 MM X 195 MM · 350 GSM ZANDERS (GERMAN) NATURAL HAMMER TEXTURE",
     "description": "DIGITAL PRINTING",
     "instagram_url": "",
     "extraCharges": [],
@@ -1524,11 +1524,11 @@
     "variants": [
       {
         "name": "",
-        "size_id": 5,
-        "material_id": 1,
-        "size": "140 MM X 140 MM",
-        "material": "260 GSM TEXTURED",
-        "price": 23
+        "size_id": 4,
+        "material_id": 9,
+        "size": "195 MM X 195 MM",
+        "material": "195 MM X 195 MM · 350 GSM ZANDERS (GERMAN) NATURAL HAMMER TEXTURE",
+        "price": 24
       }
     ]
   },
