@@ -1395,11 +1395,11 @@
   {
     "id": "IM 016",
     "category": "RECTANGULAR FLORAL",
-    "price": 23,
+    "price": 24,
     "featured": false,
     "minOrder": 100,
-    "size": "140 MM X 200 MM",
-    "material": "260 GSM TEXTURED",
+    "size": "14x20 cm",
+    "material": "TEXTURED",
     "description": "DIGITAL PRINTING",
     "instagram_url": "",
     "extraCharges": [],
@@ -1420,10 +1420,10 @@
       {
         "name": "",
         "size_id": 5,
-        "material_id": 1,
-        "size": "140 MM X 200 MM",
-        "material": "260 GSM TEXTURED",
-        "price": 23
+        "material_id": 11,
+        "size": "14x20 cm",
+        "material": "TEXTURED",
+        "price": 24
       }
     ]
   },
