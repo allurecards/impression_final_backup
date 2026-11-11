@@ -1416,16 +1416,7 @@
     "imageWatermarks": [
       null
     ],
-    "variants": [
-      {
-        "name": "",
-        "size_id": 5,
-        "material_id": 11,
-        "size": "14x20 cm",
-        "material": "TEXTURED",
-        "price": 24
-      }
-    ]
+    "variants": []
   },
   {
     "id": "IM 015",
