@@ -1,5 +1,49 @@
 [
   {
+    "id": "IM 192",
+    "category": "HERITAGE HUES",
+    "price": 37,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195 MM X 195 MM",
+    "material": "300 GSM PREMIUM TEXTURED",
+    "description": "PREMIUM DIGITAL PRINTING",
+    "instagram_url": "https://www.instagram.com/p/Dfn52oQy_mr/",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "middle-right",
+    "watermarkSize": "medium",
+    "watermarkColor": "#ffd700",
+    "images": [
+      "src/assets/cards/display/im-192-1.jpeg",
+      "src/assets/cards/display/im-192-2.jpeg",
+      "src/assets/cards/display/im-192-3.jpeg",
+      "src/assets/cards/display/im-192-4.jpeg"
+    ],
+    "originals": [
+      "src/assets/cards/originals/im-192-1.jpeg",
+      "src/assets/cards/originals/im-192-2.jpeg",
+      "src/assets/cards/originals/im-192-3.jpeg",
+      "src/assets/cards/originals/im-192-4.jpeg"
+    ],
+    "imageWatermarks": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "variants": [
+      {
+        "name": "MEDIUM",
+        "size_id": 4,
+        "material_id": 12,
+        "size": "195 MM X 195 MM",
+        "material": "300 GSM PREMIUM TEXTURED",
+        "price": 37
+      }
+    ]
+  },
+  {
     "id": "IM 191",
     "category": "HERITAGE HUES",
     "price": 35,
