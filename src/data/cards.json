@@ -3,10 +3,10 @@
     "id": "IM 192",
     "category": "HERITAGE HUES",
     "price": 37,
-    "featured": false,
+    "featured": true,
     "minOrder": 100,
-    "size": "195 MM X 195 MM",
-    "material": "300 GSM PREMIUM TEXTURED",
+    "size": "14X20 CM",
+    "material": "195 MM X 195 MM · 350 GSM ZANDERS (GERMAN) NATURAL HAMMER TEXTURE",
     "description": "PREMIUM DIGITAL PRINTING",
     "instagram_url": "https://www.instagram.com/p/Dfn52oQy_mr/",
     "extraCharges": [],
@@ -35,10 +35,10 @@
     "variants": [
       {
         "name": "MEDIUM",
-        "size_id": 4,
-        "material_id": 12,
-        "size": "195 MM X 195 MM",
-        "material": "300 GSM PREMIUM TEXTURED",
+        "size_id": 6,
+        "material_id": 9,
+        "size": "14X20 CM",
+        "material": "195 MM X 195 MM · 350 GSM ZANDERS (GERMAN) NATURAL HAMMER TEXTURE",
         "price": 37
       }
     ]
